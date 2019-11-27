@@ -69,10 +69,10 @@ public class UploadFileController extends Controller{
         }
         //word转化成图片
         if(re){
-        	WordChangeImage  wi=new WordChangeImage();
-        	String imagepath=wi.doc2Img(dir,imagespath);
-        	ExportDocService doc=new ExportDocService();
-        	doc.alysisWord(dir,imagepath);
+        //WordChangeImage  wi=new WordChangeImage();
+//        	String imagepath=wi.doc2Img(dir,imagespath);
+//        	ExportDocService doc=new ExportDocService();
+//        	doc.alysisWord(dir,imagepath);
         }
         file.delete();
         if(re){
