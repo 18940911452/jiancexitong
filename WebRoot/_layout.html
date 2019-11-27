@@ -1,0 +1,394 @@
+<#macro layout>
+<!doctype html>
+<html lang="en">
+	<head>
+ 		 <title>管理系统</title>  
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<!-- VENDOR CSS -->
+		<link rel="stylesheet" href="webapp/css/timeline.css" />
+		<link href="css/plugins/chosen/chosen.css" rel="stylesheet">
+		<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css" >
+		<link rel="stylesheet" href="assets/vendor/themify-icons/css/themify-icons.css" >
+		<link rel="stylesheet" href="assets/vendor/pace/themes/orange/pace-theme-minimal.css" >
+		<link rel="stylesheet" href="assets/css/vendor/animate/animate.min.css" >
+		<link rel="stylesheet" href="assets/vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" >
+		<link rel="stylesheet" href="assets/vendor/x-editable/bootstrap3-editable/css/bootstrap-editable.css" >
+		<link rel="stylesheet" href="assets/vendor/bootstrap-tour/css/bootstrap-tour.min.css" >
+		<link rel="stylesheet" href="assets/vendor/jqvmap/jqvmap.min.css" >
+		<!-- MAIN CSS -->
+		<link rel="stylesheet" href="assets/css/main.min.css" >
+		<link rel="stylesheet" href="assets/css/skins/sidebar-nav-darkgray.css" >
+		<link rel="stylesheet" href="assets/css/skins/navbar3.css" >
+		<!-- FOR DEMO PURPOSES ONLY. You should/may remove this in your project -->
+		<link rel="stylesheet" href="assets/css/demo.min.css" >
+		<!-- ICONS -->
+		<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+		<!-- Javascript -->
+		<script type="text/javascript" src="js/jquery-2.2.4.min.js" ></script>
+		<script src="assets/vendor/bootstrap/js/bootstrap.min.js" ></script>
+		<script src="assets/vendor/pace/pace.min.js" ></script>
+		<script src="assets/vendor/bootstrap-progressbar/js/bootstrap-progressbar.min.js" ></script>
+		<script src="assets/vendor/Flot/jquery.flot.js" ></script>
+		<script src="assets/vendor/Flot/jquery.flot.time.js" ></script>
+		<script src="assets/vendor/flot.tooltip/jquery.flot.tooltip.js" ></script>
+		<script src="assets/vendor/x-editable/bootstrap3-editable/js/bootstrap-editable.min.js" ></script>
+		<script src="assets/vendor/jquery.maskedinput/jquery.maskedinput.min.js" ></script>
+		<script src="assets/vendor/moment/min/moment.min.js" ></script>
+		<script src="assets/vendor/jquery-sparkline/js/jquery.sparkline.min.js" ></script>
+		<script src="assets/vendor/bootstrap-tour/js/bootstrap-tour.min.js" ></script>
+		<script src="assets/vendor/jquery-ui/ui/widget.js" ></script>
+		<script src="assets/vendor/jquery-ui/ui/data.js" ></script>
+		<script src="assets/vendor/jquery-ui/ui/scroll-parent.js" ></script>
+		<script src="assets/vendor/jquery-ui/ui/disable-selection.js" ></script>
+		<script src="assets/vendor/jquery-ui/ui/widgets/mouse.js" ></script>
+		<script src="assets/vendor/jquery-ui/ui/widgets/sortable.js" ></script>
+		<script src="assets/vendor/datatables/js-main/jquery.dataTables.min.js" ></script>
+		<script src="assets/vendor/datatables/js-bootstrap/dataTables.bootstrap.min.js" ></script>
+		<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+		<script src="assets/vendor/jquery-appear/jquery.appear.min.js" ></script>
+		<script src="assets/vendor/jqvmap/jquery.vmap.min.js" ></script>
+		<script src="assets/vendor/jqvmap/maps/jquery.vmap.world.js" ></script>
+		<script src="assets/vendor/jqvmap/maps/jquery.vmap.usa.js" ></script>
+		<script src="assets/vendor/chart-js/Chart.min.js" ></script>
+		<script src="assets/vendor/raphael/raphael.min.js" ></script>
+		<script src="assets/vendor/justgage-toorshia/justgage.js" ></script>
+		<script src="assets/scripts/klorofilpro-common.min.js" ></script>
+		<script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js" ></script>
+		<script src="assets/vendor/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js" ></script>
+		<script src="assets/vendor/clockpicker/bootstrap-clockpicker.min.js" ></script>
+		<script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+		
+		 <script type="text/javascript" src="wangEditor3.1.1/js/wangEditor.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="js/datepicker/daterangepicker-bs3.css"/>
+		<script src="js/datepicker/moment.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/datepicker/daterangepicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap-daterangepicker/option.js" type="text/javascript" charset="utf-8"></script>
+		
+		<!----------------------------其它资源---------------------------->
+		 <script src="js/web-plugin/iPage/sigroup.iPage.plugin.v4.3.min.js"></script>
+		 <link rel="stylesheet" type="text/css" href="js/web-plugin/iPage/iPage.v4.css"/>
+		 <script type="text/javascript" src="js/sigroup.iFunc.plugin.v1.js"></script>
+		<script type="text/javascript" src="js/jquery.json-2.4.min.js"></script>
+		
+		<!-- 文件上传 -->
+		<link href="js/fileinput/fileinput.css" rel="stylesheet" />
+		<script src="js/fileinput/fileinput.js"></script>
+		<script src="js/fileinput/zh.js"></script>
+		<!--t提示框  -->
+		<link href="css/tip.css" rel="stylesheet" type="text/css" />
+		<script src="js/jquery.qtip-1.0.0-rc3.js"></script>
+			
+		<!-- PNotify -->
+		<script type="text/javascript" src="js/notify/pnotify.core.js"></script>
+		<script type="text/javascript" src="js/notify/pnotify.buttons.js"></script>
+		<script type="text/javascript" src="js/notify/pnotify.nonblock.js"></script>
+		<link rel="stylesheet" type="text/css" href="js/notify/jquery.pnotify.default.css"/>
+
+		
+		<script src="js/sigroup-plugin/iTrackChart/sigroup.iTrackChart.plugin.v7.js"></script>
+		<!-- Chosen -->
+		<script src="js/plugins/chosen/chosen.jquery.js"></script>
+	  
+		<!--lym 新增-->
+		<link rel="stylesheet" type="text/css" href="css/publicWeb_lym.css"/>
+	    <style>
+			.navbar-default{
+				background: url("images/login.jpg") no-repeat center center;
+				-webkit-background-size: cover;
+				background-size: cover;
+
+			}
+			.navbar-default .brand{
+				width: 400px;
+				padding-top: 14px;
+			}
+			.brand img{
+				float: left;
+				width: 30px;
+				height: 30px;
+			}
+			.brand h1{
+				color: #fff;
+				margin: 0;
+				line-height: 30px;
+				text-indent: 16px;
+				font-size: 22px;
+			}
+	    	.main-content{float: left;width: 100%;height:100%;}
+	    	.mb0{margin-bottom: 0;}
+			ul.notifications .notification-item p{padding-left: 24px;}
+			.notifications p{width: 325px;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;}
+			#navbar-menu .fa-star{color: #fff !important;}
+			#globalKw{position: relative;top: 20px;border: 1px solid #fff;}
+			#globalKw::-webkit-input-placeholder{color: #bde1ff;}
+			#globalSearch{color: #fff;top: 26px;}
+			.panel-heading .right .dropdown .fa-search{color:#17A293!important;}
+			.panel .panel-heading .right {padding-right: 5px;}
+			.select_div{margin-top:11px;}
+			.ipage-fenye-info {padding-top: 10px;}
+			.select_all_text{float: right;}
+			.content_div:before{content: "";display: table;clear:both;}
+			.content_div:after{content: "";display: table;clear:both;}
+			.hot_detail{padding:0 20px;}
+			.hot_detail h3{width: 800px;margin:0 auto;font-size: 28px;font-weight: bold;text-align: center;margin-top: 20px;margin-bottom: 10px;white-space:nowrap;overflow:hidden;text-overflow: ellipsis;}
+			::-webkit-scrollbar{width:0px}
+			ul.notifications .notification-item .timestamp img{height: 22px;vertical-align: text-bottom;margin-left: 10px;}
+			a,a:hover{text-decoration: none !important;}
+			.dropdown-backdrop {display:none;}
+			.cursor{
+				cursor: pointer;
+			}
+			#wrapper{height: 100%;}
+			.ellipsis{
+				overflow: hidden;
+				white-space:nowrap;
+				text-overflow:ellipsis;
+			}
+			.panel .panel-heading .panel-title,.modal-title{
+				border-left: 5px solid #32597a;
+			}
+			.bg_o {
+				background: #32597a !important;
+			}
+			.ipage-fenye-on {
+				background: #32597a;
+			}
+			.ipage-fenye-on:hover {
+				background: #32597a;
+			}
+			.glyphicon-edit {
+				color: #32597a;
+			}
+			.btn_add_xg,.btn{
+				background-color: #32597a!important;
+				color: #fff;
+			}
+			.daterangepicker td.active, .daterangepicker td.active:hover{
+			    background-color: #32597a!important;
+			    color: #fff;
+			}
+			.btn-default:hover{
+			    color: #fff;
+			}
+
+		</style>
+	</head>
+	<body class="pace-done">
+	    <script type="text/javascript">
+		//加载夜间模式
+		if (localStorage.displayModa) {
+			$('body').addClass(localStorage.displayModa)
+		}
+	    </script>
+		<!-- WRAPPER -->
+		<div id="wrapper" class="clearfix">
+			<!-- NAVBAR -->
+			<nav class="navbar navbar-default navbar-fixed-top">
+ 				<div class="brand">
+					<!-- <img src="images/icon/login_icon.png" alt=""> 放置logo-->
+ 					<h1>人员信息文档管理系统</h1>
+ 					<!-- <h1 style="color: #fff;margin: 0;line-height: 30px;text-indent: 75px;margin-top: 14px;font-size: 22px;">晴天多语言舆情监测分析系统</h1> -->
+				</div>
+				<div class="container-fluid">
+					<div id="tour-fullwidth" class="navbar-btn" style="display: none;">
+						<button type="button" class="btn-toggle-fullwidth"><i class="ti-arrow-circle-left"></i></button>
+					</div>
+					<div id="navbar-menu">
+					   
+						<ul class="nav navbar-nav navbar-right" style="padding: 0 10px;">
+	
+						    <li style="display: none;">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="fa fa-moon-o"></i>
+								</a>
+								<ul class="dropdown-menu logged-user-menu color-list" id="sidebar-color">
+									<li><a  data-skin="sidebar-nav-gray" data-type='normal' style="background-color: #fdfdfd;" title="Gray"></a></li>
+									<li><a  data-skin="sidebar-nav-darkgray" data-type='dark' style="background-color: #383838;" title="Dark Gray"></a></li>
+								</ul>
+							</li> 
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="float: left;">
+									<!-- <img src="${login_user.icon!}" > -->
+									<span>${login_user.userName!}</span>
+								</a>
+								<a id="exit_login" style="float: left;width: 84px;">退出</a>
+								<!--<ul class="dropdown-menu logged-user-menu">-->
+									<!--<li><a id="exit_login" ></i> <span>退出</span></a></li>-->
+								<!--</ul>-->
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</nav>
+			<!-- END NAVBAR -->
+			<!-- LEFT SIDEBAR -->
+			<div id="sidebar-nav" class="sidebar" style="margin-top: 0;background: #213b50;">
+				<nav>
+					<ul class="nav" id="sidebar-nav-menu">
+						<!--  <li class="menu-group" ></li>-->
+						
+						<!--  <li class="panel ">
+							<a href="depart"><i class="fa fa-cog icolor "></i> <span>部门管理</span></a>
+						</li>
+						 <li class="panel ">
+							<a href="news"><i class="fa fa-newspaper-o icolor clickicolor"></i> <span>文章管理</span></a>
+						</li> 
+						
+						<li class="panel ">
+							<a href="imgtext"><i class="fa fa-picture-o icolor clickicolor"></i> <span>图文管理</span></a>
+						</li>
+						<li class="panel ">
+							<a href="teacher"><i class="fa  fa-address-card icolor clickicolor"></i> <span>名师管理</span></a>
+						</li>
+						
+						<li class="panel ">
+							<a href="stsq"><i class="fa  fa-address-book icolor clickicolor"></i> <span>学员管理</span></a>
+						</li>
+						<li class="panel ">
+							<a href="jyxx"><i class="fa  fa-universal-access icolor clickicolor"></i> <span>就业信息管理</span></a>
+						</li>
+						<li class="panel ">
+							<a href="secpages"><i class="fa fa-list-alt icolor clickicolor"></i> <span>二级页面管理</span></a>
+						</li>  -->
+						<li class="panel ">
+							<a href="userinfo"><i class="fa  fa-address-card icolor clickicolor"></i> <span>人员信息管理</span></a>
+						</li>
+						<li class="panel ">
+							<a href="user"><i class="fa fa-user icolor clickicolor"></i> <span>用户管理</span></a>
+						</li>
+						
+						<!-- <li class="panel perm_item_parent">
+							<a href="#tables1" data-toggle="collapse" data-parent="#sidebar-nav-menu" class="collapsed"><i class="fa fa-cog "></i> 
+							<span >系统管理</span>
+							 <i class="icon-submenu ti-angle-left"></i></a>
+							<div id="tables1" class="collapse ">
+								<ul class="submenu">
+
+                                   <li class="perm_item child" ><a href="depart" >部门管理</a></li>
+                                   <li class="perm_item child"><a href="user" >用户管理</a></li>
+                                         
+
+
+								</ul>
+							</div>
+						</li> -->
+						
+
+						
+					</ul>
+					<button type="button" class="btn-toggle-minified" title="Toggle Minified Menu"><i class="ti-arrows-horizontal"></i></button>
+				</nav>
+			</div>
+
+			<!-- END LEFT SIDEBAR -->
+			<!-- MAIN -->
+			<div class="main" style="height: 100%;">
+				<!-- MAIN CONTENT -->
+				<div class="main-content">
+					<#nested>
+				</div>
+				<!-- END MAIN CONTENT -->
+				
+				<!-- END RIGHT SIDEBAR -->
+			</div>
+			<!-- END MAIN -->
+			<div class="clearfix"></div>
+			<footer>
+				<div class="container-fluid">
+					<!--<p class="copyright">&copy; 2017 <a href=""  target="_blank">Theme I Need</a>. All Rights Reserved.</p>-->
+					<!--<p class="copyright">&copy; 2017 </p>-->
+				</div>
+			</footer>
+		</div>
+		<!-- END WRAPPER -->
+
+		<!-- DEMO PANEL -->
+		<!-- for demo purpose only, you should remove it on your project directory -->
+		<!-- END DEMO PANEL -->
+	</body>
+</html>
+	<script type="text/javascript">
+
+      $(document).ready(function(){
+        //加载国际化的js、css文件
+	 // $.include(['js/test.js', 'css/test.css']);  
+        //退出
+        $("#exit_login").click(function (){
+			if (confirm("确定要退出吗？")) {
+			    window.location.href="login/logout";
+				//$(this).attr("href","/login/logout");
+			}
+		})
+         
+         
+      });
+      // nav 高亮
+	$.each($('.panel').find('a'),function (i,val){
+		var pathname=window.location.pathname;
+		
+		if(pathname.indexOf($(this).attr('href')) != -1){
+			$(this).addClass('active')
+		}
+	}); 
+	
+
+     // console.log($("#MyGrod").val());
+      if($("#MyGrod").val()==1){
+          console.log("超级用户");
+      }else if($("#MyGrod").val()==2){
+          console.log("单位管理用户");
+          $("#ds-01").remove();
+	  }else if($("#MyGrod").val()==3){
+          $("#ds-01").remove();
+          $("#ds-02").remove();
+	  }else if($("#MyGrod").val()==4){
+         $("#tables1").parent().remove();
+	  }
+    </script>
+
+<script>
+   
+      //清除全选
+    $("body").on("click",".page_btn,.go_btn,button[class*=search_info_other_submit]",function(){
+	 	$(".select_all").prop("checked",false); 
+	})
+    $("body").on("click","input.export_info",function() {
+    	check_source_box_("export_info");
+	})
+    function check_source_box_(type) {
+		var flag = true;
+		var count = 0;
+		$("input." + type ).each(function() {
+			if ($(this).val() != -1) {
+				if ($(this).is(":checked")) {
+					count++;
+				} else {
+					flag = false;
+				}
+			}
+		});
+		if (flag) {
+			$(".select_all").prop("checked", true);
+		} else {
+			$(".select_all").prop("checked", false);
+					
+		}
+	}
+    
+    
+	
+	
+	//夜间模式切换
+	$('#sidebar-color a').click(function () {
+		var type = $(this).data('type');
+		localStorage.displayModa=type;
+		history.go(0)
+	})
+</script>
+
+</#macro>

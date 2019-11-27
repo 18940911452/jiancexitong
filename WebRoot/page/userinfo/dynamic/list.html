@@ -1,0 +1,170 @@
+
+</style>
+<input type="hidden" class="page_data" data-total="${total}" />
+
+
+            <table id="orderMes" class="table table-striped table-hover table-hide" style="width:100%;">
+                <thead>
+				    <tr class="table_thead">
+				   		<td style="width:8%;text-align:center;">姓名</td>
+				   		<td style="width:8%;text-align:center;">性 别</td>
+				   		<td style="width:8%;text-align:center;">现任职务</td>
+				        <td style="width:10%;text-align:center;">出生年月</td>
+				        <td style="width:8%;text-align:center;">民族</td>
+				       <!--  <td style="width:8%;text-align:center;">来源</td> -->
+				        <td style="width:6%;text-align:center;">籍 贯</td>
+						<!-- <td style="width:8%;text-align:center;">更新时间</td> -->
+						<td style="width:8%;text-align:center;">入 党时 间</td>
+						<td style="width:8%;text-align:center;">工作时 间</td>
+						<td style="width:8%;text-align:center;">全日制教育</td>
+						<td style="width:8%;text-align:center;">毕业院校</td>
+						<td style="width:8%;text-align:center;">操作</td>
+				    </tr>
+				</thead>
+                <tbody>
+
+                    <#if list?exists>
+                        <#if (list?size>0)>
+                            <#list list as item>
+                                <tr class="lead_cate_list">
+                    
+                                    <td class="ukey_id" style="display: none;">
+										<td class="keywordscategoryid" style="display: none;">
+                                            <#if item.id??>${item.id}</#if>
+                                        </td>
+                                      <td class="imagepath" style="display: none;">
+                                            <#if item.imagePath??>${item.imagePath}</#if>
+                                        </td>
+                                      
+                                        <td class="keywordscategoryid">
+                                            <#if item.name??>${item.name}</#if>
+                                        </td>
+                                         <td class="keywordscategoryid">
+                                            <#if item.sex??>${item.sex}</#if>
+                                        </td>
+                                         <td class="keywordscategoryid">
+                                            <#if item.xianrenzhiwu??>${item.xianrenzhiwu}</#if>
+                                        </td>
+                                       <td class="keywordscategoryid">
+                                            <#if item.birthday??>${item.birthday}</#if>
+                                        </td>
+                                         
+                                        <td class="keywordscategoryid">
+                                            <#if item.minzu??>${item.minzu}</#if>
+                                        </td>
+                                       <td class="keywordscategoryid">
+                                            <#if item.jiguan??>${item.jiguan}</#if>
+                                        </td>
+                                         <td class="keywordscategoryid">
+                                            <#if item.rudangshijian??>${item.rudangshijian}</#if>
+                                        </td>
+                                         <td class="keywordscategoryid">
+                                            <#if item.gongzuoshijian??>${item.gongzuoshijian}</#if>
+                                        </td>
+                                         <td class="keywordscategoryid">
+                                            <#if item.quanrizhijiaoyu??>${item.quanrizhijiaoyu}</#if>
+                                        </td>
+                                        <td class="keywordscategoryid">
+                                            <#if item.quanrizhibiyeyuanxiao??>${item.quanrizhibiyeyuanxiao}</#if>
+                                        </td>
+                                        
+                                        <!-- <td class="keywordscategoryid">
+                                        	<#if (item.status==1)>有效
+                                            	<#else> 无效
+                                            </#if>
+                                        </td>
+                                       <!--  <td class="keywordscategoryid">
+                                            <#if item.updateTime??>${item.updateTime}</#if>
+                                        </td>  -->
+                                        <td class="keywordscategoryid">
+                                        	<a data-toggle="modal" data-target="#editUserModal" style="font-size:16px;color: #32597A!important;" class="text-primary1 cursor" style="font-size: 16px;"  title="查看">
+	                                             <i class="glyphicon glyphicon-eye-open"></i>
+	                                         </a> &nbsp;&nbsp; 
+	                                         <a  class="downloadword cursor"  data-toggle="modal" data-target="#downloadword" style="font-size:16px;color: #32597A!important;" class="text-primary1 cursor" style="font-size: 16px;"  title="下载">
+	                                             <i class="glyphicon glyphicon-download-alt"></i>
+	                                         </a>
+	                                         &nbsp;&nbsp; 
+	                                         <a class="info_dele text-danger1 cursor" style="font-size:16px;color: #808080!important;" title="删除"><!-- 删除 -->
+	                                             <i class="glyphicon glyphicon-trash"></i>
+	                                         </a>
+                                             <!--  &nbsp;&nbsp;
+                                             <a data-toggle="modal" class="resetPass text-primary1 cursor" style="font-size: 16px;"  title="重置密码">编辑
+                                                 <i class="fa fa-key" style="color: #32597a;"></i>
+                                             </a> -->
+                                        </td>
+                                  
+                                </tr>
+                            </#list>
+                            <#else>
+                             <script>
+                                $("#xg").html("");
+                                $("#xg").append("<img style='display:block;margin:60px auto 50px auto;' src='img/my/bt-nodata-now.png' />");
+                            </script>
+                        </#if>
+                        <#else>
+                        	<script>
+                                $("#xg").html("");
+                                $("#xg").append("<img style='display:block;margin:60px auto 50px auto;' src='img/my/bt-nodata-now.png' />");
+                            </script>
+                    </#if>
+                </tbody>
+            </table>
+
+<style>
+  .keywordscategoryid{
+  	text-align:center;
+  }
+</style>
+<script type="text/javascript">
+    // 删除用户
+    $(".info_dele").unbind("click").click(function() {
+        var url = "userinfo/deleteNews";
+        var id = $.trim($(this).parents("tr").find(".keywordscategoryid").html());
+     
+        if (confirm("确定要删除吗？")) {
+            $.post(url, {
+            	id: id
+            }, function(data) {
+                if (data == "ok") {
+//                	$('.go_btn').click();
+                  getInfoList();
+                } else if (data == "error") {
+                    alert("删除失败");
+                } else if (data == "exist") {
+                    alert("已存在");
+                }
+            });
+        } else {
+            return false;
+        } 
+    });
+	$(".downloadword").unbind("click").click(function() {
+		alert();
+		var url="http://localhost:8080/docManager/upload/word/342cf1cf-4708-4072-8db5-184ace8ff7fd.doc";
+       window.open(url);
+    });
+
+    // 重置用户密码
+    $(".resetPass").unbind("click").click(function() {
+        var url = "user/updatePassword";
+        var id = $.trim($(this).parents("tr").find(".keywordscategoryid").html());
+
+        if (confirm("确定要重置密码吗？")) {
+             $.post(url, {
+                id: id
+            }, function(data) {
+                if (data == "true") {
+//                	$('.go_btn').click();
+                    alert("密码重置成功！");
+                    getInfoList();
+                } else if (data == "error") {
+                    alert("重置失败！");
+                }
+            });
+        } else {
+            return false;
+        }
+    });
+
+    
+</script>

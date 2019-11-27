@@ -1,0 +1,120 @@
+<link rel="stylesheet" type="text/css" href="css/sm/style.css"/>
+<style>
+.icon-leimupinleifenleileibie:before { content: "\e7f9";} 
+.gai_xinxi_list{padding: 10px;border-bottom: 1px dashed #888;padding-bottom: 20px;}
+.gai_xinxi_list h3{height: 30px;line-height: 30px;font-size: 16px;overflow: hidden;margin-bottom: 10px;color: #333;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.gai_xinxi_list h3 font{cursor: pointer;}
+/*.gai_xinxi_list p{max-height: 90px;line-height: 30px;font-size: 15px;overflow: hidden;margin-bottom: 10px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}*/
+.gai_xinxi_list h4{font-style: normal;font-weight: normal;}
+.gai_xinxi_list h4 span{margin-right: 2%;}
+.fullname {
+	color: #14171a;
+	font-size: 16px;
+	font-weight: bold
+}
+.report-middle{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+	display: -moz-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+	word-wrap: break-word;
+	font-size: 15px;
+	line-height: 28px;
+}
+.report-footer{margin-top: 12px;font-size: 14px;}
+ .hotReport{ border-bottom: 1px solid #e6ecf0;}
+.report-header111{margin-bottom: 5px;}
+.fa-star{color: #17a293;}
+.tanchu_emotion_judge_show_ label input{height: 30px;}
+.gai_xinxi_list .user_img1{
+	float: left;
+	width: 60px;
+	height:60px;
+	padding: 10px;
+	margin-top: 5px;
+	border-radius:10%!important;
+}
+.gai_xinxi_list .user_img1 img{
+	padding: 0;
+	margin: 0;
+}
+.gai_xinxi_list input[type="checkbox"],.page_info input[type="checkbox"]{
+	width: 16px;
+	height: 16px;
+}
+</style>
+<div class="panel-group" id="accordion">
+<#if list?exists&&(list?size>0)>	
+<#list list as mi>
+	<div class="gai_xinxi_list">
+	    <!--<input type="checkbox" class="export_info" value="" style="float: left; margin-top: 25px" check_id="${mi.id}" />-->
+	    <div class="user_img1" style="">
+	         <img class="user_img1" style="width: 40px;height:40px; border-radius:10%!important;" onerror="nofind();" src="<#if mi.userImage??>http://103.36.29.130:9001/files/${mi.userImage}</#if>" alt="">
+	    </div>
+		<h3 style="height:20px;line-height: 20px;margin-left: 60px;">
+			<font onclick="showDetailByIdKeyTablename($(this),<#if mi.id??>'${mi.id}'</#if>)"  class="fullname tan_title panel_website_name" title="<#if mi.fromUserName??>${mi.fromUserName}</#if>">
+				<#if mi.fromUserName??>${mi.fromUserName}</#if>
+			</font>
+			<i title="${mi.pubtime}" class="panel_pubtime">${mi.pubtime}</i>
+		</h3>
+		<p class="tan_content report-middle" style="margin-left: 60px;margin-bottom:0;" title="<#if mi.content??>${mi.content}</#if>">
+			<#if mi.content??>${mi.content}</#if>
+		</p>
+		
+	</div>
+ </#list>
+<#else>
+<input type="hidden" class="page_data1" data-total="<#if total?exists>${total}</#if>" />
+<script>
+	$('#total_num').html(<#if total?exists>${total}</#if>);
+	$("#article_list").html("");
+	$("#article_list").append("<img style='display:block;margin:60px auto 50px auto;' src='img/my/bt-nodata-now.png' />");
+</script>
+</#if>
+</div>
+<input type="hidden" class="page_data" data-total="${total}"/>
+<!-- 信息文章详情 -->
+<div id="article_detail_modal"></div>
+
+<script>
+$('#total_num').html(<#if total?exists>${total}</#if>);
+$(function (){
+	$("#article_detail_modal").load("page/analyse/detail/detail_article_modal.html");
+
+});
+function nofind(){ 
+	var img=event.srcElement; 
+	img.src="img/avatar-4.jpg"; 
+	img.onerror=null; // 控制不要一直跳动 
+} 
+$(".con_picture").click(function (){
+	 $("#contentImgModal").find("img").attr("src",$(this).attr("src"));
+});
+
+
+function turnPage(){
+	$("#contentdiv").load('/page/biddinginfo_al/mod1/mod/effect.html');
+}
+//    点击文章标题 显示的模态框
+var radioStr = '					<font class="tanchu_emotion_judge_show_" style="margin-left: 10px;">'+
+'													<label class="radio radio-inline" style="margin-top: 0;font-size: 14px;">正面'+
+'<input type="radio" value="0" name="radioinline_" />'+
+'													</label>'+
+'													<label class="radio radio-inline" style="margin-top: 0;font-size: 14px;">'+
+'														<input type="radio" name="radioinline_" value="1" />中立'+
+'													</label>'+
+'													<label class="radio radio-inline" style="margin-top: 0;font-size: 14px;">'+
+'														<input type="radio" name="radioinline_" value="2" />负面'+
+'													</label>'+
+'													<button class="btn btn-info btn-xs emotion_judge_btn" style="margin-left: 10px;"></button>'+
+'					</font>';
+
+function showDetailByIdKeyTablename($obj,id){
+	contentDetailModalF ($obj,'.gai_xinxi_list');
+	$(".new_content_lj").find(".collect_active_all").prev().hide();
+
+}
+
+</script>

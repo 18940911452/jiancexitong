@@ -1,0 +1,183 @@
+<#include "/_layout.html"/>
+<@layout>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+<script src="js/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script type="text/javascript" src="js/datepicker/moment.min.js"></script>
+<script type="text/javascript" src="js/datepicker/daterangepicker.js"></script>
+<script src="js/jquery.cntl.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="js/datepicker/daterangepicker-bs3.css" />
+<link href="js/jquery-ui/jquery-ui.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-timepicker-addon.css" />
+<link rel="stylesheet" type="text/css" href="css/y_zhuti.css" />
+<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/vendor/animate/animate.min.css">
+<link rel="stylesheet" href="css/cntl.css">
+<link rel="stylesheet" type="text/css" href="css/twitter_core.bundle.css" />
+<style>
+	[data-manage="bMessage"] #myTab>li.active>a {
+		background: #fff;
+		border-bottom-color: transparent;
+	}
+
+	#ui-datepicker-div {z-index: 99999 !important;}
+	.tabActive {background-color: #21a3e1;}
+	.tabActive a {color: white;}
+	.addrow,.deltrow {cursor: pointer;}
+	.yucai_list {display: none;}
+	.collect_active_all i {color: #17a293;}
+	#yindao_list li:hover {background: #D9D9D9;cursor: pointer;}
+	#yindao_list #info_div li {margin-bottom: 0px;}
+	.daterangepicker {z-index: 9999!important;}
+	.ui-front {z-index: 6000 !important;}
+
+	.fancy-checkbox input[type="checkbox"]+span:before {border: 1px solid #00aaff;}
+	.navbar-form input[type="text"] {min-width: 135px;}
+	.radio-inline{margin:0 0 0 30px!important;}
+	.cntl-state{
+		margin: 0 auto;
+	}
+	.cntl-content{
+		opacity: 1;
+	}
+	.userli{
+	    cursor: pointer;
+	    border-bottom: 1px solid #d9d9d9;
+	}
+	.userli .user_list h4{
+        line-height: 28px;
+        width: 140px;
+        margin: 0;
+        font-size: 18px;
+		color: #000;
+		/*font-weight: 700;*/
+	}
+	.userli .user_list p{
+	    line-height: 14px;
+        font-size: 12px;
+        margin: 0;
+	}
+	.userli .user_list p span{
+		font-size: 12px;
+		line-height: 14px;
+		margin-right: 5px;
+	}
+	.user_img{
+	    padding: 10px;
+	}
+    .user_img img{
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+    }
+    .active_id{
+        background: #ccc;
+    }
+	#siteZhandian label,#stateZhandian label{
+		float: left;
+		margin-right: 5px;
+		padding: 4px 10px 0 24px;
+	}
+	.daterangepicker .ranges{width: 200px;}
+</style>
+<div class="row">
+	<div class="col-md-3" style="padding-left:0;padding-right:0;margin-left:-16px;width: 260px;position: fixed;top: 70px;z-index: 1000;height: 100%;">
+		<div class="panel" style="box-shadow: none;height: 100%;">
+			<div class="panel-body panel-body-box" style="padding:0;background: #e6e6e6;height: 100%;">
+				<div role="tabpanel" style="margin-top:0px;position: relative; width: auto;">
+					<div id="user_list" class="ipage" style="overflow-y: scroll;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12" id="user_right" style="padding-left: 260px;padding-right:0px;">
+		
+	</div>
+	
+</div>
+<div id="myTabContent" class="tab-content">
+	<div id="home">
+		<div id="addMonitorDiv"></div>
+		<div id="editMonitorDiv"></div>
+		<div id="addYucaiInfo"></div>
+	</div>
+</div>
+<script>
+//微信列表头像 路径
+var userImgsrc = "https://124.205.229.230:9006/im/";
+var userImg = "img/avatar-4.jpg"; //本地头像
+  
+    $("#user_list").slimScroll({
+        height: "calc(100vh - 108px)",
+        color: "rgba(200,200,200,.8)"
+    });
+
+var names,urls,sites;
+
+    // 获取监控配置信息列表
+    getInfoList();
+    function getInfoList() {
+        var options = new Object();
+        var param = {};
+
+        param.path = "page/analyse/dynamic/list.html";
+        options.param = param;
+        //iPage.page_foot_html = '<div class="page_info ipage-fenye"><div class="ipage-fenye-btn"><button class="startPage page_btn ipage-fenye-on">\u9996\u9875</button><button class="prePage page_btn ipage-fenye-on">\u4e0a\u9875</button><button class="nextPage page_btn ipage-fenye-on">\u4e0b\u9875</button><button class="endPage page_btn ipage-fenye-on" style="display:none;">\u5c3e\u9875</button><input class="pageNo_input" type="text" value="1"/><button class="ipage-fenye-on go_btn">GO</button></div><div class="ipage-fenye-info">\u4fe1\u606f\u603b\u6570\uff1a<span class="ipage-number total"></span>&nbsp;&nbsp;\u603b\u9875\u6570\uff1a<span class="ipage-number totalPage"></span>&nbsp;&nbsp;\u5f53\u524d\u9875\uff1a<span class="ipage-number pageNo"></span></div></div>';
+        options.pageSize = 15;
+        options.isExport = false; //分页插件导出功能
+        options.page_foot_html = false; //插件底部功能
+        options.callback = function() {
+        	if(this.pageNo == 1){
+        		$("#user_list .row .userli").eq(0).addClass("active_id");
+        		var firsid = $("#user_list .row .userli").eq(0).attr("groupid");
+        		var firstime = $("#user_list .row .userli").eq(0).attr("stime");
+        		var firsetime = $("#user_list .row .userli").eq(0).attr("etime");
+        		load_user_page(firsid,2,21,firstime,firsetime);
+        	}
+        	userListClick();
+        };
+        var obj = new iPage.ScrollLoadContainer("user_list", "analyse/loadSelectGroupInfo", options).init();
+        $(".status_tip").hide();
+    }
+    
+    function userListClick(){
+    	var userlis = $('.cache_div .row .userli');
+    	
+    	$.each(userlis,function(i,e){
+    		$(this).on('click',function(){
+    			$(this).addClass("active_id").siblings().removeClass("active_id");
+    			load_user_page($(this).attr('groupid'),2,21,$(this).attr('stime'),$(this).attr('etime'));
+    		});
+    	});
+    }
+    
+    function load_user_page(id,ctype,utype,stime,etime){
+    	let localData={
+    			"searchVo.fromUserId":id,
+    			"searchVo.ctype":ctype,
+    			"searchVo.utype":utype,
+                "searchVo.sTime": stime,
+                "searchVo.eTime": etime
+    	};
+    	var userData = JSON.stringify(localData);
+    	localStorage.setItem("userDada",userData);
+    	$('#user_right').load('page/analyse/dynamic/account_info.html');
+    }
+
+//获取参数
+function get_articanalysem(id,ctype,utype,stime,etime){
+    let localData={
+        "searchVo.fromUserId":id,
+        "searchVo.ctype":ctype,
+        "searchVo.utype":utype,
+        "searchVo.sTime": stime,
+        "searchVo.eTime": etime
+    };
+    var userData = JSON.stringify(localData);
+    localStorage.setItem("userDada",userData);
+    return param;
+}
+</script>
+</@layout>

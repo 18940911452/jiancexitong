@@ -1,0 +1,156 @@
+Table: manage_depart
+----------+--------------+------+-----+---------+---------
+ Field    | Type         | Null | Key | Default | Remarks 
+----------+--------------+------+-----+---------+---------
+ dep_id   | INT(10)      | NO   | PRI |         | 自增id    
+ dep_name | VARCHAR(255) | YES  |     |         | 部门名称    
+ status   | INT(10)      | NO   |     | 0       | 0 正常  -1 删除
+----------+--------------+------+-----+---------+---------
+
+Table: manage_perm
+-----------+--------------+------+-----+---------+---------
+ Field     | Type         | Null | Key | Default | Remarks 
+-----------+--------------+------+-----+---------+---------
+ perm_id   | INT(10)      | NO   | PRI |         | 自增id    
+ perm_path | VARCHAR(100) | YES  |     |         |         
+ perm_name | VARCHAR(100) | YES  |     |         |         
+ icon      | VARCHAR(100) | YES  |     |         | 图标      
+ status    | TINYINT(3)   | NO   |     | 1       | 是否启用： 1，是；-1，否
+-----------+--------------+------+-----+---------+---------
+
+Table: manage_role
+-----------+--------------+------+-----+---------+---------
+ Field     | Type         | Null | Key | Default | Remarks 
+-----------+--------------+------+-----+---------+---------
+ role_id   | INT(10)      | NO   | PRI |         | 自增id    
+ role_name | VARCHAR(255) | YES  |     |         | 角色名称    
+-----------+--------------+------+-----+---------+---------
+
+Table: manage_role_perm_rel
+---------+---------+------+-----+---------+---------
+ Field   | Type    | Null | Key | Default | Remarks 
+---------+---------+------+-----+---------+---------
+ role_id | INT(10) | NO   | PRI |         | 角色id    
+ perm_id | INT(10) | NO   | PRI |         | 权限id    
+---------+---------+------+-----+---------+---------
+
+Table: manage_role_user_rel
+---------+---------+------+-----+---------+---------
+ Field   | Type    | Null | Key | Default | Remarks 
+---------+---------+------+-----+---------+---------
+ role_id | INT(10) | NO   | PRI |         | 角色id    
+ user_id | INT(10) | NO   | PRI |         | 用户id    
+---------+---------+------+-----+---------+---------
+
+Table: manage_user_info
+-------------+---------------+------+-----+-------------------+---------
+ Field       | Type          | Null | Key | Default           | Remarks 
+-------------+---------------+------+-----+-------------------+---------
+ user_id     | INT(10)       | NO   | PRI |                   |         
+ user_name   | VARCHAR(255)  | NO   |     |                   | 用户名     
+ password    | VARCHAR(255)  | NO   |     |                   | 密码      
+ nick_name   | VARCHAR(100)  | YES  |     |                   | 昵称      
+ icon        | VARCHAR(100)  | YES  |     |                   | 图标      
+ dep_id      | INT(10)       | YES  |     |                   | 账户所属的部门 
+ sex         | INT(10)       | YES  |     | 2                 | 0是女  1男   2是未知
+ email       | VARCHAR(100)  | YES  |     |                   | 邮箱      
+ nation      | VARCHAR(100)  | YES  |     |                   | 民族      
+ birthdate   | VARCHAR(50)   | YES  |     |                   | 出生日期：1991-01-01
+ tel         | VARCHAR(50)   | YES  |     |                   | 电话      
+ create_time | TIMESTAMP(19) | YES  |     | CURRENT_TIMESTAMP | 创建日期    
+ status      | INT(10)       | YES  |     | 1                 | 状态：0，无效；1，有效
+ token       | VARCHAR(300)  | YES  |     |                   |         
+ longitude   | DOUBLE(22)    | YES  |     | 0                 | 经度      
+ latitude    | DOUBLE(22)    | YES  |     | 0                 | 纬度      
+ pushToken   | VARCHAR(300)  | YES  |     |                   |         
+ role        | INT(10)       | YES  |     | 0                 |         
+ update_time | TIMESTAMP(19) | YES  |     |                   |         
+-------------+---------------+------+-----+-------------------+---------
+
+Table: news
+----------+---------------+------+-----+---------+---------
+ Field    | Type          | Null | Key | Default | Remarks 
+----------+---------------+------+-----+---------+---------
+ id       | INT(10)       | NO   | PRI |         |         
+ type     | INT(10)       | YES  |     |         |         
+ title    | VARCHAR(255)  | YES  |     |         |         
+ content  | BLOB(65535)   | YES  |     |         |         
+ preimage | VARCHAR(500)  | YES  |     |         |         
+ author   | VARCHAR(255)  | YES  |     |         |         
+ time     | TIMESTAMP(19) | YES  |     |         |         
+ source   | VARCHAR(255)  | YES  |     |         |         
+ status   | INT(10)       | YES  |     |         |         
+ addfield | VARCHAR(255)  | YES  |     |         |         
+ num      | INT(10)       | YES  |     |         |         
+----------+---------------+------+-----+---------+---------
+
+Table: userinfo
+-----------------------+---------------+------+-----+-------------------+---------
+ Field                 | Type          | Null | Key | Default           | Remarks 
+-----------------------+---------------+------+-----+-------------------+---------
+ id                    | INT(10)       | NO   | PRI |                   |         
+ name                  | VARCHAR(20)   | YES  |     |                   |         
+ sex                   | VARCHAR(20)   | YES  |     |                   |         
+ birthday              | VARCHAR(20)   | YES  |     |                   |         
+ minzu                 | VARCHAR(20)   | YES  |     |                   |         
+ status                | INT(10)       | YES  |     | 1                 | 状态  删除0   正常1
+ update_time           | TIMESTAMP(19) | YES  |     | CURRENT_TIMESTAMP |         
+ jiguan                | VARCHAR(20)   | YES  |     |                   | 籍贯      
+ chushengdi            | VARCHAR(255)  | YES  |     |                   |         
+ sourcePath            | VARCHAR(255)  | YES  |     |                   |         
+ imagePath             | VARCHAR(500)  | YES  |     |                   |         
+ rudangshijian         | VARCHAR(20)   | YES  |     |                   |         
+ gongzuoshijian        | VARCHAR(20)   | YES  |     |                   |         
+ jiankangzhuangkang    | VARCHAR(100)  | YES  |     |                   |         
+ zhuanyejishuzhuwu     | VARCHAR(255)  | YES  |     |                   |         
+ youhetechang          | VARCHAR(255)  | YES  |     |                   |         
+ quanrizhijiaoyu       | VARCHAR(255)  | YES  |     |                   |         
+ quanrizhibiyeyuanxiao | VARCHAR(255)  | YES  |     |                   |         
+ zaizhijiaoyu          | VARCHAR(255)  | YES  |     |                   |         
+ zaizhibiyeyuanxiao    | VARCHAR(255)  | YES  |     |                   |         
+ xianrenzhiwu          | TEXT(65535)   | YES  |     |                   |         
+ nirenzhiwu            | TEXT(65535)   | YES  |     |                   |         
+ nimianzhiwu           | TEXT(65535)   | YES  |     |                   |         
+ jianli                | TEXT(65535)   | YES  |     |                   |         
+ chengjiangqingkuang   | TEXT(65535)   | YES  |     |                   |         
+ niandukaohe           | TEXT(65535)   | YES  |     |                   |         
+ renmianliyou          | TEXT(65535)   | YES  |     |                   |         
+ g_name1               | VARCHAR(20)   | YES  |     |                   |         
+ g_name2               | VARCHAR(20)   | YES  |     |                   |         
+ g_name3               | VARCHAR(20)   | YES  |     |                   |         
+ g_name4               | VARCHAR(20)   | YES  |     |                   |         
+ g_name5               | VARCHAR(20)   | YES  |     |                   |         
+ g_name6               | VARCHAR(20)   | YES  |     |                   |         
+ g_name7               | VARCHAR(20)   | YES  |     |                   |         
+ g_chengwei1           | VARCHAR(20)   | YES  |     |                   |         
+ g_chengwei2           | VARCHAR(20)   | YES  |     |                   |         
+ g_chengwei3           | VARCHAR(20)   | YES  |     |                   |         
+ g_chengwei4           | VARCHAR(20)   | YES  |     |                   |         
+ g_chengwei5           | VARCHAR(20)   | YES  |     |                   |         
+ g_chengwei6           | VARCHAR(20)   | YES  |     |                   |         
+ g_chengwei7           | VARCHAR(20)   | YES  |     |                   |         
+ g_birthday1           | VARCHAR(20)   | YES  |     |                   |         
+ g_birthday2           | VARCHAR(20)   | YES  |     |                   |         
+ g_birthday3           | VARCHAR(20)   | YES  |     |                   |         
+ g_birthday4           | VARCHAR(20)   | YES  |     |                   |         
+ g_birthday5           | VARCHAR(20)   | YES  |     |                   |         
+ g_birthday6           | VARCHAR(20)   | YES  |     |                   |         
+ g_birthday7           | VARCHAR(20)   | YES  |     |                   |         
+ g_zhengzhi1           | VARCHAR(20)   | YES  |     |                   |         
+ g_zhengzhi2           | VARCHAR(20)   | YES  |     |                   |         
+ g_zhengzhi3           | VARCHAR(20)   | YES  |     |                   |         
+ g_zhengzhi4           | VARCHAR(20)   | YES  |     |                   |         
+ g_zhengzhi5           | VARCHAR(20)   | YES  |     |                   |         
+ g_zhengzhi6           | VARCHAR(20)   | YES  |     |                   |         
+ g_zhengzhi7           | VARCHAR(20)   | YES  |     |                   |         
+ g_gongzuodanwei1      | VARCHAR(255)  | YES  |     |                   |         
+ g_gongzuodanwei2      | VARCHAR(255)  | YES  |     |                   |         
+ g_gongzuodanwei3      | VARCHAR(255)  | YES  |     |                   |         
+ g_gongzuodanwei4      | VARCHAR(255)  | YES  |     |                   |         
+ g_gongzuodanwei5      | VARCHAR(255)  | YES  |     |                   |         
+ g_gongzuodanwei6      | VARCHAR(255)  | YES  |     |                   |         
+ g_gongzuodanwei7      | VARCHAR(255)  | YES  |     |                   |         
+ chengbaodanweiyijian  | TEXT(65535)   | YES  |     |                   |         
+ shenpijiguanyijian    | TEXT(65535)   | YES  |     |                   |         
+-----------------------+---------------+------+-----+-------------------+---------
+

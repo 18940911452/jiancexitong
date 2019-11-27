@@ -1,0 +1,372 @@
+﻿<#include "/_layout.html"/>
+<@layout>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+<script src="js/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script type="text/javascript" src="js/datepicker/moment.min.js"></script>
+<script type="text/javascript" src="js/datepicker/daterangepicker.js"></script>
+<script src="js/jquery.cntl.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="js/datepicker/daterangepicker-bs3.css" />
+<link href="js/jquery-ui/jquery-ui.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-timepicker-addon.css" />
+<link rel="stylesheet" type="text/css" href="css/y_zhuti.css" />
+<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/vendor/animate/animate.min.css">
+<link rel="stylesheet" href="css/cntl.css">
+<link rel="stylesheet" type="text/css" href="css/twitter_core.bundle.css" />
+<style>
+	[data-manage="bMessage"] #myTab>li.active>a {
+		background: #fff;
+		border-bottom-color: transparent;
+	}
+
+	#ui-datepicker-div {z-index: 99999 !important;}
+	.tabActive {background-color: #21a3e1;}
+	.tabActive a {color: white;}
+	.addrow,.deltrow {cursor: pointer;}
+	.yucai_list {display: none;}
+	.collect_active_all i {color: #17a293;}
+	#yindao_list li:hover {background: #D9D9D9;cursor: pointer;}
+	#yindao_list #info_div li {margin-bottom: 0px;}
+	.daterangepicker {z-index: 9999!important;}
+	.ui-front {z-index: 6000 !important;}
+
+	.fancy-checkbox input[type="checkbox"]+span:before {border: 1px solid #00aaff;}
+	.navbar-form input[type="text"] {min-width: 135px;}
+	.radio-inline{margin:0 0 0 30px!important;}
+	.cntl-state{
+		margin: 0 auto;
+	}
+	.cntl-content{
+		opacity: 1;
+	}
+	.userli{
+	    border-bottom: 1px solid #d9d9d9;
+	}
+	.user_img{
+	    padding: 10px;
+	}
+    .user_img img{
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+    }
+    .active_id{
+        background: #ccc;
+    }
+	#siteZhandian label,#stateZhandian label{
+		float: left;
+		margin-right: 5px;
+		padding: 4px 10px 0 24px;
+	}
+	.daterangepicker .ranges{width: 200px;}
+	.keywordscategoryid{
+		vertical-align: middle;
+	}
+</style>
+<div >
+		<div class="row">
+		<div class="col-md-12">
+			<div class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">学员管理</h3>
+					<!-- <button style="padding: 0 5px; float: right;position: relative;bottom: -1px; margin-bottom: 10px;margin-right: -1px;background-color: #17a293;color: #fff;" class="btn btn_add_xg " data-toggle="modal" data-target="#addNewsModal"><i class="fa fa-plus no-margin"></i></button> -->
+					<a href="javascript:;" id="btn_getUser" style="display: inline-block;float: right;position: relative;top: 6px;width: 25px;height: 25px;color: #ccc;" class="glyphicon glyphicon-search"></a>
+					<input id="getUser" style="margin-top: -3px;float: right;position: relative;right: 6px;top: 0px;width: 12%;border: #ccc 1px solid;border-radius: 3px;" type="text" class="" placeholder="请输入关键字">
+				</div>
+				<div class="panel-body" style="padding-top:20px;">
+					<div id="xg"></div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+	<div id="addNewsDiv"></div>
+	<div id="editUserDiv"></div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		// 加载信息
+		var name = $("#getUser").val().trim();
+		getInfoList(name);
+		// 加载添加用户页面
+		$("#addNewsDiv").load('user/loadHtml', {
+			'path': 'page/stsq/detail/addNews.html'
+		}, function() {
+			//load_adddanwei(); ////加载添加  单位
+		});
+		// 加载编辑用户界面
+		$("#editUserDiv").load('user/loadHtml', {
+			'path': 'page/stsq/detail/editNews.html'
+		},function(){
+			//ff();
+		});
+
+
+	});
+	// $("#sel_type").change(function() { getInfoList(""); });
+
+	// 获取用户信息列表
+	function getInfoList(name) {
+		var options = new Object();
+		var seltype=41;
+		options.param = {
+			name:name,
+			type:seltype,
+			path: "page/stsq/dynamic/list.html"
+		};
+        options.callback = function() {
+
+	    }
+		//iPage.page_foot_html = '<div class="page_info ipage-fenye"><div class="ipage-fenye-btn"><button class="startPage page_btn ipage-fenye-on">\u9996\u9875</button><button class="prePage page_btn ipage-fenye-on">\u4e0a\u9875</button><button class="nextPage page_btn ipage-fenye-on">\u4e0b\u9875</button><button class="endPage page_btn ipage-fenye-on" style="display:none;">\u5c3e\u9875</button><input class="pageNo_input" type="text" value="1"/><button class="ipage-fenye-on go_btn">GO</button></div><div class="ipage-fenye-info">\u4fe1\u606f\u603b\u6570\uff1a<span class="ipage-number total"></span>&nbsp;&nbsp;\u603b\u9875\u6570\uff1a<span class="ipage-number totalPage"></span>&nbsp;&nbsp;\u5f53\u524d\u9875\uff1a<span class="ipage-number pageNo"></span></div></div>';
+		var page_html=$("<div>"+iPage.page_foot_html+"</div>");
+		page_html.find(".ipage-fenye-oper").hide();
+		iPage.page_foot_html = page_html.html();
+		iPage.pageSize = 10;
+		var obj = new iPage.PageLoad("xg", "stsq/getStsqListInfo", options).init();
+	}
+	
+	//搜索部分
+    $("#btn_getUser").click(function() {
+    	var searchName = $("#getUser").val().trim();
+        getInfoList(searchName);
+//        $('#getUser').val('');
+    });
+	$('#getUser').focus(function(){
+        //绑定回车事件 发送
+        document.onkeydown = function(e){
+            if(!e){
+                e = window.event;
+            }
+            if((e.keyCode || e.which) == 13){
+            	var searchName = $("#getUser").val().trim();
+                getInfoList(searchName);
+//                $('#getUser').val('');
+                $('#getUser').blur();
+            }
+        };
+	});
+
+    
+    // 添加用户
+    $("#addNewsDiv").on('click','.btn-primary',function() {
+
+        var param = get_Monitor_param000("#addNewsModal");
+        if (param == "fail") {
+            return;
+        }
+        var url = "news/addNews";
+        $.post(url, {
+            param: param
+        }, function(data) {
+            if (data == "success") {
+            	$("#getUser").val(' ');
+            	getInfoList(name);
+                $("#addNewsModal").modal("hide");
+            } else if (data == "fail") {
+                $("#addNewsModal").find(".result").show();
+                //$("#addUserModal").find(".result").html("操作失败");
+                $("#addNewsModal").find(".result").html("操作失败");
+            } else if (data == "exist") {
+                $("#addNewsModal").find(".result").show();
+               // $("#addUserModal").find(".result").html("该用户名称已存在，请重新输入");
+                $("#addNewsModal").find(".result").html("该用户名称已存在，请重新输入!");
+            }
+        });
+    });
+    
+    
+    // 编辑时回显用户信息
+    $("#xg").on('click',".text-primary1",function() {
+    	//$("#editUserModal").find(".result").hide();
+        //$("#editUserModal").find(".result").html('');
+        var id = $.trim($(this).parents("tr").find(".keywordscategoryid").html());
+        //var uk_tid = $.trim($(this).parents("tr").find(".ukey_id").html())
+        $.post("news/getInfoByid", {
+            "id": id
+        }, function(data) {
+        	console.log(data)
+            $("#editUserModal").find("#hide_id").val(id);
+            var id = data.id;
+            var type = data.type;
+            var title = data.title;
+            var content = data.content_;
+            var preimage = data.preimage;
+            var author = data.author;
+            var source = data.source;
+            var status = data.status;
+            debugger
+            $("#editUserModal").find(".hide_id").val(id);
+            $("#editUserModal").find(".add_title").val(title);
+            //$("#editUserModal").find(".div5").val(content);
+            editor2.txt.html(content);
+             $("#editUserModal").find(".add_author").val(author);
+             $("#editUserModal").find(".add_source").val(source);
+        });
+    });
+    
+    
+    
+    // 编辑用户
+    $("#editUserDiv").on('click',".btn-primary",function() {
+        var param = edit_Monitor_param000("#editUserDiv");
+        if (param == "fail") {
+            return;
+        }
+        var modal=$("#editUserModal")
+        var url = "news/editNews";
+        var flag = true;
+        if (flag) {
+           //param = JSON.stringify(param);
+            $.post(url, {
+                param: param
+            }, function(data) {
+                if (data == "ok") {
+                	$('.go_btn').click();
+//                  getInfoList();
+                    $("#editUserModal").modal("hide");
+                } else if (data == "error") {
+                    $("#editUserModal").find(".result").show();
+                    //$("#editUserModal").find(".result").html("操作失败");
+                    $("#editUserModal").find(".result").html("操作失败");
+                } else if (data == "exist") {
+                    $("#editUserModal").find(".result").show();
+                    //$("#editUserModal").find(".result").html("该用户名称已存在，请重新输入");
+                    $("#editUserModal").find(".result").html("该用户名称已经存在，请重新输入");
+                };
+            });
+        }
+    });
+
+    function edit_Monitor_param000(modal) {
+    	 $(modal).find(".result").hide();
+         $(modal).find(".result").html("");
+         var param = {};
+         var $container = $(modal);
+         param.id=$container.find(".hide_id").val();
+         param.title = $container.find(".add_title").val();
+         param.content = editor2.txt.html();
+         param.author = $container.find(".add_author").val();
+         param.source = $container.find(".add_source").val();
+ 		param.type=41;
+ 		
+         if (iFunc.isEmpty(param.title)) {
+             $(modal).find(".result").show();
+             //$(modal).find(".result").html("请输入用户名称！");
+             $(modal).find(".result").html("请输入标题！");
+             return "fail";
+         }
+ 		
+         if (iFunc.isEmpty(param.content)) {
+             $(modal).find(".result").show();
+             //$(modal).find(".result").html("请输入用户名称！");
+             $(modal).find(".result").html("请输入内容！");
+             return "fail";
+         }
+         //debugger
+         return $.toJSON(param);
+        }
+    
+    function get_Monitor_param000(modal) {
+        $(modal).find(".result").hide();
+        $(modal).find(".result").html("");
+        var param = {};
+        var $container = $(modal);
+        param.title = $container.find(".add_title").val();
+        param.content = editor1.txt.html();
+        param.author = $container.find(".add_author").val();
+        param.source = $container.find(".add_source").val();
+		param.type=41;
+        /* 
+		if($.trim(param.title)!=''){
+            if(containSpecial(param.title)==true){
+                $(modal).find(".result").show();
+                //$(modal).find(".result").html("用户名称不允许输入特殊字符！");
+                $(modal).find(".result").html("标题不允许输入特殊字符！");
+                return "fail";
+            }
+		}
+		 */
+		 if (param.type==null || param.type<1) {
+	            $(modal).find(".result").show();
+	            //$(modal).find(".result").html("请输入用户名称！");
+	            $(modal).find(".result").html("请选择文章类型！");
+	            return "fail";
+	        }
+        if (iFunc.isEmpty(param.title)) {
+            $(modal).find(".result").show();
+            //$(modal).find(".result").html("请输入用户名称！");
+            $(modal).find(".result").html("请输入标题！");
+            return "fail";
+        }
+		
+        if (iFunc.isEmpty(param.content)) {
+            $(modal).find(".result").show();
+            //$(modal).find(".result").html("请输入用户名称！");
+            $(modal).find(".result").html("请输入内容！");
+            return "fail";
+        }
+        //debugger
+        return $.toJSON(param);
+        //return param;
+    }
+	
+    //第二次添加初始化
+	$("body").on("click",".btn_add_xg",function () {
+		$(".user_til").val('');
+		editor1.txt.html("");
+		$("#addUserModal").find(".result").hide();
+		$("#addUserModal").find(".result").html('');
+    });
+        //判断不能输入特殊字符
+        function containSpecial(s) {
+            var containSpecial = RegExp(/[(\…)(\~)(\￥)(\!)(\@)(\#)(\$)(\%)(\【)(\】)(\；)(\^)(\：)(\&)(\*)(\()(\))(\-)(\_)(\+)(\=)(\[)(\])(\{)(\})(\|)(\\)(\;)(\:)(\')(\")(\,)(\.)(\/)(\<)(\>)(\?)(\)]+/);
+            return (containSpecial.test(s));
+        }
+        //判断手机号码格式
+        function checkPhone(phone){
+            if(!(/^1[34578]\d{9}$/.test(phone))){
+                return false;
+            }else {
+                return true;
+            }
+        }
+        //判断出生日期
+	    function checkBirthdate(date){
+            var nowtime = new Date();
+            var nowdate = dateTime(date);
+            if(nowdate>nowtime){
+                return false;
+			}else{
+                return true;
+			}
+		}
+		//时间转成时间戳
+		function dateTime(time){
+			var oldtime = time.replace(/-/g,"/");
+			var newTime = new Date(oldtime).getTime();
+			return newTime;
+		}
+
+        //判断是否为国内固话或者传真号是否正确
+        function istell(str) {
+            var result=str.match(/\d{3}-\d{8}|\d{4}-\d{7}/);
+            if(result==null) return false;
+            return true;
+        }
+        //对电子邮件的验证
+        function Emailtest(temp) {
+            var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+            if(!myreg.test(temp)) {
+                return false;
+            }else {
+                return true;
+            }
+        }
+        
+</script>
+
+</@layout>

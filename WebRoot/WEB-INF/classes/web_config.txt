@@ -1,0 +1,20 @@
+devMode = true
+
+
+###线上头像地址
+headAdress=http://103.36.29.130:9001/im/
+localHeadAdress=F:\\touxiang
+
+
+#wg_fs_common  1.8
+#jdbcUrl_fs_data = jdbc\:mysql\://localhost\:3306/dev_im_user?useUnicode\=true&characterEncoding\=UTF-8
+#user_fs_data = root
+#password_fs_data = qwer1024
+
+#5.6
+jdbcUrl_fs_data = jdbc\:mysql\://39.107.32.6\:3306/dev_im_user?useUnicode\=true&characterEncoding\=UTF-8&zeroDateTimeBehavior\=convertToNull&autoReconnect\=true
+user_fs_data = root
+password_fs_data = 310310
+
+#解析后的图片路径
+imagapath=http://localhost:8080/docManager/upload/word/images/

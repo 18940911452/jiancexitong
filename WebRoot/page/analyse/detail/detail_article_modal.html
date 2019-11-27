@@ -1,0 +1,210 @@
+<style>
+	.new_content h2{font-size: 20px;font-weight: 700;text-align: center;margin-top: 20px;margin-bottom: 10px;}
+	.new_content h3 span{color: #999999;font-size: 13px;margin-right: 10px;}
+	/*.new_content_content{max-height: 600px;overflow-y: auto;}*/
+	.new_content p{color: #3a3939;font-size: 14px; line-height: 30px; text-align: justify;margin:0 auto;margin-top:30px;padding:0 60px;}
+	.new_content::-webkit-scrollbar { width: 6px;height: 30px;}
+	.new_content::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3);border-radius: 10px;background-color:rgba(255,255,255,0);}
+	.new_content::-webkit-scrollbar-thumb{width: 5px;height: 2px;border-radius: 10px;-webkit-box-shadow: inset 0 0 6px rgba(100,100,100,0.3);background-color:#bfbfbf;}
+	.close-link>img{
+		transition: All 0.4s ease-in-out;
+		-webkit-transition: All 0.4s ease-in-out;
+		-moz-transition: All 0.4s ease-in-out;
+		-o-transition: All 0.4s ease-in-out;
+	}
+	.close-link>img:hover {
+		transform: rotate(180deg);
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		-o-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+	}
+
+	#contentDetailModal .new_position{position: absolute;right: 10px;}
+	#contentDetailModal .new_content_three{position: absolute;width:25px;top:-2px;}
+	#contentDetailModal .new_content_sc{margin-left: 28px;}
+	#contentDetailModal .support_level_i{font-size: 16px;}
+	#contentDetailModal .btn.btn-circle{width: 22px;height:22px;line-height: 22px;border-radius: 100px;}
+	#contentDetailModal .new_content_sc i{font-size: 13px;}
+	#contentDetailModal .fa-plus{font-size: 14px;}
+	#contentDetailModal .fa-star-o{font-size: 13px;}
+	#contentDetailModal .fa-minus{font-size: 13px;}
+	#contentDetailModal .sm_title{width: 700px;display: inline-block;}
+	/*#contentDetailModal input{margin-top: 7px;}*/
+	.tan_title{cursor: pointer;}
+	.renwu{padding: 20px 30px;}
+	.renwu li{padding: 0 25px;margin-bottom: 10px;list-style-type: none;}
+	.wchat_span{background: #f9f7f7;color: #31b0d5;}
+	.detail_span{    background-image: url(../images/detailis_bg.png);
+		display: inline-block;
+		vertical-align: middle;
+		background-position: left top;
+		border-radius: 2px;
+		overflow: hidden;
+		margin: 2px 0px;}
+	.modal-dialog{z-index: 2000;}
+</style>
+<div class="modal fade" id="contentDetailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="border-bottom:1px solid #eee;background: rgba(0,0,0,0.3)">
+	<div class="modal-dialog" role="document" style="background: #fff;padding-bottom: 20px;width:920px;max-height:710px;border-radius: 7px;">
+		<!--<div class="modal-header" style="margin-bottom: 0px;padding: 0;min-height:17px;">
+			<h3 style="display: inline-block;position:relative;top: 10px;font-size: 17px;color: #17a293;padding: 5px;padding-left: 10px;"> ${_home.home_065}</h3>
+			<a href="javascript:;" class="close-link glyphicon glyphicon-remove-circle" style="color: #5e6773;margin-right: 12px;margin-top: 7px;float: right;font-size: 20px;top: 7px;" >
+			</a>
+		</div>-->
+		<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="modal-title" style="text-align:left;">详细信息</h4>
+			</div>
+		<div class="new_content" style="background:#fff;margin:10px auto;padding-top:10px;max-height:650px;overflow-x: hidden;border: 0 !important;">
+			<h2 style="padding: 0 20px;"></h2>
+			<h3 style="text-align: center;position: relative;height:30px;line-height: 30px;">
+				<span class="new_content_icon"></span><!-- 数据源图标 -->
+				<span class="new_content_two"></span><!-- 时间 -->
+				<span class="new_content_one"></span><!--站点 -->
+				<span class="new_content_3"></span><!--作者-->
+				<span class="new_content_category"></span><!--分类-->
+				<span class="new_content_4"></span><!--情感-->
+				<span class="new_content_5"></span><!--源链接-->
+				<span class="new_content_6" style="display: none;"></span><!---->
+				<span class="new_position">
+					<span class="new_content_three"></span>
+					<span class="new_content_sc"></span>
+					<span class="new_content_lj"></span>
+					<span class="new_content_font"></span>
+				</span>
+			</h3>
+			<p class="new_content_content"></p>
+			<div  class="renwu">
+				<li class="entity_1"></li>
+				<li class="entity_2"></li>
+				<li class="entity_3"></li>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	function contentDetailModalF ($obj,parent) {
+var radioStr = '';
+		var iconSource={
+				"1":"<i class='fa fa-twitter ' title='Twitter'></i>",
+				"2":"<i class='fa fa-facebook' title='Facebook'></i>",
+				"3":"<i class='fa fa fa-instagram' title='Instagram'></i>",
+				"4":"<i class='fa fa-newspaper-o' title='新闻'></i>",
+				"5":"<i class='fa fa-pied-piper' title ='博客'></i>",
+				"6":"<i class='fa fa-comments-o' title='论坛'></i>",
+				"7":"<i class='fa fa-clipboard' title ='报纸'></i>",
+				"8":"<i class='fa fa-weixin' title='微信'></i>",
+				"9":"<i class='fa fa-weibo' title='微博'></i>",
+				"10":"<i class='fa fa-pied-piper-pp' title='App'></i>"
+				};
+
+		var type = $obj.siblings().find(".new_type").attr("type");
+		$("#contentDetailModal").find(".modal-content").html("");
+		//清空模态框
+		$("#contentDetailModal").modal("show");
+		$("#contentDetailModal").find("div.new_content span").text("");
+		$("#contentDetailModal").find("div.new_content .renwu li").text("");
+		$("#contentDetailModal").find(".new_content_content").css("fontSize","14px")
+		//标题
+		var $item = $obj.parents(parent);
+		var title = $item.find('.tan_title').html();
+		//时间
+		var site =$item.find(".panel_pubtime").html();
+		//用户
+		var new_fabu = $item.find(".panel_website_name").html();
+		
+		var new_qing = $item.find(".panel_support_level").html();
+		
+		var content = $item.find(".tan_content").html();
+		//实体
+		var entity_person =  $item.find(".panel_entity_person").html();
+		var entity_address = $item.find(".panel_entity_address").html();
+		var entity_org =  $item.find(".panel_entity_org").html();
+		var support_level_i = $item.find(".support_level").html();
+		//分类
+		var newsCate = $item.find(".item-category").text();
+		
+		var new_lj = $item.find(".panel_keep").html();
+		var new_sc = $item.find(".panel_keep").html();
+		//源链接
+		var tran_sourceUrl= $item.find("[data-url='sourceUrl']").html();
+		//站点
+		var tan_site1 =  $item.find(".tan_site1").html();
+		
+		$(".entity_1").html(entity_person?entity_person:'');
+		$(".entity_2").html(entity_address?entity_address:'');
+		$(".entity_3").html(entity_org?entity_org:'');
+		$(".new_content h2").html(title);
+		if (type!=4 && type!=5 && type!=6) {
+			$(".new_content h2").html($obj.siblings().find(".new_type").attr("title"));
+			$(".new_content h2").html('<span class="sm_title clamp-1">'+title+'</span>');
+		}
+		//$(".new_content_two").html('发布时间：'+site);
+		$(".new_content_two").html('<i title="发布时间" class="fa fa-clock-o"></i> '+site);
+		//站点
+		if(tan_site1){
+			$(".new_content_one").html('<i title="站点" class="fa fa-globe"></i> '+tan_site1);
+		}
+		//用户
+		if(new_fabu){
+			$(".new_content_3").html('<i title="账号名称" class="fa fa-user-o"></i> '+new_fabu);
+		}
+		//分类
+		if(newsCate){
+			$(".new_content_category").html('<i class="iconfont icon-leimupinleifenleileibie" title="分类"></i>'+newsCate);
+		}
+		if(type){
+			$(".new_content_icon").html(iconSource[type]);
+		} 
+
+		
+		$(".new_content_4").html(support_level_i)
+
+		$(".new_content_5").html(tran_sourceUrl)
+		$(".new_content_6").html(radioStr)
+		var emotionJudge_ =$item.find(".tanchu_detail_emotion_judge").val() ; //情感判断
+		if (emotionJudge_ !='') {
+			$(".tanchu_emotion_judge_show_").find("input[name='radioinline_'][value="+emotionJudge_+"]").prop('checked',true);
+		}
+		$(".new_content_three").html(new_qing);
+		$(".new_content_sc").html(new_lj);
+		$(".new_content_sc").find(".add_favorites_all").hide();
+		$(".new_content_sc").find(".collect_active_all").hide();
+		$(".new_content_lj").html(new_sc);
+		$(".new_content_lj").find(".add_favorites_all").prev().hide();
+		$(".new_content_lj").find(".collect_active_all").prev().hide();
+		$(".new_content_font").html($obj.parents('.panel').find(".font").html());
+		setTimeout(function () {
+			$('.new_content').scrollTop(0)
+		},300)
+		$(".font_add").unbind("click").click(function (){
+			var font_num = parseInt($(this).parents(".new_content").find(".new_content_content").css("fontSize"));
+			font_num++;
+			if(font_num < 20){
+				$(this).parents(".new_content").find(".new_content_content").css("fontSize",font_num+"px");
+			}
+		})
+		$(".font_reduce").unbind("click").click(function (){
+			var font_num = parseInt($(this).parents(".new_content").find(".new_content_content").css("fontSize"));
+			font_num--;
+			if(font_num > 12){
+				$(this).parents(".new_content").find(".new_content_content").css("fontSize",font_num+"px");
+			}
+		})
+
+		if (type==3) {
+			var pic = $item.find(".picture_box").html();
+			content = content+'<div style="text-align: center;">'+pic+'</div>'
+		}
+		var img_pic=$item.find(".picture_img").attr('src');
+        console.log(img_pic);
+        var contents=content.replace('<br>','<br><img src="'+img_pic+'"><br>');
+		$(".new_content_content").html(contents);
+
+
+		$("#contentDetailModal").find(".close-link").unbind("click").click(function(){
+			$("#contentDetailModal").modal("hide");
+		});
+	
+	}
+</script>

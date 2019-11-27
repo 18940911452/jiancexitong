@@ -1,0 +1,469 @@
+<div id="editUserModal" class="modal fade in editUserModal_user" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="width:1100px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="opacity: 1">×</button>
+                <h4 class="modal-title" id="myModalLabel" style="text-align:left"><!-- 添加用户信息 -->详情</h4>
+            </div>
+            <div class="modal-body form-horizontal-body" style="padding:20px">
+            
+                
+               <div class="row form-group" style="margin-bottom:15px">
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->姓名：</label>
+                           </div>
+                           <div class="col-md-2">
+                                 <label class="control-label name" style="float:left;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->--</label>
+                           </div>
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->性别：</label>
+                           </div>
+                           <div class="col-md-2">
+                                 <label class="control-label sex" style="float:left;margin-top: 6px;font-weight: bold;">男</label>
+                           </div>
+                            <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->出生年月：</label>
+                           </div>
+                           <div class="col-md-2">
+                                 <label class="control-label birthday" style="float:left;margin-top: 6px;font-weight: bold;">男</label>
+                           </div>	
+                       </div>
+                   </div>
+                   
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->民 族：</label>
+                           </div>
+                           <div class="col-md-2">
+                                 <label class="control-label minzu" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->籍 贯：</label>
+                           </div>
+                           <div class="col-md-2">
+                                 <label class="control-label jiguan" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>
+                            <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->出生地：</label>
+                           </div>
+                           <div class="col-md-2">
+                                 <label class="control-label chushengdi" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>	
+                       </div>
+                   </div>
+                   
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->入 党时 间：</label>
+                           </div>
+                           <div class="col-md-2">
+                                 <label class="control-label rudangshijian" style="float:left;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->--</label>
+                           </div>
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->参加工作时间：</label>
+                           </div>
+                           <div class="col-md-2">
+                                 <label class="control-label gongzuoshijian" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>
+                            <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->健康状况：</label>
+                           </div>
+                           <div class="col-md-2">
+                                 <label class="control-label jiankangzhuangkang" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>	
+                       </div>
+                   </div>
+                  
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-3 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->专业技术职务：</label>
+                           </div>
+                           <div class="col-md-3">
+                                 <label class="control-label zhuanyejishuzhuwu" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>
+                           <div class="col-md-3 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->熟悉专业有何专长：</label>
+                           </div>
+                           <div class="col-md-3">
+                                 <label class="control-label youhetechang" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>
+                       </div>
+                   </div>
+                   
+                    <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-3 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->全日制教育：</label>
+                           </div>
+                           <div class="col-md-3">
+                                 <label class="control-label quanrizhijiaoyu" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>
+                           <div class="col-md-3 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->毕业院校系及专业：</label>
+                           </div>
+                           <div class="col-md-3">
+                                 <label class="control-label quanrizhibiyeyuanxiao" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>
+                       </div>
+                   </div>
+                   
+                    <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-3 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->在职教育：</label>
+                           </div>
+                           <div class="col-md-3">
+                                 <label class="control-label zaizhijiaoyu" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>
+                           <div class="col-md-3 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->毕业院校系及专业：</label>
+                           </div>
+                           <div class="col-md-3">
+                                 <label class="control-label zaizhibiyeyuanxiao" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>
+                       </div>
+                   </div>
+                   
+                    <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-3 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->现任职务：</label>
+                           </div>
+                           <div class="col-md-3">
+                                 <label class="control-label xianrenzhiwu" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-3 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->拟任职务：</label>
+                           </div>
+                           <div class="col-md-3">
+                                 <label class="control-label nirenzhiwu" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-3 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->拟免职务：</label>
+                           </div>
+                           <div class="col-md-3">
+                                 <label class="control-label nimianzhiwu" style="float:left;margin-top: 6px;font-weight: bold;">--</label>
+                           </div>
+                       </div>
+                   </div>
+                   
+               </div>
+              
+                <div class="row form-group" style="margin-bottom:15px">
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->简介：</label>
+                           </div>
+                           <div class="col-md-9 jianli">
+									<!-- 简介：-->
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               
+               <div class="row form-group" style="margin-bottom:15px">
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->惩罚情况：</label>
+                           </div>
+                           <div class="col-md-9 chengjiangqingkuang">
+                               <!-- <input type="text" class="form-control add_content user_til"> 惩罚情况 -->
+
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               
+               <div class="row form-group" style="margin-bottom:15px">
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->年度考核结果：</label>
+                           </div>
+                           <div class="col-md-9 niandukaohe">
+                               <!-- <input type="text" class="form-control add_content user_til"> -->
+
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               
+               <div class="row form-group" style="margin-bottom:15px">
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->任免理由：</label>
+                           </div>
+                           <div class="col-md-9 renmianliyou">
+                               <!-- <input type="text" class="form-control add_content user_til"> -->
+
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               
+                 <div class="row form-group" style="margin-bottom:15px">
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->家庭主要成员及其重要社会关系：</label>
+                           </div>
+                           <div class="col-md-9">
+                             	 <div class="form-group">
+				                           <div class="col-md-2 text_right pad_r">
+				                               <label class="control-label g_chengwei1" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_name1" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3 text_right pad_r">
+				                               <label class="control-label g_birthday1" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_zhengzhi1" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3">
+				                                 <label class="control-label g_gongzuodanwei1" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+                      	 		</div>
+                      	 		<div class="form-group">
+				                           <div class="col-md-2 text_right pad_r">
+				                               <label class="control-label g_chengwei2" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_name2" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3 text_right pad_r">
+				                               <label class="control-label g_birthday2" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_zhengzhi2" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3">
+				                                 <label class="control-label g_gongzuodanwei2" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+                      	 		</div>
+                      	 		
+                      	 		<div class="form-group">
+				                            <div class="col-md-2 text_right pad_r">
+				                               <label class="control-label g_chengwei3" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_name3" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3 text_right pad_r">
+				                               <label class="control-label g_birthday3" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_zhengzhi3" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3">
+				                                 <label class="control-label g_gongzuodanwei3" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+                      	 		</div>
+                      	 		
+                      	 		<div class="form-group">
+				                            <div class="col-md-2 text_right pad_r">
+				                               <label class="control-label g_chengwei4" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_name4" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3 text_right pad_r">
+				                               <label class="control-label g_birthday4" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_zhengzhi4" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3">
+				                                 <label class="control-label g_gongzuodanwei4" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+                      	 		</div>
+                      	 		
+                      	 		<div class="form-group">
+				                          <div class="col-md-2 text_right pad_r">
+				                               <label class="control-label g_chengwei5" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_name5" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3 text_right pad_r">
+				                               <label class="control-label g_birthday5" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_zhengzhi5" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3">
+				                                 <label class="control-label g_gongzuodanwei5" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+                      	 		</div>
+                      	 		<div class="form-group">
+				                            <div class="col-md-2 text_right pad_r">
+				                               <label class="control-label g_chengwei6" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_name6" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3 text_right pad_r">
+				                               <label class="control-label g_birthday6" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_zhengzhi6" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3">
+				                                 <label class="control-label g_gongzuodanwei6" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+                      	 		</div>
+                      	 		<div class="form-group">
+				                            <div class="col-md-2 text_right pad_r">
+				                               <label class="control-label g_chengwei7" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_name7" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3 text_right pad_r">
+				                               <label class="control-label g_birthday7" style="margin-top: 6px;font-weight: bold;"><!-- 用户名称 --></label>
+				                           </div>
+				                           <div class="col-md-2">
+				                                 <label class="control-label g_zhengzhi7" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+				                           <div class="col-md-3">
+				                                 <label class="control-label g_gongzuodanwei7" style="margin-top: 6px;font-weight: bold;"></label>
+				                           </div>
+                      	 		</div>
+                           </div>
+                       </div>
+                       
+                       
+                   </div>
+               </div>
+                <div class="row form-group" style="margin-bottom:15px">
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->呈报单位意见：</label>
+                           </div>
+                           <div class="col-md-9 chengbaodanweiyijian">
+                               <!-- <input type="text" class="form-control add_content user_til"> -->无
+
+                           </div>
+                       </div>
+                   </div>
+               </div>
+                <div class="row form-group" style="margin-bottom:15px">
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="float:right;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->审批机关意见：</label>
+                           </div>
+                           <div class="col-md-9 shenpijiguanyijian">
+                               <!-- <input type="text" class="form-control add_content user_til"> -->无
+
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               
+                <div class="col-lg-12">
+                    <strong class='result' style="display:none;color:red;"></strong>
+                </div>
+                <div class="modal-footer" style="clear: both;">
+                    <button type="button" class="btn btn-primary" style="background-color: #32597a; color: #fff; border:none"><!-- 保存 -->保存</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><!-- 取消 -->取消</button>
+                    <input type="text" hidden id="b_id" />
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+<script type="text/javascript">
+$('#editUserModal').on('show.bs.modal', function () {
+	$("#editUserModal").find(".result").html('').hide();
+});
+$('.editUser_birthdate').daterangepicker({
+    singleDatePicker: true,
+    showDropdowns: true,
+    timePicker24Hour : true,
+    autoUpdateInput:true,
+    timePickerSeconds:true,
+    "format": "YYYY-MM-DD",
+    "locale": {
+        "format": "YYYY-MM-DD",
+        applyLabel: "确定",
+        cancelLabel: "取消",
+        resetLabel: "重置"
+    }
+});
+var E2 = window.wangEditor
+var editor2 = new E2('#div5')
+editor2.customConfig.uploadImgShowBase64 = true
+editor2.create()
+
+  //上传文件夹
+function editajaxFileUpload() {
+	var fileObj = document.getElementById("edit_file_submit").files; // js 获取文件对象
+	var fileObjs = [];
+    if (fileObj.length == 0) {
+        alert("请选择文件");
+        return;
+    }
+    if(fileObj.length>0){
+		for(var i=0;i<fileObj.length;i++){
+            fileObjs.push(fileObj[i]);
+		}
+        $.each(fileObjs,function(i,fileObj){
+            //判断上传的文件类型
+            var typeu;
+            var regex = /^.*?\.(jpg|png|jpeg|bmp|gif|JPG)$/;
+            var matchdFlag = regex.test(fileObj.name);
+            if(!matchdFlag){
+            	alert("请选择图片文件");
+                return;
+            }
+
+            var formFile = new FormData();
+            formFile.append("action", "UploadVMKImagePath");
+            formFile.append("file", fileObj); //加入文件对象
+            formFile.append("typeu",typeu);
+            //第二种 ajax 提交
+            var data = formFile;
+            $.ajax({
+                url: 'upload/uploadFile',
+                data: data,
+                type: "post",
+                dataType: "json",
+                cache: false,//上传文件无需缓存
+                processData: false,//用于对data参数进行序列化处理 这里必须false
+                contentType: false, //必须
+                success: function (result) {
+                	var result=result.result;
+                	$("#editUserModal").find(".preimg").html("");
+                	$("#editUserModal").find(".preimg").append("<img src='"+result+"' height='50px'>");
+                	$("#editUserModal").find("#imgaddress").val(result);
+                   
+                },
+                error: function (e)//服务器响应失败处理函数
+                {
+                    console.log('上传文件到服务器失败！');
+                }
+            });
+		});
+	}
+}
+</script>

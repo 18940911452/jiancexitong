@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en" class="fullscreen-bg">
+	<head>
+		<title>登录</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<!-- <link rel="icon" href="images/favicon.ico" type="images/favicon" />
+		<link rel="shortcut icon" href="images/favicon.ico" type="images/favicon" />
+		<link rel="bookmark" href="images/favicon.ico" type="images/favicon" /> -->
+		<!-- VENDOR CSS -->
+		<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css" >
+		<link rel="stylesheet" href="assets/vendor/themify-icons/css/themify-icons.css" >
+		<!-- MAIN CSS -->
+		<link rel="stylesheet" href="assets/css/main.min.css">
+		<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+		<link rel="stylesheet" href="assets/css/demo.min.css" >
+		<link rel="shortcut icon" href="images/logo_login2.ico" type="image/x-icon" />
+		<!-- GOOGLE FONTS -->
+		<!-- ICONS -->
+		<style type="text/css">
+			body{
+				background: url(images/login.jpg) no-repeat center center;
+				color: #fff;
+				background-size: cover;
+			}
+			#login {
+				width: 646px;
+				height: 836px;
+				margin: 0 auto;
+				position: relative;
+				padding-top: 100px;
+				/* background: url(images/login_bg.jpg) no-repeat; */
+			}
+			#login .loginMask{
+				width: 646px;
+				height: 736px;
+				background: #fff;
+				opacity: 0.2;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				position: absolute;
+				left: 0;
+				top: 100px;
+				z-index: -1;
+			}
+
+			#login_box {
+				width: 646px;
+				height: 736px;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				overflow: hidden;
+			}
+
+			.from_ {
+				text-align: center;
+				margin-top: 100px;
+			}
+
+			.from_ p {
+				/*color: #7e7e7e;*/
+				color: #fff;
+				text-align: center;
+				font-size: 26px;
+				margin: 0;
+				margin-top: 30px;
+			}
+			.form-group .btn{
+				width: 304px;
+				height: 50px;
+				text-shadow: 1px 1px 5px #000;
+				-webkit-box-shadow: 3px 0px 3px rgba(0,0,0,0.3);
+				-moz-box-shadow: 3px 0px 3px rgba(0,0,0,0.3);
+				box-shadow: 3px 0px 3px rgba(0,0,0,0.3);
+				border-radius:12px;
+				border:0px solid #ddd;
+				background: #238bac;
+				font-size: 22px;
+				margin: 0 auto;
+			}
+			.form-horizontal{width: 400px;margin: 50px auto 0;}
+			.form-horizontal .control-label{padding-top: 0;}
+			input:-webkit-autofill {
+				-webkit-box-shadow: 0 0 0px 1000px white inset !important;
+			}
+			.from_ .banquan{font-size: 14px;font-family: "宋体";color: #d6caca;}
+		</style>
+	</head>
+	<body style="">
+	<div id="login">
+		<div id="login_box" style="">
+			<div class="from_">
+				<!-- <img src="images/icon/login_icon.png" /> -->
+				<p>人员信息文档管理系统</p>
+				<div class="form-horizontal">
+					<div class="form-group" style="padding: 20px 0;margin: 0;border-bottom: 1px solid #dddddd;">
+						<label for="inputEmail3" class="col-sm-2 control-label"><img src="images/icon/user_icon.png" ></label>
+						<div class="col-sm-10" style="padding: 0;">
+							<input type="text" class="form-control" id="username" placeholder="用户名" style="border:none;box-shadow: none;">
+						</div>
+					</div>
+					<div class="form-group" style="padding: 20px 0;margin: 0;border-bottom: 1px solid #dddddd;">
+						<label for="inputPassword3" class="col-sm-2 control-label"><img src="images/icon/ps_icon.png" ></label>
+						<div class="col-sm-10" style="padding: 0;">
+							<input type="password" class="form-control" id="password" placeholder="密码" style="border:none;box-shadow: none;">
+						</div>
+					</div>
+					<span style="color: #f00;font-size: 14px;float: left;margin-left: 85px;margin-top: 20px;" id="alert">&nbsp;</span>
+					<div class="form-group" style="margin: 0;margin-top: 70px;">
+						<div class="col-sm-12" style="padding: 0;">
+							<button type="" class="btn btn-primary btn-block user_login" id="btn-login">登  录</button>
+							<span id="tagTip"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="loginMask"></div>
+	</div>
+	</body>
+</html>
+<script src="js/jquery-2.2.4.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	    
+	   $('.user_login').unbind('click').click(function (){
+           		$("#tagTip").html('');
+	      		loginclick();
+	      });
+	  function loginclick() {
+        if ($.trim($("#username").val()) == '') {
+            $("#username").focus();//当前输入框获得焦点
+            alert('请输入用户名');
+            return false;
+        } else if ($.trim($("#password").val()) == '') {
+            $("#password").focus();
+           alert("请输入密码!");
+            return false;
+        } else {
+            var username = $.trim($("#username").val());
+            var password = $.trim($("#password").val());
+            $("#btn-login").attr("disabled", true);
+               	   $("#btn-login").text("登录中"); 
+            $.post("login/login", {
+                username : username,
+                password : password
+            }, function(res) {
+                if(res == "ok"){
+               		window.location.href="userinfo";
+               	}
+               	if(res=="error"){
+               		$("#tagTip").html("用户名或密码错误错误！");
+               		/*setInterval(function(){
+               			$("#tagTip").html("");
+               		},1500)*/
+               		$("#btn-login").attr("disabled", false);
+               	    $("#btn-login").text("登录");
+               	}
+            });
+        }
+    }
+	       var appContext = 'http://172.16.3.44:18010/uum/';
+	       $(function(){
+               var message = null;
+	       	   if (message != null && message != "") {
+                   swal({
+                       title             : null,
+                       text              : '请检查您的登录信息!',
+                       showConfirmButton : false,
+                       showCancelButton  : true,
+	                   cancelButtonText  : '确定'
+                   });
+               }
+           });
+
+	    /*    $("#loginButton").off("click").on("click", function() {
+	    	  // $("#loginForm").submit();
+	       }); */
+
+           /**回车登录**/
+		   document.onkeydown=function(event){
+               var e = event || window.event || arguments.callee.caller.arguments[0];
+	           if(e && e.keyCode==13){ // enter 键
+	               loginclick();
+	           }
+	       }; 
+
+	       /**用户名输入框获取焦点**/
+	       setTimeout(function() {
+	           try {
+	               $("#username").focus();
+	           } catch (e) {
+
+	           }
+	       }, 200);
+	       
+	       function forgetPassword() {
+	    	   window.location.href=appContext + "view/password/forget/";
+	       }
+	    /*]]>*/
+	</script>

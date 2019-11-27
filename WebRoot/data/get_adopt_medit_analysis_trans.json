@@ -1,0 +1,2371 @@
+{
+	"media_hasChildren": [
+		{
+			"num": 1,
+			"name": "千龙网"
+		}, {
+			"num": 7,
+			"name": "新华网"
+		}, {
+			"num": 1,
+			"name": "红网"
+		}, {
+			"num": 2,
+			"name": "中国政府网"
+		}, {
+			"num": 3,
+			"name": "中国新闻网"
+		}
+	],
+	"level": 2,
+	"adoptCountSum": 221,
+	"color": "#fff333",
+	"name": "调控让楼市回归理性，房价\u201C上天\u201D不可持续",
+	"itemStyle": {
+		"normal": {
+			"color": "#fff333"
+		}
+	},
+	"children": [
+		{
+			"level": 0,
+			"color": "#ff9c7e",
+			"name": "网站",
+			"itemStyle": {
+				"normal": {
+					"color": "#ff9c7e"
+				}
+			},
+			"children": [
+				{
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "漳州都市网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 9
+				}, {
+					"level": 1,
+					"color": "#DC143C",
+					"name": "证券之星",
+					"itemStyle": {
+						"normal": {
+							"color": "#DC143C"
+						}
+					},
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国兰州网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 4
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "重庆晨网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 3
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "腾讯网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "shundecity.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "客家新闻网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "bzxhw.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "xkhouse.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "0731fdc.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "mnwww.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "经济视野网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "rznews.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "tongren.gov.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "宜昌都市在线",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "chinaidr.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "杭州网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 4
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国亳州网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#FF00FF",
+					"name": "千龙网",
+					"itemStyle": {
+						"normal": {
+							"color": "#FF00FF"
+						}
+					},
+					"children": [
+						{
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "zmdtvw.cn",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1",
+							"media_level": ""
+						}
+					],
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "尚一网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "荆楚网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "东北网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#FF00FF",
+					"name": "新华网",
+					"itemStyle": {
+						"normal": {
+							"color": "#FF00FF"
+						}
+					},
+					"children": [
+						{
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "wjyanghu.com",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1",
+							"media_level": ""
+						}, {
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "皖江在线",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1",
+							"media_level": ""
+						}, {
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "zmdnews.cn",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1",
+							"media_level": ""
+						}, {
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "安庆新闻网",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1",
+							"media_level": ""
+						}, {
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "金江网",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1",
+							"media_level": 4
+						}, {
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "66ruian.com",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1",
+							"media_level": ""
+						}, {
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "xtnews.gov.cn",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1",
+							"media_level": ""
+						}
+					],
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "齐鲁晚报网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 3
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中宏网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "heyuan.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "zyjjw.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "界面",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "南昌新闻网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "nbd.com.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "华商网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 3
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "crionline.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#DC143C",
+					"name": "财经网",
+					"itemStyle": {
+						"normal": {
+							"color": "#DC143C"
+						}
+					},
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "xuanwww.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "zhicheng.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "财经搜索",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "人民政协网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "chinawj.com.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "jynews.net",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "fsonline.com.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#DC143C",
+					"name": "凤凰网",
+					"itemStyle": {
+						"normal": {
+							"color": "#DC143C"
+						}
+					},
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "阿克苏新闻网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "hongzhoukan.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "消费日报网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国小康网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "zjkrbsnews.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "ztnews.net",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "newsxc.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "温州网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "zyxedu.net",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "南方网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "华龙网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "央广网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "海南在线",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "gzw.net",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "解放牛网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "百姓生活网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "东南新闻网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "南充新闻网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 4
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "沈阳网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "365淘房",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国社会科学网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "网易",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "每日甘肃网（甘肃日报）",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#DC143C",
+					"name": "新浪网",
+					"itemStyle": {
+						"normal": {
+							"color": "#DC143C"
+						}
+					},
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "chinaesm.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#DC143C",
+					"name": "光明网",
+					"itemStyle": {
+						"normal": {
+							"color": "#DC143C"
+						}
+					},
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "myzaker.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "大庆网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 4
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "半月谈网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#DC143C",
+					"name": "中国经济网",
+					"itemStyle": {
+						"normal": {
+							"color": "#DC143C"
+						}
+					},
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国产业经济信息网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国国际广播电台",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "奥一网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国财经报网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "brandcn.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "officese.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国搜索",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国改革论坛网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "cet.com.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国商务新闻网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "cb.com.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "广西人民广播电台",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "ehomeday.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "新疆网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "jpm.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#FF00FF",
+					"name": "红网",
+					"itemStyle": {
+						"normal": {
+							"color": "#FF00FF"
+						}
+					},
+					"children": [
+						{
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "青岛人民广播电台",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1",
+							"media_level": 4
+						}
+					],
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "beijingoffice.com.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "千华网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国西藏网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "zgfznews.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国铝业网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#DC143C",
+					"name": "搜狐网",
+					"itemStyle": {
+						"normal": {
+							"color": "#DC143C"
+						}
+					},
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#DC143C",
+					"name": "中工网",
+					"itemStyle": {
+						"normal": {
+							"color": "#DC143C"
+						}
+					},
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#DC143C",
+					"name": "环球网",
+					"itemStyle": {
+						"normal": {
+							"color": "#DC143C"
+						}
+					},
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "xmhouse.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "szhk.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "新蓝网 浙江网台",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#DC143C",
+					"name": "中证网",
+					"itemStyle": {
+						"normal": {
+							"color": "#DC143C"
+						}
+					},
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "tlnews.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "tanzhou.com.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "舜网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "zhijia.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国日报网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "大河网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "haofz.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "777kuu.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "十堰房产网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "bmlink.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "efw.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "闽南网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 4
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "西部网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "oilone.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "beinet.net.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "天津网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "肇庆阳光网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "南阳网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "荔枝网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "focus.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国发展门户网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中安在线",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "cbt.com.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "jsdushi.net",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "金融界",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "opsteel.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "胶东在线",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "dllp.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "视界网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "东方网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "万家热线",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "星岛环球网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "财信网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "cutv.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "香港商报",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#FF00FF",
+					"name": "中国政府网",
+					"itemStyle": {
+						"normal": {
+							"color": "#FF00FF"
+						}
+					},
+					"children": [
+						{
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "中金在线",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1",
+							"media_level": ""
+						}, {
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "panzhihua.gov.cn",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1",
+							"media_level": ""
+						}
+					],
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "同花顺财经",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "loupan.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "津滨网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "gazx.org",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "天健网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "龙虎网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "xafc.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "scxxb.com.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "ftnews.net",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "fang.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "浙江在线",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "新浪台湾",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "gs-zy.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国质量新闻网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#DC143C",
+					"name": "央视网",
+					"itemStyle": {
+						"normal": {
+							"color": "#DC143C"
+						}
+					},
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国发展网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#FF00FF",
+					"name": "中国新闻网",
+					"itemStyle": {
+						"normal": {
+							"color": "#FF00FF"
+						}
+					},
+					"children": [
+						{
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "leju.com",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1",
+							"media_level": ""
+						}, {
+							"level": 2,
+							"color": "#DC143C",
+							"name": "中华网",
+							"itemStyle": {
+								"normal": {
+									"color": "#DC143C"
+								}
+							},
+							"show": "1",
+							"media_level": 1
+						}, {
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "大众网",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1",
+							"media_level": 2
+						}
+					],
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#DC143C",
+					"name": "华夏经纬网",
+					"itemStyle": {
+						"normal": {
+							"color": "#DC143C"
+						}
+					},
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "澎湃新闻",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "nmgin.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "zj.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "cctvfinance.com",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "民主与法制网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "北方网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "映象网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "扬州网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "广西电视台",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#DC143C",
+					"name": "中国网",
+					"itemStyle": {
+						"normal": {
+							"color": "#DC143C"
+						}
+					},
+					"show": "1",
+					"media_level": 1
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "海广网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "南报网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "汗丰网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "jjckb.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "mszz.cn",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "河北经济网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "正北方网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": ""
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国山东网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国江苏网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1",
+					"media_level": 2
+				}
+			],
+			"show": "1"
+		}, {
+			"level": 0,
+			"color": "#ff9c7e",
+			"name": "客户端",
+			"itemStyle": {
+				"normal": {
+					"color": "#ff9c7e"
+				}
+			},
+			"children": [
+				{
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "网易新闻",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1"
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "财经网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1"
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "搜狐新闻",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1"
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中新网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1"
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "中国经济网",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1"
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "参考消息",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1"
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "一点资讯",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1"
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "百度新闻",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1"
+				}, {
+					"level": 1,
+					"color": "#FF00FF",
+					"name": "人民日报",
+					"itemStyle": {
+						"normal": {
+							"color": "#FF00FF"
+						}
+					},
+					"children": [
+						{
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "凤凰新闻",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1"
+						}, {
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "腾讯新闻",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1"
+						}, {
+							"level": 2,
+							"color": "#00e2f2",
+							"name": "界面",
+							"itemStyle": {
+								"normal": {
+									"color": "#00e2f2"
+								}
+							},
+							"show": "1"
+						}
+					],
+					"show": "1"
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "海客新闻",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1"
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "天天快报",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1"
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "Zaker新闻",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1"
+				}, {
+					"level": 1,
+					"color": "#00e2f2",
+					"name": "新浪新闻",
+					"itemStyle": {
+						"normal": {
+							"color": "#00e2f2"
+						}
+					},
+					"show": "1"
+				}
+			],
+			"show": "1"
+		}, {
+			"color": "#ff9c7e",
+			"name": "微信",
+			"itemStyle": {
+				"normal": {
+					"color": "#ff9c7e"
+				}
+			},
+			"children": [
+				{
+					"color": "#00e2f2",
+					"name": "阳江房天下",
+					"show": 1
+				}, {
+					"color": "#00e2f2",
+					"name": "房地产投资融资俱乐部",
+					"show": 1
+				}, {
+					"color": "#00e2f2",
+					"name": "大申房产",
+					"show": 1
+				}, {
+					"color": "#00e2f2",
+					"name": "凤凰房产广州站",
+					"show": 1
+				}, {
+					"color": "#00e2f2",
+					"name": "天津房产",
+					"show": 1
+				}, {
+					"color": "#00e2f2",
+					"name": "浙报地产金融会",
+					"show": 1
+				}
+			],
+			"show": "1"
+		}
+	],
+	"show": "1",
+	"level_app": 2,
+	"media_hightestLevel": [
+		{
+			"num": 0,
+			"name": "证券之星"
+		}, {
+			"num": 7,
+			"name": "新华网"
+		}, {
+			"num": 0,
+			"name": "财经网"
+		}, {
+			"num": 0,
+			"name": "凤凰网"
+		}, {
+			"num": 0,
+			"name": "新浪网"
+		}, {
+			"num": 0,
+			"name": "光明网"
+		}, {
+			"num": 0,
+			"name": "中国经济网"
+		}, {
+			"num": 0,
+			"name": "搜狐网"
+		}, {
+			"num": 0,
+			"name": "中工网"
+		}, {
+			"num": 0,
+			"name": "环球网"
+		}, {
+			"num": 0,
+			"name": "中证网"
+		}, {
+			"num": 2,
+			"name": "中国政府网"
+		}, {
+			"num": 0,
+			"name": "央视网"
+		}, {
+			"num": 0,
+			"name": "中华网"
+		}, {
+			"num": 0,
+			"name": "华夏经纬网"
+		}, {
+			"num": 0,
+			"name": "中国网"
+		}
+	]
+}

@@ -1,0 +1,976 @@
+
+<script type="text/javascript" src="js/carrotsearch.foamtree.html5.min.js "></script>
+<script type="text/javascript" src="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+<!--<script type="text/javascript" src="js/get_param.js"></script>-->
+<link rel="stylesheet" href="css/show.css" type="text/css"></link>
+<link rel="stylesheet" href="css/myCss.css" type="text/css"></link>
+<link rel="stylesheet" href="css/y_zhutijiance.css" />
+
+<style>
+    body{
+        overflow:scroll;
+    }
+	.btn-group .btn-info.btn.btn-outline{
+		padding:8px 12px!important;
+		width:19.9%;
+	}
+	.btn-group .btn-info.btn.btn-outline:hover{
+		background:#17a293;border-color:#17a293 !important;
+	}
+	.btn-outline.btn-info{color: #333;}
+	.new_btn .active{color: #fff;}
+	.btn-group .btn-info.btn.btn-outline:hover{color: #fff;}
+	.form-horizontal{margin-top: 10px;}
+	.no-borders1{border-color:#17a293 !important;}
+	.btn-info{background:#17a293;border-color:#17a293 !important;}
+	.btn-info:hover, .btn-info:focus{background:#17a293;}
+	.btn-info:active, .btn-info:active:hover, .btn-info:active:focus, .btn-info.active, .btn-info.active:hover, .btn-info.active:focus{background:#17a293;border-color:#17a293 !important;}
+	#content_listaa{float: left;clear: both;width: 100%;margin-bottom: 50px;}
+	.new_content p{
+		padding: 0px 63px!important;
+	}
+	.ipage-fenye{
+		margin-left: 0;
+		padding-left: 0;
+	}
+	.ipage-fenye-oper{
+		margin-left: 10px;
+	}
+	#article_list .content_div{
+		min-height: 450px;
+	}
+	.name_tag_option{margin-top: 10px;}
+	/*.ibox {*/
+		/*position: relative;*/
+		/*top: 35px;*/
+	/*}*/
+	.btn {
+	    padding: 6px 12px;
+		background: #45819a;
+		color: #fff;
+	}
+	.btn-primary{background-color:#17a293 !important;border-color:#17a293 !important}
+	#leader_category .btn_abs {
+        position: absolute;
+	    padding: 4px 9px;
+	    right: -35px;
+	    top: 1px;
+	}
+	#add{
+		position: absolute;
+	    padding: 4px 9px;
+	    right: 115px;
+	    top: 0px;
+	}
+	#addsiteCategoryModal .form-group {
+	    margin-bottom: 15px !important;
+	}
+	.add_favorites_all{cursor: pointer;}
+	#new_zhankai{display: none;}
+	#article_list .select_all{margin-top: 0;}
+	#content_list11 .panel-heading h3,#ibox-related .panel-heading h3{
+		font-size: 20px;
+		border-left: 5px solid #32597a;
+		padding-left: 5px;
+		padding-right: 5px;
+		color: #32597a;
+		margin: 0;
+	}
+	.timeFw{
+		height: 40px;
+		padding-top: 5px;
+	}
+	.timeFw span{
+		float: left;
+		width: 100px;
+		height: 30px;
+		line-height:30px;
+		font-size: 14px;
+	}
+	.timeFw input{
+		float: left;
+		width: 200px;
+		height: 30px;
+		line-height:30px;
+	}
+	#startimend{
+		float: left;
+		width: 320px;
+		height: 30px;
+		line-height:30px;
+	}
+	#group_wx{
+		width: auto;
+		min-height: 100px;
+	}
+	#group_wx span{
+		float: left;
+		width: 50px;
+		height: 76px;
+		line-height:76px;
+		text-align: center;
+	}
+
+	#indicators{
+		width: 90%;
+		height: 50px;
+		float: left;
+		overflow: hidden;
+	}
+	#indicators ul li{
+		width: 60px;
+		height: 30px;
+		float: left;
+		margin-right: 20px;
+	}
+	#indicators .ind_img img{
+		width: 30px;
+		height: 30px;
+	}
+	#indicators ul li h6{
+		width: 100%;
+		height:20px;
+		line-height:20px;
+		text-align: center;
+		font-weight: normal;
+	}
+	#group_item{
+		max-width: 80%;
+		height: 100px;
+		float: left;
+		margin-bottom: 20px;
+		overflow: hidden;
+	}
+	#group_item ul li{
+		width: 60px;
+		height: 90px;
+		float: left;
+		margin-right: 20px;
+		margin-bottom:10px;
+	}
+	#group_item ul li .group_img{
+		width: 60px;
+		height: 60px;
+		-webkit-border-radius:50%;
+		-moz-border-radius:50%;
+		border-radius:50%;
+	}
+	#group_item ul li .group_img img{
+		width: 60px;
+		height: 60px;
+	}
+	#group_item ul li h6{
+		width: 100%;
+		height:30px;
+		line-height:30px;
+		text-align: center;
+		font-weight: normal;
+	}
+	#group_btn{
+		width: 50px;
+		float: left;
+		margin-top: 20px;
+	}
+	#group_btn a{
+		display: block;
+		width: 50px;
+		text-align: center;
+		margin-top: 2px;
+		color: rgb(23, 162, 147);
+		font-weight: bold;
+		display: none;
+	}
+	#group_btn a img{
+		margin-top: 3px;
+		float: right;
+		width: 14px;
+	}
+	#group_btn a.group_active{
+		display: block;
+	}
+	.phrase_btn{
+		height: 40px;
+		padding-top: 8px
+	}
+	.phrase_btn li{
+		padding: 1px 10px;
+		height: 30px;
+		line-height:30px;
+		float: left;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		margin-right: 20px;
+	}
+	.yh_btn li.btn_p1 {
+		background: rgba(228,211,84,0.4);
+	}
+	.yh_btn li.btn_p2 {
+		background: rgba(247,163,92,0.4);
+	}
+	.yh_btn li.btn_p3 {
+		background: rgba(241,92,128,0.4);
+	}
+	.phrase_btn li.select_on{
+		background: #32597a;
+		color: #fff;
+	}
+
+</style> 
+
+<div class="row ">
+	<div class="top-search" >
+		<div class="row search" style="">
+
+			<div class="informTime" style="height: 50px;">
+				<div class="row">
+					<div class="col-md-10">
+						<div class="timeFw">
+							<span style="width: 70px;">时间范围：</span>
+							<!--<input type="text" id="startimend" class="form-control cDate" value="">-->
+							<span>事中开始时间：</span>
+							<input type="text" id="stime" />
+							<span style="margin-left: 20px;">事中结束时间：</span>
+							<input type="text" id="etime" />
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="timeBtn">
+							<button class="btn" id="informBtn">分析</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		    <div id="content_listaa" class="analysis">
+				<div class="ibox-content" id="content_list11">
+					<div class="analysis_result clearfix">
+					    <div class="row clearfix">
+					        <div class="col-md-8" style="height: 600px;padding-left: 0;">
+					           <div class="panel">
+						            <div class="panel-heading clearfix">
+						                 <h3 style="">态势分析</h3>
+										 <select id="event_evolution_charts_interval" style="display: none;float: right;margin-top: 20px;">
+											<option value="1" selected="selected">1h</option><!--1小时  -->
+											<!--<option value="2">2h</option>
+                                            <option value="6">6h</option>
+                                            <option value="12">12h</option>-->
+											<!--<option value="24">24h</option>&lt;!&ndash;24小时  &ndash;&gt;-->
+										 </select>
+						            </div>
+						            <div class="panel-body">
+										<div class="yh_btn">
+											<ul id="phrase_btn" class="clearfix phrase_btn">
+
+											</ul>
+										</div>
+						                 <div class="ibox-content">
+						                     <div class="trend_analysis_result" id="trend_analysis_result" style="width: 100%;height: 510px; margin-top: 0px;"></div>
+										 </div>
+						            </div>
+
+							   </div>
+								<div class="demoNodata" style="display:none">
+									<img style="display:none;margin:60px 0 50px -100px;" src="img/my/bt-nodata-now.png" />
+								</div>
+						    </div>
+							<div class="col-md-4" style="height: 600px;">
+                                <div class="panel">
+									<div class="panel-heading clearfix">
+										<h3 style="">发布量排行</h3>
+									</div>
+									<div class="panel-body">
+										<div class="ibox-content">
+											<div class="inform_ranking" id="inform_ranking" style="height: 550px;">
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					    </div>
+					</div>
+				</div>
+			</div>
+			<div class="ibox" style="position: relative;clear: both;">
+				<div class="ibox-related" id="ibox-related">
+					<div class="row clearfix">
+						<div class="col-md-8" style="height: 600px;padding-left: 0;">
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">相关信息</h3>
+									<b class="searchCount badge bg_o ng-binding" id="total_num"  style="display: none;vertical-align: text-top;margin-top: 1px;">0</b>
+								</div>
+								<div class="panel-body" style="height: 570px;">
+									<div class="ibox-content">
+										<div id="article_list"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 style="font-size: 20px;">热词分析</h3>
+								</div>
+								<div class="panel-body">
+									<div class="ibox-content">
+										<div class="event_clues_charts" style="height: 550px;width:100%; " id="event_clues_charts"></div>
+									</div>
+								</div>
+							</div>
+							<div class="demoNodata" style="display:none">
+								<img style="display:none;margin:60px 0 50px -100px;" src="img/my/bt-nodata-now.png" />
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<input type="hidden"  id="searchtype" value="major_info" >
+	</div>
+</div>
+<div id="emotion_Modal" style="height:700px;overflow: hidden;z-index: 4000;" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" style="width:965px;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<a class="close-link" style="float: right;" >
+					<span style="font-size: 20px;cursor: pointer;" class="glyphicon glyphicon-remove-circle"></span>
+				</a>
+				<h4 class="modal-title" style="text-align:left">信息列表</h4><!--信息列表  -->
+			</div>
+			 <div id="emotion_modal_list" style="height:500px;overflow: hidden;"></div>
+		</div>
+	</div>
+</div>
+<script>
+$(function(){
+    //图表接口
+	var release_interface = "analyse/loadSelectUserMessageInfo"; //发布量接口
+	var information_interface = "analyse/loadSelectMessageInfo"; //相关信息接口
+	var hotwords_interface = "analyse/queryHotMessageInfo"; //热词接口
+    //获取参数
+    var param=get_article_param();
+
+    //群组id 和开始结束时间
+    var groupId = param["searchVo.fromUserId"];
+    var stime = param["searchVo.sTime"]; //实际群消息的开始时间 转时间戳dateTime(stime)
+    var etime = param["searchVo.eTime"]; //实际群消息的结束时间 转时间戳dateTime(etime)
+    var stimeMs = dateTime(stime);
+    var etimeMs = dateTime(etime);
+    var fromTime = ''; //默认分割的事前时间点
+    var toTime = '';   //默认分开的事中时间点
+    var dataPlots =[]; //分阶段的数据
+    //时间范围
+	/*
+    $('.cDate').val(init7Days());
+    $('.cDate').daterangepicker(daterangepicker_minute());
+    */
+    //判断 如果结束时间和开始时间 超过3天 就显示三个颜色（事前，事中，事后） 否则只显示一个
+	/*
+	//针对24小时汇聚数据的分阶段情况 现暂时取消
+    if(etimeMs-stimeMs>259200000){
+        fromTime = stimeMs+86400000;
+        toTime = etimeMs-86400000;
+        $('#stime').val(getMyDate(fromTime));
+        $('#etime').val(getMyDate(toTime));
+	}else{
+        $('#stime').val(stime);
+        $('#etime').val(etime);
+	}
+	*/
+    //判断 如果事中开始时间和事中结束时间 超过小时 就显示三个颜色（事前，事中，事后） 否则只显示一个
+    //针对1小时汇聚数据的分阶段情况
+    if(dateTime(etime)-stimeMs>10800000){
+        //开始和结束时间分三份
+        var num = Math.floor((etimeMs-stimeMs)/3600000/3)*3600000;
+        fromTime = stimeMs+num;
+        toTime = etimeMs-num;
+        $('#stime').val(getMyDate(fromTime));
+        $('#etime').val(getMyDate(toTime));
+        dataPlots = creatDatabands(dateTime(stime),etimeMs,fromTime,toTime);
+    }else{
+        $('#stime').val(stime);
+        $('#etime').val(etime);
+        dataPlots = [{"name":"事中","from":stimeMs,"to":etimeMs,"type":2}];
+    }
+    //根据事中开始结束时间点 生成阶段划分的数据
+	function creatDatabands(stime,etime,fromtime,totime){
+        var dataPlotBand = [{"name":"事前","from":stime,"to":fromtime,"type":1},{"name":"事中","from":fromtime,"to":totime,"type":2},{"name":"事后","from":totime,"to":etime,"type":3}];
+	    return dataPlotBand;
+    }
+
+    $('#stime').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        timePicker24Hour : true,
+        autoUpdateInput:true,
+        timePickerSeconds:true,
+        timePicker : true,
+        "format": "YYYY-MM-DD HH:mm:ss",
+        "locale": {
+            "format": "YYYY-MM-DD HH:mm:ss",
+            applyLabel: "确定",
+            cancelLabel: "取消",
+            resetLabel: "重置"
+        }
+    });
+
+    $('#etime').daterangepicker({
+        singleDatePicker: true,
+        showDropdowns: true,
+        timePicker24Hour : true,
+        autoUpdateInput:true,
+        timePickerSeconds:true,
+        timePicker : true,
+        "format": "YYYY-MM-DD HH:mm:ss",
+        "locale": {
+            "format": "YYYY-MM-DD HH:mm:ss",
+            applyLabel: "确定",
+            cancelLabel: "取消",
+            resetLabel: "重置"
+        }
+    });
+
+	console.log(param);
+    //态势图
+    var data1h,data24h,time1h,time24h,timeHour,timeDay;
+    $.post("analyse/get_trend_byDateSelect",param,function(msg){
+        data1h = msg.data; //一小时数据
+        data24h = msg.data2; //天数据
+        time1h = msg.time; //按小时获
+        time24h = msg.time2; //按一天来获取数据
+        timeHour = msg.time11; //小时 时间戳
+        timeDay = msg.time22;  //天时间戳
+
+        if(data1h.length == "0"||data24h == "0"){
+            $("#trend_analysis_result").html("");
+            $("#trend_analysis_result").append("<img style='display:block;margin:0 auto 50px auto;padding-top: 60px;' src='img/my/bt-nodata-now.png' />");
+            return false;
+        }
+        var chartData = new Object();
+        chartData.seriesData = [];
+        chartData.containorID = 'trend_analysis_result';
+        //chartData.stime = evo.stime+iFunc.timezoneOffset;
+        //chartData.etime = evo.etime+iFunc.timezoneOffset;
+
+        //dataPlotBands:[{stage,type:trend_type,from:xxxx,to:xxxx}]	1-事前，2-事中，3-事后
+        chartData.plotBands1 = getPlotBands(dataPlots);
+        chartData.plotBands = chartData.plotBands1;
+        //默认加载1小时的数据和时间
+        $.each(data1h,function (i,v) {
+            chartData.seriesData.push({y:v,x:timeHour[i]+iFunc.timezoneOffset});
+        });
+
+        load_analysis_taishi(chartData.containorID,dataPlots,chartData.plotBands,chartData.seriesData);
+        //根据select选择 加载态势图
+        $('#event_evolution_charts_interval').change(function(){
+
+            if($(this).val() == "24"){
+                $('#trend_analysis_result').empty();
+                chartData.seriesData = [];
+                $.each(data24h,function (i,v) {
+                    chartData.seriesData.push({y:v,x:timeDay[i]+iFunc.timezoneOffset});
+                });
+                load_analysis_taishi(chartData.containorID,dataPlots,chartData.plotBands,chartData.seriesData);
+
+            }else if($(this).val() == "1"){
+                chartData.seriesData = [];
+                $('#trend_analysis_result').empty();
+                $.each(data1h,function (i,v) {
+
+                    chartData.seriesData.push({y:v,x:timeHour[i]+iFunc.timezoneOffset});
+                });
+                load_analysis_taishi(chartData.containorID,dataPlots,chartData.plotBands,chartData.seriesData);
+            }
+        });
+        //用户输入 范围选择器的开始时间和结束时间 效果
+        //$('.highcharts-range-selector[name=min]').val();
+        $('.highcharts-range-selector[name=min]').blur(function(){
+            var str1 = $('.highcharts-range-selector[name=min]').val().replace(/:(\S*)/,":00:00");
+//            $('.highcharts-range-selector[name=min]').val()
+			console.log(str1);
+		});
+
+
+        //点击分析按钮
+        $('#informBtn').on('click',function(){
+            //把选中的时间 转成毫秒
+            var newStime = dateTime($('#stime').val());
+            var newEtime = dateTime($('#etime').val());
+            //根据用户输入的 事中开始结束时间点 从新生成 阶段划分数据
+            dataPlots = creatDatabands(stimeMs,etimeMs,newStime,newEtime);
+            chartData.plotBands1 = getPlotBands(dataPlots);
+            chartData.plotBands = chartData.plotBands1;
+
+            if(newStime<stimeMs||newStime>etimeMs){
+                alert('请选择正确的事中开始时间(不能小于开始时间 不能大于结束时间)！');
+                return;
+            }
+            if(newEtime<stimeMs||newEtime>etimeMs){
+                alert('请选择正确的事中结束时间(不能小于开始时间 不能大于结束时间)！');
+                return;
+            }
+            if(newStime>newEtime){
+                alert('事中开始时间不能大于事中结束时间！');
+                return;
+            }
+            fromTime = newStime;
+            toTime = newEtime;
+
+            $('#event_evolution_charts_interval').change();
+
+        });
+
+    });
+
+
+	//发布量分析
+    load_analyse_loadSelectMessageInfoRel(release_interface,param);
+
+    //相关信息分析
+    load_analyse_xiangguanxinxi(information_interface,param);
+	function load_analyse_xiangguanxinxi(interface,param){
+        $('#article_list').html('');
+        var options = {};
+        options.param=param;
+
+        options.callback = function(){
+            console.log();
+        };
+        //获取列表
+        var operBtnBind = function() {
+            $(".exoprt_btn").unbind("click").click(function() {
+                var obj = $("#article_list .export_info:checked");
+                if(obj.size() == 0) {
+                    alert("请选择需要导出的信息");
+                    return;
+                } else if(obj.size() > 0) {
+                    var data = "";
+                    $.each(obj, function(i) {
+                        if (i==0) {
+                            data += $(this).val();
+                        }else{
+                            data += ","+$(this).val() ;
+                        }
+
+                    });
+                    var uuid = "searchVo.id="+data;
+                    window.location.href = "analyse/exportAll?" + uuid;
+                }
+            });
+            $(".exoprt_all_btn").unbind("click").click(function() {
+                var totals = $("#article_list").find("input.page_data").data("total");
+                if(totals < 1) {
+                    return false;
+                }
+                if(confirm("全部导出可能耗时较长，确定导出？")) {
+                    var data="";
+                    for(var key in  param){
+                        data+=key+"="+param[key]+"&";
+                    }
+                    window.location.href = "analyse/exportAll?" + data;
+                }
+            });
+        };
+        options.operBtnBind = operBtnBind;
+        //iPage.page_foot_html = '<div class="page_info ipage-fenye" style="display: none;"><div class="ipage-fenye-btn"><button class="startPage page_btn ipage-fenye-on">\u9996\u9875</button><button class="prePage page_btn ipage-fenye-on">\u4e0a\u9875</button><button class="nextPage page_btn ipage-fenye-on">\u4e0b\u9875</button><button class="endPage page_btn ipage-fenye-on" style="display:none;">\u5c3e\u9875</button><input class="pageNo_input" type="text" value="1"/><button class="ipage-fenye-on go_btn">GO</button></div><div class="ipage-fenye-info">\u4fe1\u606f\u603b\u6570\uff1a<span class="ipage-number total"></span>&nbsp;&nbsp;\u603b\u9875\u6570\uff1a<span class="ipage-number totalPage"></span>&nbsp;&nbsp;\u5f53\u524d\u9875\uff1a<span class="ipage-number pageNo"></span></div></div>';
+        //iPage.page_head_html = '<div class="page_info ipage-fenye ipage-fenye-head"><div class="ipage-fenye-btn"><button class="startPage page_btn ipage-fenye-on">\u9996\u9875</button><button class="prePage page_btn ipage-fenye-on">\u4e0a\u9875</button><button class="nextPage page_btn ipage-fenye-on">\u4e0b\u9875</button><button class="endPage page_btn ipage-fenye-on" style="display:none;">\u5c3e\u9875</button><input class="pageNo_input" type="text" value="1"/><button class="ipage-fenye-on go_btn">GO</button></div><div class="ipage-fenye-info">\u4fe1\u606f\u603b\u6570\uff1a<span class="ipage-number total"></span>&nbsp;&nbsp;\u603b\u9875\u6570\uff1a<span class="ipage-number totalPage"></span>&nbsp;&nbsp;\u5f53\u524d\u9875\uff1a<span class="ipage-number pageNo"></span></div></div>';
+        iPage.operBtnHtml = undefined; //隐藏导出按钮
+		iPage.pageSize = 4;
+        //var obj = new iPage.PageLoad("article_list", "monitor_al/mod1/loadTopicDataInfo",options).init();
+        //
+        //引入详情信息列表
+        var obj = new iPage.PageLoad("article_list", interface,options).init();
+
+    }
+
+	//热词分析
+    load_event_clues_charts(hotwords_interface,param);
+    //时间范围
+	/*
+	$('body').on('click','.applyBtn',function(){
+        let time = $('#startimend').val().split(daterangepicker_separator);
+		let strat =time[0];
+        let endTime =time[1];
+        var param=get_article_param();
+		param["searchVo.sTime"]=strat;
+		param["searchVo.eTime"]=endTime;
+        var options = new Object();
+        options = param;
+
+//        load_analysis_result_page(options);
+	});
+*/
+
+	//时间转成毫秒
+	function dateTime(time){
+	    if(time != ''){
+            var oldtime = time.replace(/-/g,"/");
+            var newTime = new Date(oldtime).getTime();
+            return newTime;
+		}
+	}
+
+    //获得年月日 得到日期oTime
+    function getMyDate(str){
+        var oDate = new Date(str),
+            oYear = oDate.getFullYear(),
+            oMonth = oDate.getMonth()+1,
+            oDay = oDate.getDate(),
+            oHour = oDate.getHours(),
+            oMin = oDate.getMinutes(),
+            oSen = oDate.getSeconds(),
+            oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay) +' '+ getzf(oHour) +':'+ getzf(oMin) +':'+getzf(oSen);//最后拼接时间
+        return oTime;
+    }
+    //补0操作
+    function getzf(num){
+        if(parseInt(num) < 10){
+            num = '0'+num;
+        }
+        return num;
+    }
+
+/////右侧悬浮导航
+$(document).scroll(function() {
+		var _m1H = $('#content_listaa').height();
+		var _m2H = $('#mod2').height();
+		_st = $(document).scrollTop();
+		if(_st >= 0 && _st < _m1H / 2) {
+			$('.custom-sidebar-list span').removeClass('on');
+			$('.custom-sidebar-list').eq(0).children().addClass('on');
+		}
+		if(_st >= _m1H / 2 && _st < 3000) {
+			$('.custom-sidebar-list span').removeClass('on');
+			$('.custom-sidebar-list').eq(1).children().addClass('on');
+		}
+
+
+	$('.custom-sidebar-list').eq(0).children().addClass('on');
+	$('.custom-sidebar-list').click(function() {
+		var _index = $(this).index();
+		if(_index == 1) {
+			$('body,html').animate({ "scrollTop": 0 + "px" }, 500);
+		}
+		if(_index == 2) {
+			$('body,html').animate({ "scrollTop": $('.analysis').offset().top - 70 + "px" }, 500);
+		}
+	});
+});
+
+
+//态势图画图
+function load_analysis_taishi(wrap,dataPlots,dataPlotBands,datajson){
+    var myCharts;
+    //生成左上角按钮
+    $("#phrase_btn").html(createPlotBands(dataPlots,stimeMs,etimeMs));
+
+    var myoptions =	{
+        chart: {
+            renderTo: wrap
+        },
+        exporting:{
+            enabled:false
+        },
+        credits:{
+            enabled:false
+        },
+        navigator:{
+            xAxis : {
+                dateTimeLabelFormats : iFunc.dateTimeLabelFormats
+            }
+        },
+        xAxis : {
+            dateTimeLabelFormats : iFunc.dateTimeLabelFormats,
+            plotBands : dataPlotBands
+        },
+        yAxis : {
+            title : {
+                text : '信息量'
+            },
+            min : 0
+        },
+        rangeSelector:{
+            enabled:true,
+            inputEnabled: $('#'+wrap).width() > 480,
+            selected : 1,
+            inputEditDateFormat:'%Y-%m-%d %H:%M:%S',
+//            inputEditDateFormat:'%Y-%m-%d %H:00:00',
+            inputDateFormat:'%Y-%m-%d %H:%M:%S',
+//            inputDateFormat:'%Y-%m-%d %H:00:00',
+            inputBoxWidth:150
+        },
+        legend:{
+            enabled:false,
+            floating:true,
+            verticalAlign:'top',
+            align:'left'
+        },
+        plotOptions:{
+            series:{
+                turboThreshold:0,
+                cursor: 'pointer',
+                events: {
+                    click: function(e) {
+                        var startime = getMyDate(e.point.category-iFunc.timezoneOffset);
+                        var endtime = startime.replace(/:00:00/, ":59:59");
+                        param["searchVo.sTime"] = startime;
+                        param["searchVo.eTime"] = endtime;
+//                        console.log(e.point);
+//                        console.log(e.point.category);
+//                        console.log(startime);
+//                        console.log(endtime);
+                        //发布量排行
+                        load_analyse_loadSelectMessageInfoRel(release_interface,param);
+                        //相关信息
+                        load_analyse_xiangguanxinxi(information_interface,param);
+                        //热词
+                        load_event_clues_charts(hotwords_interface,param);
+                    }
+                }
+            }
+        },
+        series : [{
+            type: 'areaspline',
+            id : 'dataseries',
+            name : '信息量',
+            data : datajson,
+            color : Highcharts.getOptions().colors[0],
+            threshold : null,
+            tooltip: {
+                valueDecimals: 0
+            }
+        }]
+    };
+    myCharts = new Highcharts.StockChart(myoptions);
+
+    //点击阶段划分 按钮
+    $('#phrase_btn').off("click",".phase");
+    $('#phrase_btn').on("click",".phase",function(){
+        var st = $(this).data("st");
+        var et = $(this).data("et");
+        st = st+iFunc.timezoneOffset;
+        et = et+iFunc.timezoneOffset;
+        myCharts.xAxis[0].setExtremes(st,et);
+        $(this).addClass("select_on").siblings().removeClass("select_on");
+    });
+}
+
+    /** 生成阶段定位按钮 */
+//param:[{stage,type,label,color,from,to}]
+function createPlotBands(dataPlots,st,et) {
+	var html = '';
+        html += '<li class="phase btn_all select_on" style="cursor:pointer;width: auto" data-st="' + st + '" data-et="' + et + '">全部</li>';
+	$.each(dataPlots, function (i, n) {
+		html += '<li class="phase btn_p' + n.type + '" style="cursor:pointer;width: auto" data-st="' + n.from + '" data-et="' + n.to + '">' + n.name + '</li>';
+	});
+	return html;
+}
+
+//阶段划分 事前 事中 事后
+//dataPlotBands:[{stage,type:trend_type,from:xxxx,to:xxxx}]	1-事前，2-事中，3-事后
+//ret:[{stage,type,label,color,from,to}]
+function getPlotBands(dataPlots){
+	var plotBands = [];
+	if(dataPlots){
+		$.each(dataPlots,function(i,n){
+			var plotBandsObj = new Object();
+//			plotBandsObj.stage = n.stage;
+			plotBandsObj.type = n.type;
+			//plotBandsObj.label = {text : (n.stage==1?'':(iFunc.stagelList[n.stage-1]+'次'))+iFunc.labelList[n.type-1]};
+//			plotBandsObj.label = {text : (n.stage==1?'':(iFunc.stagelList[n.stage-1]+'${_res.event_236}'))+" "+iFunc.labelList[n.type-1]};
+			plotBandsObj.color = Highcharts.Color(iFunc.colorList[n.type-1]).setOpacity(iFunc.opacityValue).get('rgba');
+			plotBandsObj.from = n.from+iFunc.timezoneOffset;
+			plotBandsObj.to = n.to+iFunc.timezoneOffset;
+			plotBands.push(plotBandsObj);
+		});
+	}
+	return plotBands;
+}
+
+//获取参数
+function get_article_param(){
+        var students = localStorage.getItem("userDada");
+        var userData = JSON.parse(students);
+        /*
+		var time = $('#startimend').val().split(daterangepicker_separator);
+		//var time = $('.cDate').val().split('至');
+		var stime = '';
+		var etime = '';
+		if (time[0]=='') {
+			stime = '';
+			etime = '';
+		}else{
+			stime = time[0];
+			etime = time[1];
+		}*/
+        var newparam = {
+            "searchVo.sTime":$('#stime').val(),
+            "searchVo.eTime":$('#etime').val()
+		};
+//		var param = $.extend(newparam,userData);
+        var param = userData;
+		param.path = "page/analyse/dynamic/wxuser_list.html";
+
+        return param;
+}
+
+//queryHotMessageInfo 热词接口
+function load_event_clues_charts(interface,param){
+    $('#event_clues_charts').attr('_echarts_instance_','');
+	$.post(interface, param, function(data) {
+
+		if(data != ""){
+
+			var da = data;
+			var fin = new Object();
+			fin.groups = da;
+			var foamtree,
+				supported;
+				keywordTree("event_clues_charts", foamtree, fin,1,param);
+		}  else {
+			$("#event_clues_charts").html("");
+			$("#event_clues_charts").append("<img style='display:block;margin:0 auto 50px auto;padding-top: 60px;' src='img/my/bt-nodata-now.png' />");
+			return false;
+		}
+	});
+}
+
+//发布量分析结果
+function load_analyse_loadSelectMessageInfoRel(interface,param){
+    $('#inform_ranking').attr('_echarts_instance_','');
+    var myChart = null;
+    $.post(interface, param, function(data) {
+//        console.log(data);
+        if(data == ""){
+            $("#inform_ranking").html("");
+            $("#inform_ranking").append("<img style='display:block;margin:0 auto 50px auto;padding-top: 60px;' src='img/my/bt-nodata-now.png' />");
+            return false;
+        }
+		//var newData = data.slice(0,10);
+		var newData = data.reverse();
+        var personName = [];
+        var personValue = [];
+        $.each(newData,function(i,ele){
+            personName.push(ele.fromUserName);
+            personValue.push(ele.relCount);
+		});
+        myChart = echarts.init(document.getElementById('inform_ranking'));
+
+        var options = {
+            color: ['#298BD4'],
+            title: {
+               title: ''
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: ''
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'value',
+                minInterval : 1,
+                boundaryGap: [0, 0.01]
+            },
+            yAxis: {
+                type: 'category',
+                data: personName
+            },
+            series: [
+                {
+                    name: '发布量',
+                    type: 'bar',
+                    itemStyle: {color: '#298BD4'},
+                    data: personValue
+                }
+            ]
+        };
+        myChart.setOption(options);
+
+
+        myChart.on('click', function (params) {
+            var thisIndex = params.dataIndex;
+			var thisId = newData[thisIndex].fromUserId;
+            param["searchVo.groupUserId"] = thisId+"#"+groupId;
+            param["searchVo.keywords"] = "";
+            load_analyse_xiangguanxinxi(information_interface,param);
+            load_event_clues_charts(hotwords_interface,param);
+        });
+    });
+}
+
+//萝卜树展示数据
+function keywordTree(key_id, foamtree, data, type,paramWord) {
+	supported = CarrotSearchFoamTree.supported;
+	if (supported) {
+		var foamtree = new CarrotSearchFoamTree({
+			id : key_id,
+			dataObject : data
+		});
+		foamtree.set({
+			onGroupSelectionChanged : function(info) {
+				//$("#emotion_Modal").modal('show');
+				var keyword = info.selectedGroups[0]["label"];
+				var paramhot = paramWord;
+				//param["path"] = "page/analyse/dynamic/wxuser_list2.html";
+				param["searchVo.keywords"]=keyword;
+                load_analyse_xiangguanxinxi(information_interface,paramhot);
+				/*
+				var options = new Object();
+				options.param = param;
+				options.callback = function(obj) {
+
+				};
+				iPage.page_head_html = "";
+				iPage.page_foot_html = '<div class="page_info ipage-fenye"><div class="ipage-fenye-btn"><button class="startPage page_btn ipage-fenye-on">\u9996\u9875</button><button class="prePage page_btn ipage-fenye-on">\u4e0a\u9875</button><button class="nextPage page_btn ipage-fenye-on">\u4e0b\u9875</button><button class="endPage page_btn ipage-fenye-on" style="display:none;">\u5c3e\u9875</button><input class="pageNo_input" type="text" value="1"/><button class="ipage-fenye-on go_btn">GO</button></div><div class="ipage-fenye-info">\u4fe1\u606f\u603b\u6570\uff1a<span class="ipage-number total"></span>&nbsp;&nbsp;\u603b\u9875\u6570\uff1a<span class="ipage-number totalPage"></span>&nbsp;&nbsp;\u5f53\u524d\u9875\uff1a<span class="ipage-number pageNo"></span></div></div>';
+				iPage.pageSize = 10;
+				//var obj = new iPage.PageLoad("emotion_modal_list", "monitor_al/mod1/loadTopicDataInfo",options).init();
+			   // var obj = new iPage.PageLoad("emotion_modal_list", "monitor_al/mod1/loadSelectTopicDataInfo",options).init();
+				var obj = new iPage.PageLoad("emotion_modal_list", "analyse/loadSelectMessageInfo",options).init();
+                */
+			},
+			//颜色定制
+			groupColorDecorator : function(opts, params, vars) {
+			},
+			groupLabelDecorator : function(opts, params, vars) {
+			},
+			//titlebar 大小
+			maxLabelSizeForTitleBar : 0,
+			//相对大小变化步长
+			aspectRatioImprovementSteps : 30,
+			//权重拉伸---作用不大
+			//groupWeightScaling:3,
+			//背景颜色，宽度，弧度等全局定义
+//				backgroundColor : "#fff",
+			backgroundColor : "rgba(0,0,0,0)",
+			borderWidth : 0.1,
+			borderRadius : 0.35,
+			groupBorderWidth : 5,
+			groupBorderRadius : 0,
+			groupFontFamily : "微软雅黑",
+		});
+	}
+}
+
+
+$("#emotion_Modal").find(".close-link").unbind("click").click(function(){
+	$("#emotion_Modal").modal("hide");
+});
+
+});
+
+</script>
+
+

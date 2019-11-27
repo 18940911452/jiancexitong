@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wangEditor 上传图片</title>
+</head>
+<body>
+   
+
+    <p>wangEditor 以base64保存图片文件</p>
+    <div id="div4">
+        <p>欢迎使用 wangEditor 富文本编辑器</p>
+    </div>
+    <div ></div>
+    <input type="button" value="获取值" onclick="test()">
+    <script type="text/javascript" src="js/wangEditor.min.js"></script>
+	 <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+	
+    <script type="text/javascript">
+        var E = window.wangEditor
+        
+        var editor1 = new E('#div4')
+        editor1.customConfig.uploadImgShowBase64 = true
+        editor1.create()
+
+       function test(){
+       	var val=editor1.txt.html();
+		
+		
+       	alert(val);
+       }
+    </script>
+</body>
+</html>

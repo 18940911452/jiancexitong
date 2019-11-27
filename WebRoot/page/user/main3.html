@@ -1,0 +1,795 @@
+<#include "/_layout.html"/>
+<@layout>
+
+	<style>
+		[data-manage="bMessage"] #myTab>li.active>a {
+			background: #fff;
+			border-bottom-color: transparent;
+		}
+		
+		#ui-datepicker-div {
+			z-index: 99999 !important;
+		}
+		
+		.tabActive {
+			background-color: #21a3e1;
+		}
+		
+		.tabActive a {
+			color: white;
+		}
+		
+		.addrow,
+		.deltrow {
+			cursor: pointer;
+		}
+		
+		.btn-primary:hover {
+			background: #1d84df;
+		}
+		
+		.btn-default:hover {
+			background: #fff;
+		}
+		
+		.btn {
+			padding: 6px 12px;
+		}
+		
+		.modal-title {
+			color: #000;
+		}
+		
+		.groupName {
+			font-weight: normal;
+		}
+		/*.main-content {
+            padding: 0;
+        }*/
+		
+		.tab-pane {
+			padding: 25px 0px;
+		}
+		
+		td {
+			text-align: center;
+		}
+		
+		.text-primary {
+			color: #17a293;
+			position: relative;
+			right: 9px;
+			cursor: pointer;
+		}
+		
+		.text-danger1 {
+			color: #808080!important;
+			position: relative;
+			left: 9px;
+			cursor: pointer;
+		}
+		
+		.ipage-fenye-on,
+		.go_btn {
+			background-color: #17a293;
+		}
+		/*.modal-content {
+            top: 137px;
+        }*/
+		
+		#home {
+			padding: 16px;
+		}
+		
+		.main-content {
+			height: 100%;
+		}
+		/*.page_info {
+            background: #fff;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 50px;
+            position: relative;
+            top: -20px;
+            height: 50px;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 1px 2px;
+            box-shadow: 0 0px 2px rgba(0, 0, 0, .15);
+            border-top: none;
+        }*/
+		
+		#getUser::-webkit-input-placeholder {
+			color: #ccc;
+		}
+		
+		#getUser {
+			padding-right: 27px;
+		}
+		#orderMes .text-primary{
+			font-size: 16px;
+		}
+		#orderMes .text-danger1{
+			font-size: 16px;
+		}
+
+	</style>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">${_res.system_008}</h3>
+					<button style="padding: 0 5px; float: right;position: relative;bottom: -1px; margin-bottom: 10px;margin-right: -1px;background-color: #17a293;color: #fff" class="btn btn_add_xg " data-toggle="modal" data-target="#addUserModal"><i class="fa fa-plus no-margin"></i></button>
+
+					<input id="getUser" style="float: right;position: relative;right: 6px;top: 0px;width: 12%;border: #ccc 1px solid;border-radius: 3px" type="text" class="" id="getUser" placeholder=" ${_res.system_091}">
+					<!--请输入用户名  -->
+					<a href="javascript:;" id="btn_getUser" style="display: inline-block;float: right;position: relative;left: 190px;top: 6px;width: 25px;height: 25px;color: #ccc" class="glyphicon glyphicon-search"></a>
+				</div>
+				<div class="panel-body" style="padding-top:20px;">
+					<div id="xg"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="addUserDiv"></div>
+	<div id="editUserDiv"></div>
+	<script>
+        //console.log(getCookie("userLanguage"));
+        if(getCookie("userLanguage")=='pt-PT'){
+            $("#getUser").css({"width":"14%"});
+            $("#btn_getUser").css({"left":"222px"});
+        }
+
+		$(function() {
+			getInfoList();
+			//$("#addUserDiv").load("/detail/manager_al/addUser.html", function() {
+			$("#addUserDiv").load('system_al/mod1/loadHtml', {
+				'path': '/detail/manager_al/addUser.html'
+			}, function() {
+				load_adddanwei(); ////加载添加  单位
+			});
+			//$("#editUserDiv").load("/detail/manager_al/editUser.html");
+			$("#editUserDiv").load('system_al/mod1/loadHtml', {
+				'path': '/detail/manager_al/editUser.html'
+			});
+
+			//load_editdanwei();////加载编辑  单位
+			//loadRole();//加载添加角色
+
+		});
+		//加载添加 单位
+		function load_adddanwei() {
+			loadCategory();
+			//单位
+			$(".leader_category_selector").change(function() {
+				var insId = $(this).find('option:selected').val();
+				load_department(insId); //加载部门
+				//              loadRole("-1",idsd); //加载角色
+			})
+			//部门
+			$(".bumen_select").change(function() {
+				//              var role_id = $(".bumen_select option:selected").attr("role_id");
+				//              var roli_ids = $(".bumen_select option:first").attr("role_id");
+				var depId = $(this).val();
+				depId = depId!=''?depId:'-1';
+				var insId = $(".leader_category_selector").val();
+				loadRole(depId, insId); //加载角色
+
+			});
+			getUkey()
+		}
+
+		//添加单位
+
+		function loadCategory() {
+			$(".leader_category_selector").empty();
+			$.post("system_al/mod4/obtainInstatutionByUserLevel", function(data) {
+				if (data.insObj!='') {
+					$.each(data.insObj, function(i,v) {
+						if (i==0) {
+							load_department (v.insId)
+						}
+						$('.leader_category_selector').append("<option value="+v.insId+">"+v.insName+"</option>")
+					});
+				}
+				if (data.insId!='') {
+					$(".leader_category_selector").find("option[value="+data.insId+"]").prop("selected",true);
+					$(".leader_category_selector").attr("disabled",true);
+				}
+				
+				var optionStr = "";
+				var insId = ""
+			})
+		}
+
+		//添加部门
+		function load_department(insId) {
+			$(".bumen_select").empty();
+			$(".bumen_select").append("<option value = '-1'>${_res.system_032}</option>");
+			$.post('system_al/mod4/obtainDepByInsId',{insId:insId},function (data) {
+				$('.bumen_select').empty();
+				//var str = '<option value="-1">请选择</option>';
+				var str = '<option value="-1">${_res.system_032}</option>';
+				$('.bumen_select').append(str)
+				if (data.depObj!='') {
+					$.each(data.depObj, function(i,v) {
+						$('.bumen_select').append("<option value="+v.depId+">"+v.depName+"</option>")
+					});
+				}
+				if (data.depId!='') {
+					$(".bumen_select").find("option[value="+data.depId+"]").prop("selected",true);
+					$(".bumen_select").attr("disabled",true);
+				}
+				var depId = data.depId?data.depId:'-1';
+				loadRole(depId, insId);
+			})
+		}
+
+		//添加角色
+		function loadRole(depId, insId) {
+			//先清空
+			$(".roleId_select").empty();
+			$(".roleId_select").append("<option value = '-1'>${_res.system_032}</option>");
+			$.post("system_al/mod1/queryRole", {
+				"depId": depId,
+				"insId": insId
+			}, function(data) {
+				//var optionHtml = "<option value = ''>请选择</option>";
+				var optionHtml = "";
+				data.forEach(function(item) {
+					optionHtml += "<option  value='" + item.roleId + "'>" + item.roleName + "</option>";
+				})
+				$(".roleId_select").append(optionHtml);
+			})
+		}
+
+		//添加ukey
+		//pageNum, Integer pageSize, String username, String ukey
+		function getUkey() {
+			$.post("system_al/mod5/getUkeyInfoList",{
+				"Rtype": "json",status:0
+			}, function(res) {
+				console.log(res[0]);
+				$(".addUser_uk").html("");
+
+				for(var n = 0; n < res[0].length; n++) {
+					var addUkey = res[0][n]["ukey_id"];
+					var auto_id = res[0][n]["auto_id"];
+					var tml = "<option value='" + auto_id + "' auto_id='" + auto_id + "'>" + addUkey + "</option>"
+					$(".addUser_uk").append(tml);
+					$("#editUserModal").find(".edit_ukey_id").append(tml);
+				}
+
+			})
+		}
+
+		// 获取监控配置信息列表
+		function getInfoList() {
+			var name = $("#getUser").val().trim();
+			var options = new Object();
+			options.param = {
+				username:name,
+				path: "/dynamic/manager/mod10/user_list.html"
+			};
+            options.callback = function() {
+
+            }
+			//iPage.page_foot_html = '<div class="page_info ipage-fenye"><div class="ipage-fenye-btn"><button class="startPage page_btn ipage-fenye-on">\u9996\u9875</button><button class="prePage page_btn ipage-fenye-on">\u4e0a\u9875</button><button class="nextPage page_btn ipage-fenye-on">\u4e0b\u9875</button><button class="endPage page_btn ipage-fenye-on" style="display:none;">\u5c3e\u9875</button><input class="pageNo_input" type="text" value="1"/><button class="ipage-fenye-on go_btn">GO</button></div><div class="ipage-fenye-info">\u4fe1\u606f\u603b\u6570\uff1a<span class="ipage-number total"></span>&nbsp;&nbsp;\u603b\u9875\u6570\uff1a<span class="ipage-number totalPage"></span>&nbsp;&nbsp;\u5f53\u524d\u9875\uff1a<span class="ipage-number pageNo"></span></div></div>';
+			var page_html=$("<div>"+iPage.page_foot_html+"</div>");
+			page_html.find(".ipage-fenye-oper").hide();
+			iPage.page_foot_html = page_html.html();
+			iPage.pageSize = 10;
+			var obj = new iPage.PageLoad("xg", "system_al/mod1/loadUser", options).init();
+		}
+
+		//模态框调用 hide 实例方法时触发。
+
+		$(".btn_add_xg").unbind("click").click(function() {
+            $(".leader_category_selector option:first").prop("selected","selected");
+            $(".bumen_select option:first").prop("selected","selected");
+            $(".roleId_select option:first").prop("selected","selected");
+            $(".addUser_uk option:first").prop("selected","selected");
+			$("#addMonitorModal").find(".gai_info option[value='0']").prop("checked", true);
+			$("#addMonitorModal").find("option[value='0']").attr("checked", true);
+			$("#addMonitorModal").find(".conf_name").val("");
+			$("#addMonitorModal").find(".contain").val("");
+			$("#addMonitorModal").find(".uncontain").val("");
+			$("#addMonitorModal").find(".keywordgroupadd").each(function() {
+				$("#addMonitorModal").remove();
+			});
+			$("#addMonitorModal").find(".result").hide();
+			$("#addMonitorModal").find(".result").html("");
+
+        });
+
+
+		function init_editModal() {
+			$("#editMonitorModal").on('hide.bs.modal', function() {
+				//$(this).find("option[value='0']").attr("selected",true);
+				$(this).find("input").val("");
+				$(this).find(".conf_name").val("");
+				$(this).find(".contain").val("");
+				$(this).find(".uncontain").val("");
+				$(this).find(".keywordgroupadd").each(function() {
+					$(this).remove();
+				});
+				$(this).find(".result").hide();
+				$(this).find(".result").html("");
+			});
+		}
+
+		function get_Monitor_param(modal) {
+			$(modal).find(".result").hide();
+			$(modal).find(".result").html("");
+			var param = {};
+			var $container = $(modal);
+			param.username = $container.find(".addUser_username").val();
+			param.password = $container.find(".addUser_password").val();
+			param.personName = $container.find(".addUser_personName").val();
+			param.tel = $container.find(".addUser_tel").val();
+			param.email = $container.find(".addUser_email").val();
+			param.dep_id = $container.find(".bumen_select option:selected").attr("dep_id"); ///部门
+			param.roleId = $container.find(".roleId_select option:selected").val(""); ///角色
+			param.uk_id = $container.find(".addUser_uk option:selected").attr("auto_id");
+
+			if(iFunc.isEmpty(param.username)) {
+				$(modal).find(".result").show();
+				$(modal).find(".result").html("${_res.system_033}！");
+				return "fail";
+			}
+			param.keywords = [];
+			var keywordRepeat = false;
+			var keywordEqualNOkeyword = false;
+			var isToLong = false;
+			var isAllSpecialCharacter = false;
+			var repeatCheckArr = [];
+			var keywords_flag = 0;
+			var isNullLine = false;
+			//		console.log(param+"333333")
+			return $.toJSON(param);
+		}
+		
+    // 点击编辑 获取关键字
+    $("#xg").on('click',".text-primary",function() {
+
+        $("#editUserModal").find(".result").hide();
+        $("#editUserModal").find(".result").html('');
+        var id = $.trim($(this).parents("tr").find(".keywordscategoryid").html());
+        var roleName = $.trim($(this).parents("tr").find(".roleName").html());
+        var instName = $.trim($(this).parents("tr").find(".instName").html());
+        var depName = $.trim($(this).parents("tr").find(".depName").html());
+        var uk_tid = $.trim($(this).parents("tr").find(".ukey_id").html())
+        $.post("system_al/mod1/echoUser", {
+            "id": id
+        }, function(data) {
+            $("#editUserModal").find("#hide_id").val(id);
+            $(".editDepartment_name").val("");
+            $(".editDepartment_leader").val("");
+            $(".editDepartment_contacter").val(""); //真实姓名
+            $(".editDepartment_email").val("");
+            $(".editDepartment_tel").val("");
+            /*$(".edit_select_danwei").val("");
+             $(".edit_select_bumen").val("");*/
+            var username = data.username;
+            var password = data.password;
+            var uk_id = data.uk_id;
+            var tel = data.tel;
+            var rid = data.rid;
+            var email = data.email;
+            var contacter = data.contacter;
+            $(".editDepartment_name").val(username);
+            $(".editpassword").val(password);
+            $(".editDepartment_email").val(email);
+            $(".editDepartment_tel").val(tel);
+            $(".edit_select_danwei").html("<option value="+data.instId+" selected = 'selected'>" + instName + "</option>");
+            $(".edit_select_bumen").html("<option value="+data.depId+" selected = 'selected'>" + depName + "</option>");
+//          $(".roleId_select_eidt").html("<option value="+rid+" selected = 'selected'>" + roleName + "</option>");
+//          $(".edit_ukey_id").prepend("<option auto_id="+uk_id+" selected = 'selected'>" + uk_tid + "</option>");
+            $(".editDepartment_contacter").val(contacter);
+            $(".edit_ukey_id").find("option[value="+uk_id+"]").prop("selected",true);
+            var inst_id1 = data.instId;
+            var dep_id1 = data.depId;
+//          load_editdanwei(inst_id1, dep_id1);
+			$(".roleId_select_eidt").empty();
+//				$(".roleId_select_eidt").append("<option value = '-1'>${_res.system_032}</option>");
+				$.post("system_al/mod1/queryRole", {
+					"depId": dep_id1,
+					"insId": inst_id1
+				}, function(data) {
+					//var optionHtml = "<option value = ''>请选择</option>";
+					var optionHtml = "";
+					data.forEach(function(item) {
+						optionHtml += "<option value='" + item.roleId + "'>" + item.roleName + "</option>";
+					})
+					$(".roleId_select_eidt").append(optionHtml);
+					$(".roleId_select_eidt").find("option[value="+rid+"]").prop("selected",true);
+				})
+       		});
+
+    });
+
+
+    //加载编辑 单位
+    function load_editdanwei(inst_id1, dep_id1) {
+        $.post("system_al/mod1/queryInstitution", function(data) {
+            $(".edit_select_danwei").html("");
+            data.forEach(function(item1) {
+                    var optionHtml1 = "<option inst_id1='" + item1.manageInstitution.id + "'>" + item1.manageInstitution.name + "</option>";
+                    $(".edit_select_danwei").append(optionHtml1);
+                })
+                /////////获取当前选中值
+            $("#editUserModal").find(".edit_select_danwei option").each(function(item, index) {
+                if (inst_id1 == $(this).attr("inst_id1")) {
+                    $(this).prop("selected", "selected");
+                    $("#editUserModal").find(".edit_select_danwei").attr("disabled", "disabled");
+                }
+            });
+            var edit_inst_id = $(".edit_select_danwei option:selected").attr("inst_id1");
+            edit_bumen(edit_inst_id, dep_id1); //////获取部门
+        })
+    }
+
+    function edit_bumen(edit_inst_id, dep_id1) {
+        $.post("system_al/mod1/queryDepartment", {
+            "inst_id": edit_inst_id
+        }, function(data) {
+            $(".edit_select_bumen").html("");
+            $(".edit_select_bumen").append("<option value = '-1'>${_res.system_032}</option>");
+            data.forEach(function(item1) {
+                var aaa = item1.manageDepartment.id
+                var optionHtml1 = "<option inst_id='" + item1.manageDepartment.id + "'>" + item1.manageDepartment.name + "</option>";
+                $(".edit_select_bumen").append(optionHtml1);
+            })
+            $("#editUserModal").find(".edit_select_bumen option").each(function(item, index) {
+                if (dep_id1 == $(this).attr("inst_id")) {
+                    $(this).prop("selected", "selected");
+                    
+                }
+                $("#editUserModal").find(".edit_select_bumen").attr("disabled", "disabled");
+            });
+        })
+    }
+
+    // 添加监控信息
+    $("#addUserDiv").on('click','.btn-primary',function() {
+
+        var param = get_Monitor_param000("#addUserModal");
+        if (param == "fail") {
+            return;
+        }
+        var url = "system_al/mod1/addUser";
+        $.post(url, {
+            param: param
+        }, function(data) {
+            //debugger;
+            if (data == "success") {
+                getInfoList();
+                $("#addUserModal").modal("hide");
+            } else if (data == "fail") {
+                $("#addUserModal").find(".result").show();
+                //$("#addUserModal").find(".result").html("操作失败");
+                $("#addUserModal").find(".result").html("${_res.system_061}");
+            } else if (data == "exist") {
+                $("#addUserModal").find(".result").show();
+               // $("#addUserModal").find(".result").html("该用户名称已存在，请重新输入");
+                $("#addUserModal").find(".result").html("${_res.system_128}");
+            }
+        });
+    })
+	//第二次添加初始化
+	$("body").on("click",".btn_add_xg",function () {
+		$(".user_til").val('');
+		$("#addUserModal").find(".result").hide();
+		$("#addUserModal").find(".result").html('');
+    })
+        //判断不能输入特殊字符
+        function containSpecial(s) {
+            var containSpecial = RegExp(/[(\…)(\~)(\￥)(\!)(\@)(\#)(\$)(\%)(\【)(\】)(\；)(\^)(\：)(\&)(\*)(\()(\))(\-)(\_)(\+)(\=)(\[)(\])(\{)(\})(\|)(\\)(\;)(\:)(\')(\")(\,)(\.)(\/)(\<)(\>)(\?)(\)]+/);
+            return (containSpecial.test(s));
+        }
+        //判断手机号码格式
+        function checkPhone(phone){
+            if(!(/^1[34578]\d{9}$/.test(phone))){
+                return false;
+            }else {
+                return true;
+            }
+        }
+        //判断是否为国内固话或者传真号是否正确
+        function istell(str) {
+            var result=str.match(/\d{3}-\d{8}|\d{4}-\d{7}/);
+            if(result==null) return false;
+            return true;
+        }
+        //对电子邮件的验证
+        function Emailtest(temp) {
+            var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+            if(!myreg.test(temp)) {
+                return false;
+            }else {
+                return true;
+            }
+        }
+		function get_Monitor_param000(modal) {
+        $(modal).find(".result").hide();
+        $(modal).find(".result").html("");
+        var param = {};
+        var $container = $(modal);
+        param.username = $container.find(".addUser_username").val();
+        param.password = $container.find(".addUser_password").val();
+        param.personName = $container.find(".addUser_personName").val();
+        param.tel = $container.find(".addUser_tel").val();
+        param.email = $container.find(".addUser_email").val();
+        param.inst_id = $("#addUserModal").find(".leader_category_selector option:selected").val();
+        param.dep_id = $("#addUserModal").find(".bumen_select option:selected").val();
+        // $("#addUserModal").find(".leader_category_selector option:selected").attr("inst_id") //$container.find(".bumen_select option:selected").attr("dep_id"); ///部门
+        param.roleId = $("#addUserModal").find(".roleId_select option:selected").val(); // $container.find(".roleId_select option:selected").attr("role_id"); ///角色
+        param.uk_id = $("#addUserModal").find(".addUser_uk option:selected").val() // $container.find(".addUser_uk option:selected").attr("auto_id");
+
+		if($.trim(param.username)!=''){
+            if(containSpecial(param.username)==true){
+                $(modal).find(".result").show();
+                //$(modal).find(".result").html("用户名称不允许输入特殊字符！");
+                $(modal).find(".result").html("${_res.system_124}！");
+                return "fail";
+            }
+		}
+		if($.trim(param.username).length>=20){
+            $(modal).find(".result").show();
+            //$(modal).find(".result").html("用户名称过长，请重新输入！");
+            $(modal).find(".result").html("${_res.system_125}！");
+            return "fail";
+		}
+        if($.trim(param.personName)!=''){
+            if(containSpecial(param.personName)==true){
+                $(modal).find(".result").show();
+                //$(modal).find(".result").html("真实姓名不允许输入特殊字符！");
+                $(modal).find(".result").html("${_res.system_126}！");
+                return "fail";
+            }
+        }
+        if($.trim(param.tel)!=''){
+            if(checkPhone(param.tel)==false || istell(param.tel)){
+                $(modal).find(".result").show();
+                //$(modal).find(".result").html("您输入的电话格式有误请重新输入！");
+                $(modal).find(".result").html("${_res.system_118}！");
+                return "fail";
+            }
+        }
+        if($.trim(param.email)!=''){
+            if(Emailtest(param.email)==false){
+                $(modal).find(".result").show();
+                //$(modal).find(".result").html("您输入的邮箱格式有误请重新输入！");
+                $(modal).find(".result").html("${_res.system_120}！");
+                return "fail";
+            }
+        }
+        if (iFunc.isEmpty(param.username)) {
+            $(modal).find(".result").show();
+            //$(modal).find(".result").html("请输入用户名称！");
+            $(modal).find(".result").html("${_res.system_033}！");
+            return "fail";
+        }
+        if (iFunc.isEmpty(param.password)) {
+            $(modal).find(".result").show();
+            //$(modal).find(".result").html("请输入密码！");
+            $(modal).find(".result").html("${_res.system_093}！");
+            return "fail";
+        }
+//      if (iFunc.isEmpty(param.inst_id)) {
+//          $(modal).find(".result").show();
+//          //$(modal).find(".result").html("请选择单位！");
+//          $(modal).find(".result").html("${_res.system_032}${_res.system_085}！");
+//          return "fail";
+//      }
+        /*if (iFunc.isEmpty(param.dep_id)) {
+            $(modal).find(".result").show();
+            //$(modal).find(".result").html("请选择部门！");
+            $(modal).find(".result").html("${_res.system_032}${_res.system_086}！");
+            return "fail";
+        }*/
+        if (param.roleId=='-1') {
+            $(modal).find(".result").show();
+            //$(modal).find(".result").html("请选择角色！");
+            $(modal).find(".result").html("${_res.system_032}${_res.system_087}！");
+            return "fail";
+        }
+        if (iFunc.isEmpty(param.uk_id)) {
+            $(modal).find(".result").show();
+            //$(modal).find(".result").html("请选择u_key！");
+            $(modal).find(".result").html("${_res.system_032}u_key！");
+            return "fail";
+        }
+        return $.toJSON(param);
+    }
+        function edit_Monitor_param000(modal) {
+            $(modal).find(".result").hide();
+            $(modal).find(".result").html("");
+            var param = {};
+            var $container = $(modal);
+            param.username = $container.find(".editDepartment_name").val();
+            param.password = $container.find(".editpassword").val();
+            param.personName = $container.find(".editDepartment_contacter").val();
+            param.tel = $container.find(".editDepartment_tel").val();
+            param.email = $container.find(".editDepartment_email").val();
+            if($.trim(param.username)!=''){
+                if(containSpecial(param.username)==true){
+                    $(modal).find(".result").show();
+                    //$(modal).find(".result").html("用户名称不允许输入特殊字符！");
+                    $(modal).find(".result").html("${_res.system_124}！");
+                    return "fail";
+                }
+            }
+            if($.trim(param.username).length>20){
+                $(modal).find(".result").show();
+                //$(modal).find(".result").html("用户名称过长，请重新输入！");
+                $(modal).find(".result").html("${_res.system_129}");
+                return "fail";
+			}
+            if($.trim(param.personName)!=''){
+                if(containSpecial(param.personName)==true){
+                    $(modal).find(".result").show();
+                    //$(modal).find(".result").html("真实姓名不允许输入特殊字符！");
+                    $(modal).find(".result").html("${_res.system_126}！");
+                    return "fail";
+                }
+            }
+            if($.trim(param.tel)!=''){
+                if(checkPhone(param.tel)==false || istell(param.tel)){
+                    $(modal).find(".result").show();
+                    //$(modal).find(".result").html("您输入的电话格式有误请重新输入！");
+                    $(modal).find(".result").html("${_res.system_118}！");
+                    return "fail";
+                }
+            }
+            if($.trim(param.email)!=''){
+                if(Emailtest(param.email)==false){
+                    $(modal).find(".result").show();
+                    //$(modal).find(".result").html("您输入的邮箱格式有误请重新输入！");
+                    $(modal).find(".result").html("${_res.system_120}！");
+                    return "fail";
+                }
+            }
+            if (iFunc.isEmpty(param.username)) {
+                $(modal).find(".result").show();
+                //$(modal).find(".result").html("请输入用户名称！");
+                $(modal).find(".result").html("${_res.system_033}！");
+                return "fail";
+            }
+            if (iFunc.isEmpty(param.password)) {
+                $(modal).find(".result").show();
+                //$(modal).find(".result").html("请输入密码！");
+                $(modal).find(".result").html("${_res.system_093}！");
+                return "fail";
+            }
+//      if (iFunc.isEmpty(param.inst_id)) {
+//          $(modal).find(".result").show();
+//          //$(modal).find(".result").html("请选择单位！");
+//          $(modal).find(".result").html("${_res.system_032}${_res.system_085}！");
+//          return "fail";
+//      }
+			/*if (iFunc.isEmpty(param.dep_id)) {
+			 $(modal).find(".result").show();
+			 //$(modal).find(".result").html("请选择部门！");
+			 $(modal).find(".result").html("${_res.system_032}${_res.system_086}！");
+			 return "fail";
+			 }*/
+
+            return $.toJSON(param);
+        }
+
+    // 编辑监控信息
+    $("#editUserDiv").on('click',".btn-primary",function() {
+        var param = edit_Monitor_param000("#editUserDiv");
+        if (param == "fail") {
+            return;
+        }
+        var modal=$("#editUserModal")
+        var url = "system_al/mod1/editUser";
+        var param = {};
+        param.id = $("#editUserModal").find("#hide_id").val();
+        param.username = $("#editUserModal").find(".editDepartment_name").val();
+        param.password = $("#editUserModal").find(".editpassword").val();
+        param.personName = $("#editUserModal").find(".editDepartment_contacter").val();
+        param.email = $("#editUserModal").find(".editDepartment_email").val();
+        param.tel = $("#editUserModal").find(".editDepartment_tel").val();
+        param.dep_id = $(".edit_select_bumen option:selected").attr("inst_id");
+        param.uk_id = $(".edit_ukey_id option:selected").attr("auto_id")
+        param.inst_id = $("#editUserModal").find(".edit_select_danwei option:selected").val();
+        param.dep_id = $("#editUserModal").find(".edit_select_bumen option:selected").val();
+        param.roleId = $("#editUserModal").find(".roleId_select_eidt option:selected").val();
+        console.log(param.uk_id);
+        var flag = true;
+        if (iFunc.isEmpty(param.username)) {
+            $(modal).find(".result").show();
+            //$(modal).find(".result").html("请输入用户名称！");
+            $(modal).find(".result").html("${_res.system_033}！");
+            return "fail";
+        }
+        if (iFunc.isEmpty(param.password)) {
+            $(modal).find(".result").show();
+            //$(modal).find(".result").html("请输入密码！");
+            $(modal).find(".result").html("${_res.system_093}！");
+            return "fail";
+        }
+//      if (iFunc.isEmpty(param.inst_id)) {
+//          $(modal).find(".result").show();
+//          //$(modal).find(".result").html("请选择单位！");
+//          $(modal).find(".result").html("${_res.system_032}${_res.system_085}！");
+//          return "fail";
+//      }
+        /*if (iFunc.isEmpty(param.dep_id)) {
+            $(modal).find(".result").show();
+            //$(modal).find(".result").html("请选择部门！");
+            $(modal).find(".result").html("${_res.system_032}${_res.system_086}！");
+            return "fail";
+        }*/
+        if (param.roleId=='-1') {
+            $(modal).find(".result").show();
+            //$(modal).find(".result").html("请选择角色！");
+            $(modal).find(".result").html("${_res.system_032}${_res.system_087}！");
+            return "fail";
+        }
+        if (iFunc.isEmpty(param.uk_id)) {
+            $(modal).find(".result").show();
+            //$(modal).find(".result").html("请选择u_key！");
+            $(modal).find(".result").html("${_res.system_032}u_key！");
+            return "fail";
+        }
+        console.log(param)
+        if (flag) {
+            param = JSON.stringify(param);
+            $.post(url, {
+                param: param
+            }, function(data) {
+                if (data == "ok") {
+                	$('.go_btn').click();
+//                  getInfoList();
+                    $("#editUserModal").modal("hide");
+                } else if (data == "error") {
+                    $("#editUserModal").find(".result").show();
+                    //$("#editUserModal").find(".result").html("操作失败");
+                    $("#editUserModal").find(".result").html("${_res.system_061}");
+                } else if (data == "exist") {
+                    $("#editUserModal").find(".result").show();
+                    //$("#editUserModal").find(".result").html("该用户名称已存在，请重新输入");
+                    $("#editUserModal").find(".result").html("${_res.system_130}");
+                };
+            });
+        }
+    })
+
+    //搜索部分
+    $("#btn_getUser").click(function() {
+        getInfoList();
+    })
+        document.onkeydown = function (e) {
+            var e = e || event;
+            if (e.keyCode == 13) {
+                getInfoList();
+                e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+            }
+        }
+    function getSystemal_y() {
+        var names = $("#getUser").val().trim();
+        console.log(names);
+        var options = new Object();
+        options.param = {
+            username: names,
+            path: "/dynamic/manager/mod10/user_list.html"
+        };
+        //iPage.page_foot_html = '<div class="page_info ipage-fenye"><div class="ipage-fenye-btn"><button class="startPage page_btn ipage-fenye-on">\u9996\u9875</button><button class="prePage page_btn ipage-fenye-on">\u4e0a\u9875</button><button class="nextPage page_btn ipage-fenye-on">\u4e0b\u9875</button><button class="endPage page_btn ipage-fenye-on" style="display:none;">\u5c3e\u9875</button><input class="pageNo_input" type="text" value="1"/><button class="ipage-fenye-on go_btn">GO</button></div><div class="ipage-fenye-info">\u4fe1\u606f\u603b\u6570\uff1a<span class="ipage-number total"></span>&nbsp;&nbsp;\u603b\u9875\u6570\uff1a<span class="ipage-number totalPage"></span>&nbsp;&nbsp;\u5f53\u524d\u9875\uff1a<span class="ipage-number pageNo"></span></div></div>';
+        var page_html=$("<div>"+iPage.page_foot_html+"</div>");
+		page_html.find(".ipage-fenye-oper").hide();
+		iPage.page_foot_html = page_html.html();
+        iPage.pageSize = 10;
+
+        var obj = new iPage.PageLoad("xg", "system_al/mod1/loadUser", options).init();
+
+    }
+
+	</script>
+
+</@layout>

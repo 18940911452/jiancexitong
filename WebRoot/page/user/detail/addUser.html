@@ -1,0 +1,192 @@
+<div id="addUserModal" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="width:840px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="opacity: 1">×</button>
+                <h4 class="modal-title" id="myModalLabel" style="text-align:left"><!-- 添加用户信息 -->添加用户</h4>
+            </div>
+            <div class="modal-body form-horizontal-body" style="padding:20px">
+               <div class="row form-group" style="margin-bottom:15px">
+                   <div class="col-md-12" style="">
+                       <div class="form-group">
+                           <div class="col-md-2 text_right pad_r">
+                               <label class="control-label" style="margin-left: 33px;margin-top: 6px;font-weight: bold;"><!-- 用户名称 -->用戶名：</label>
+                           </div>
+                           <div class="col-md-9">
+                               <input type="text" class="form-control addUser_username user_til">
+                           </div>
+                           <span class="col-md-1 b-x" style="color:red; position:relative;right:20px;top:8px">*</span>
+                       </div>
+                   </div>
+               </div>
+                
+                <div class="row form-group" style="margin-bottom:15px;margin-top: 15px;">
+                    <div class="col-md-12" style="">
+                        <div class="form-group">
+                            <div class="col-md-2 text_right pad_r">
+                                <label class="control-label" style="margin-left: 40px;margin-top: 6px;font-weight: bold;"><!-- 密码 -->密码：</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="password" class="form-control addUser_password user_til">
+                            </div>
+                            <span class="col-md-1 b-x" style="color:red; position:relative;right:20px;top:8px">*</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row form-group" style="margin-bottom:15px;margin-top: 15px;">
+                    <div class="col-md-12" style="">
+                        <div class="form-group">
+                            <div class="col-md-2 text_right pad_r">
+                                <label class="control-label" style="margin-left: 40px;margin-top: 6px;font-weight: bold;"><!-- 密码 -->昵称：</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control addUser_nickname user_til">
+                            </div>
+                            <span class="col-md-1 b-x" style="color:red; position:relative;right:20px;top:8px">*</span>
+                        </div>
+                    </div>
+                </div>
+                
+                  <div class="row form-group" style="margin-bottom:15px">
+                    <div class="col-md-12">
+
+                        <div class="form-group">
+                            <div class="col-md-2 text_right pad_r">
+                                <label class="control-label" style="margin-left: 40px;margin-top: 6px;font-weight: bold;"><!-- 昵称 -->性别：</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control xingbie_select" >
+                                	<option value = '2' style="margin-left: 40px;margin-top: 6px;">-- 请选择 --</option>
+                                	<option value="0" style="margin-left: 40px;margin-top: 6px;">女</option>
+                                	<option value="1" style="margin-left: 40px;margin-top: 6px;">男</option>
+                                </select>
+                            </div>
+                            <!--<span class="col-md-1 b-x" style="color:red; position:relative;right:20px;top:8px">*</span>-->
+                        </div>
+                    </div>
+                </div>
+                  <!--民族  -->
+                <div class="row form-group" style="margin-bottom:15px">
+                    <div class="col-md-12" style="">
+                        <div class="form-group">
+                            <div class="col-md-2 text_right pad_r">
+                                <label class="control-label" style="margin-left: 40px;margin-top: 6px;font-weight: bold;"><!-- 电话 -->民族：</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control addUser_nation user_til">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <!--生日addUser_birthdate  -->
+                <div class="row form-group" style="margin-bottom:15px">
+                    <div class="col-md-12" style="">
+                        <div class="form-group">
+                            <div class="col-md-2 text_right pad_r">
+                                <label class="control-label" style="margin-left: 40px;margin-top: 6px;font-weight: bold;"><!-- 电话 -->出生日：</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control addUser_birthdate user_til">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group" style="margin-bottom:15px">
+                    <div class="col-md-12" style="">
+                        <div class="form-group">
+                            <div class="col-md-2 text_right pad_r">
+                                <label class="control-label" style="margin-left: 40px;margin-top: 6px;font-weight: bold;"><!-- 电话 -->电话：</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control addUser_tel user_til">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group" style="margin-bottom:15px">
+                    <div class="col-md-12" style="">
+                        <div class="form-group">
+                            <div class="col-md-2 text_right pad_r">
+                                <label class="control-label user_til" style="margin-left: 40px;margin-top: 6px;font-weight: bold;"><!-- 邮件 -->邮箱：</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control addUser_email user_til">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group" style="margin-bottom:15px">
+                    <div class="col-md-12">
+
+                        <div class="form-group">
+                            <div class="col-md-2 text_right pad_r">
+                                <label class="control-label" style="margin-left: 25px;margin-top: 6px;font-weight: bold;font-weight: bold;"><!-- 部门 -->所属部门：</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select class="form-control bumen_select" id="selects1" >
+                                	<!-- <option value="1" style="margin-left: 40px;margin-top: 6px;"></option>
+                                	<option value="2" style="margin-left: 40px;margin-top: 6px;">编辑部</option>
+                                	<option value="3" style="margin-left: 40px;margin-top: 6px;">新闻部</option>
+                                	<option value="4" style="margin-left: 40px;margin-top: 6px;">总编办</option>
+                                	<option value="5" style="margin-left: 40px;margin-top: 6px;">发行部</option>
+                                	<option value="6" style="margin-left: 40px;margin-top: 6px;">评论部</option>
+                                	<option value="7" style="margin-left: 40px;margin-top: 6px;">广告部</option>
+                                	<option value="8" style="margin-left: 40px;margin-top: 6px;">宣传部</option> -->
+                                </select>
+                            </div>
+                            <!--<span class="col-md-1 b-x" style="color:red; position:relative;right:20px;top:8px">*</span>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <strong class='result' style="display:none;color:red;"></strong>
+                </div>
+                <div class="modal-footer" style="clear: both;">
+                    <button type="button" class="btn btn-primary" style="background-color: #32597a; color: #fff; border:none"><!-- 保存 -->保存</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><!-- 取消 -->取消</button>
+                    <input type="text" hidden id="b_id" />
+                </div>
+            </div>
+        </div>
+    </div>    </div>
+    
+<script type="text/javascript">
+init();   //<option value="8" style="margin-left: 40px;margin-top: 6px;">宣传部</option>
+$('#addUserModal').on('show.bs.modal', function () {
+	$("#addUserModal").find(".result").html('').hide();
+});
+function init(){
+    	 var url = "depart/departAll";
+         $.post(url, {
+         }, function(data) {
+             if (data.length>0) {
+            	for (var i = 0; i < data.length; i++) {
+            			if(data[i].id==14){
+                   		 $("#selects1").append("<option value="+data[i].id+" style='margin-left: 40px;margin-top: 6px;' selected='selected'>"+data[i].depname+"</option>");
+                		}else{
+                   		 $("#selects1").append("<option value="+data[i].id+" style='margin-left: 40px;margin-top: 6px;'>"+data[i].depname+"</option>");
+                		}
+            	}
+            	
+             }
+         });
+     }
+$('.addUser_birthdate').val("");
+$('.addUser_birthdate').daterangepicker({
+    singleDatePicker: true,
+    showDropdowns: true,
+    timePicker24Hour : true,
+    
+    autoUpdateInput:true,
+    timePickerSeconds:true,
+    timePicker : true,
+    "format": "YYYY-MM-DD",
+    "locale": {
+        "format": "YYYY-MM-DD",
+        applyLabel: "确定",
+        cancelLabel: "取消",
+        resetLabel: "重置"
+    }
+});
+</script>

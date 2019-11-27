@@ -1,0 +1,89 @@
+<#include "/_layout.html"/>
+<@layout>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+<script src="js/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script type="text/javascript" src="js/datepicker/moment.min.js"></script>
+<script type="text/javascript" src="js/datepicker/daterangepicker.js"></script>
+<script src="js/jquery.cntl.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="js/datepicker/daterangepicker-bs3.css" />
+<link href="js/jquery-ui/jquery-ui.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-timepicker-addon.css" />
+<link rel="stylesheet" type="text/css" href="css/y_zhuti.css" />
+<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/vendor/animate/animate.min.css">
+<link rel="stylesheet" href="css/cntl.css">
+<link rel="stylesheet" type="text/css" href="css/twitter_core.bundle.css" />
+<style>
+	[data-manage="bMessage"] #myTab>li.active>a {
+		background: #fff;
+		border-bottom-color: transparent;
+	}
+
+	#ui-datepicker-div {z-index: 99999 !important;}
+	.tabActive {background-color: #21a3e1;}
+	.tabActive a {color: white;}
+	.addrow,.deltrow {cursor: pointer;}
+	.yucai_list {display: none;}
+	.collect_active_all i {color: #17a293;}
+	#yindao_list li:hover {background: #D9D9D9;cursor: pointer;}
+	#yindao_list #info_div li {margin-bottom: 0px;}
+	.daterangepicker {z-index: 9999!important;}
+	.ui-front {z-index: 6000 !important;}
+
+	.fancy-checkbox input[type="checkbox"]+span:before {border: 1px solid #00aaff;}
+	.navbar-form input[type="text"] {min-width: 135px;}
+	.radio-inline{margin:0 0 0 30px!important;}
+	.cntl-state{
+		margin: 0 auto;
+	}
+	.cntl-content{
+		opacity: 1;
+	}
+	.userli{
+	    border-bottom: 1px solid #d9d9d9;
+	}
+	.user_img{
+	    padding: 10px;
+	}
+    .user_img img{
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+    }
+    .active_id{
+        background: #ccc;
+    }
+	#siteZhandian label,#stateZhandian label{
+		float: left;
+		margin-right: 5px;
+		padding: 4px 10px 0 24px;
+	}
+	.daterangepicker .ranges{width: 200px;}
+</style>
+<div >
+		<div class="row">
+		<div class="col-md-12">
+			<div class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">权限限制</h3>
+					<button style="padding: 0 5px; " class="btn btn_add_xg " data-toggle="modal" ></button>
+				</div>
+				
+				<div class="panel-body" style="padding-top:20px;">
+					<div id="xg">
+					您没有权限查看该页面！！
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+	<div id="addUserDiv"></div>
+	<div id="editUserDiv"></div>
+</div>
+
+</@layout>

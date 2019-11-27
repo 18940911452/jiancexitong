@@ -1,0 +1,1056 @@
+
+<style>
+    .ui-widget-content{background: #201e1b !important;}
+    .xiangguanxinxi{border-bottom: 1px solid #888;margin-left: 20px;height: 30px;line-height: 30px;    margin: 0 auto;width: 98%;}
+    .xiangguanxinxi span{margin-left: 20px;    font-weight: bold;    font-size: 16px;}
+    #key_info_list .ipage-fenye{display: none;}
+    .post news_time,.facebook_time,.news_time{
+        color: #000!important;
+    }
+    .demo{
+        padding:10px 70px;
+    }
+    .circle span{
+        width:84px;
+        height:84px;
+        position: relative;
+        cursor: pointer;
+    }
+    .font img{
+        position:absolute;
+        width:50px;
+        height: auto;
+        border-radius: 50%;
+        border:none;
+        margin:0;
+        padding:0px;
+        top:14px;
+        left: 14px;
+
+        transition: all .2s linear;
+    }
+    .font .fa{
+        font-size: 50px;
+        border-radius:50%;
+        position:absolute;
+        top:14px;
+        left: 18px;
+    }
+    .font .fa.fa-newspaper-o{
+        font-size: 40px;
+        border-radius:50%;
+        position:absolute;
+        top:21px;
+        left: 16px;
+    }
+    .circle:hover img{
+        transform: scale(1.1);
+    }
+    .main-timeline{ position: relative; }
+    .main-timeline:before,
+    .main-timeline:after{
+        content: "";
+        display: block;
+        width: 100%;
+        clear: both;
+    }
+    .main-timeline:before{
+        content: "";
+        width: 3px;
+        height: 100%;
+        background: #302124;
+        position: absolute;
+        top: 0;
+        left: 50%;
+    }
+    .main-timeline .timeline{
+        width: 50%;
+        float: left;
+        position: relative;
+        z-index: 1;
+    }
+    .main-timeline .timeline:before,
+    .main-timeline .timeline:after{
+        content: "";
+        display: block;
+        width: 100%;
+        clear: both;
+    }
+    .main-timeline .timeline:first-child:before,
+    .main-timeline .timeline:last-child:before{
+        content: "";
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #fff;
+        border: 4px solid #17a293;
+        position: absolute;
+        top: 0;
+        right: -12px;
+        z-index: 1;
+    }
+    .main-timeline .timeline:last-child:before{
+        top: auto;
+        bottom: 0;
+    }
+    .main-timeline .timeline:last-child:nth-child(even):before{
+        right: auto;
+        left: -9px;
+        bottom: -2px;
+    }
+    .main-timeline .timeline-content{
+        text-align: center;
+        margin-top: 8px;
+        position: relative;
+        transition: all 0.3s ease 0s;
+    }
+    .main-timeline .timeline-content:before{
+        content: "";
+        width: 100%;
+        height: 4px;
+        background: #adabab;
+        position: absolute;
+        top: 48px;
+        left: 0;
+        z-index: -1;
+    }
+    .main-timeline .circle{
+        width: 93px;
+        height: 93px;
+        border-radius: 50%;
+        background: #fff;
+        float: left;
+        margin-right: 25px;
+        position: relative;
+    }
+    /*.main-timeline .circle:before{
+        content: "";
+        width: 26px;
+        height: 30px;
+        background: #cca872;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        right: -28px;
+        bottom: 0;
+        z-index: -1;
+        box-shadow: inset 7px 0 9px -7px #444;
+    }*/
+    .main-timeline .circle span{
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        line-height: 160px;
+        border: 3px solid #adabab;
+        font-size: 80px;
+        color: #454344;
+    }
+    /*.main-timeline .circle span:before,
+    .main-timeline .circle span:after{
+        content: "";
+        width: 28px;
+        height: 50px;
+        background: #fff;
+        border-radius: 0 0 0 21px;
+        margin: auto;
+        position: absolute;
+        top: -54px;
+        right: -33px;
+        bottom: 0;
+        z-index: -1;
+    }*/
+    .main-timeline .circle span:after{
+        border-radius: 21px 0 0 0;
+        top: 0;
+        bottom: -56px;
+    }
+    .main-timeline .content{
+        display: table;
+        padding-right: 20px;
+        position: relative;
+    }
+    .main-timeline .year{
+        display: block;
+        padding: 10px;
+        margin: 10px 0 0px 0;
+        /* margin:0;*/
+        /*background: #cca872;*/
+        /*border-radius: 7px;*/
+        font-size: 16px;
+        color: #000;
+    }
+    .main-timeline .title{
+        font-size: 25px;
+        font-weight: bold;
+        color: #cca872;
+        margin-top: 0;
+    }
+    .main-timeline .description{
+        font-size: 14px;
+        color: #a6a6a6;
+        text-align: justify;
+    }
+    /*.main-timeline .icon{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #fff;
+        border: 4px solid #cca872;
+        position: absolute;
+        top: 38px;
+        right: -14px;
+    }*/
+    .main-timeline .icon{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #fff;
+        border: 4px solid #17a293;
+        position: absolute;
+        top: 40px;
+        right: -11px;
+    }
+    .main-timeline .icon:before{
+        content: "";
+        width: 10px;
+        height: 20px;
+        background: #adabab;
+        margin: auto;
+        position: absolute;
+        /*top: -1px;*/
+        top: 33px;
+        left: -12px;
+        bottom: 0;
+        z-index: -1;
+    }
+    .thematic .content {
+        padding: 0;
+    }
+    .main-timeline .icon span:before,
+    .main-timeline .icon span:after{
+        content: "";
+        width: 18px;
+        height: 25px;
+        background: #fff;
+        border-radius: 0 0 21px 0;
+        margin: auto;
+        position: absolute;
+        top: -30px;
+        left: -15px;
+        bottom: 0;
+        z-index: -1;
+    }
+    .main-timeline .icon span:after{
+        border-radius: 0 21px 0 0;
+        top: 0;
+        left: -13px;
+        bottom: -30px;
+    }
+    /*  .main-timeline .timeline:nth-child(2n) .timeline-content,*/
+    .main-timeline .timeline:nth-child(2n) .circle{
+        float: right;
+    }
+    .main-timeline .timeline:nth-child(2n) .circle{
+        margin: 0 0 0 25px;
+    }
+    .main-timeline .timeline:nth-child(2n) .circle:before{
+        right: auto;
+        left: -28px;
+        box-shadow: -7px 0 9px -7px #444 inset;
+    }
+    .main-timeline .timeline:nth-child(2n) .circle span:before,
+    .main-timeline .timeline:nth-child(2n) .circle span:after{
+        right: auto;
+        left: -33px;
+        border-radius: 0 0 21px 0;
+    }
+    .main-timeline .timeline:nth-child(2n) .circle span:after{
+        border-radius: 0 21px 0 0;
+    }
+    .main-timeline .timeline:nth-child(2n) .content{
+        padding: 0;
+        margin-left: 28px;
+    }
+    .main-timeline .timeline:nth-child(2n) .icon{
+        right: auto;
+        left: -7px;
+    }
+    .main-timeline .timeline:nth-child(2n) .icon:before,
+    .main-timeline .timeline:nth-child(2n) .icon span:before,
+    .main-timeline .timeline:nth-child(2n) .icon span:after{
+        left: auto;
+        right: -12px;
+    }
+    .main-timeline .timeline:nth-child(2n) .icon span:before{
+        border-radius: 0 0 0 21px;
+    }
+    .main-timeline .timeline:nth-child(2n) .icon span:after{
+        border-radius: 21px 0 0 0;
+    }
+    .main-timeline .timeline:nth-child(2){
+        margin-top: 105px!important;
+    }
+    .main-timeline .timeline:nth-child(odd){
+        margin: -85px 0 0 0;
+    }
+    .main-timeline .timeline:nth-child(even){
+        margin-bottom: 80px;
+    }
+    .main-timeline .timeline:first-child,
+    .main-timeline .timeline:last-child:nth-child(even){
+        margin: 0;
+    }
+    @media only screen and (max-width: 990px){
+        .main-timeline:before{ left: 100%; }
+        .main-timeline .timeline{
+            width: 100%;
+            float: none;
+            margin-bottom: 20px !important;
+        }
+        .main-timeline .timeline:first-child:before,
+        .main-timeline .timeline:last-child:before{
+            left: auto !important;
+            right: -13px !important;
+        }
+        .main-timeline .timeline:nth-child(2n) .circle{
+            float: left;
+            margin: 0 25px 0 0;
+        }
+        .main-timeline .timeline:nth-child(2n) .circle:before{
+            right: -33px;
+            left: auto;
+            box-shadow: 7px 0 9px -7px #444 inset;
+        }
+        .main-timeline .timeline:nth-child(2n) .circle span:before,
+        .main-timeline .timeline:nth-child(2n) .circle span:after{
+            right: -33px;
+            left: auto;
+            border-radius: 0 0 0 21px;
+        }
+        .main-timeline .timeline:nth-child(2n) .circle span:after{
+            border-radius: 21px 0 0 0;
+        }
+        .main-timeline .timeline:nth-child(2n) .content{
+            padding: 0 40px 0 0;
+            margin-left: 0;
+        }
+        .main-timeline .timeline:nth-child(2n) .icon{
+            right: -14px;
+            left: auto;
+        }
+        .main-timeline .timeline:nth-child(2n) .icon:before,
+        .main-timeline .timeline:nth-child(2n) .icon span:before,
+        .main-timeline .timeline:nth-child(2n) .icon span:after{
+            left: -15px;
+            right: auto;
+        }
+        .main-timeline .timeline:nth-child(2n) .icon span:before{
+            border-radius: 0 0 21px 0;
+        }
+        .main-timeline .timeline:nth-child(2n) .icon span:after{
+            border-radius: 0 21px 0 0;
+        }
+        .main-timeline .timeline:nth-child(2),
+        .main-timeline .timeline:nth-child(odd),
+        .main-timeline .timeline:nth-child(even){
+            margin: 0;
+        }
+    }
+    @media only screen and (max-width: 480px){
+        .main-timeline:before{ left: 0; }
+        .main-timeline .timeline:first-child:before,
+        .main-timeline .timeline:last-child:before{
+            left: -12px !important;
+            right: auto !important;
+        }
+        .main-timeline .circle,
+        .main-timeline .timeline:nth-child(2n) .circle{
+            width: 130px;
+            height: 130px;
+            float: none;
+            margin: 0 auto;
+        }
+        .main-timeline .timeline-content:before{
+            width: 99.5%;
+            top: 68px;
+            left: 0.5%;
+        }
+        .main-timeline .circle span{
+            line-height: 115px;
+            font-size: 60px;
+        }
+        .main-timeline .circle:before,
+        .main-timeline .circle span:before,
+        .main-timeline .circle span:after,
+        .main-timeline .icon{
+            display: none;
+        }
+        .main-timeline .content,
+        .main-timeline .timeline:nth-child(2n) .content{
+            padding: 0 10px;
+        }
+        .main-timeline .year{
+            margin-bottom: 15px;
+        }
+        .main-timeline .description{
+            text-align: center;
+        }
+    }
+
+    .main-timeline .timeline.timelineInd0:before{
+        content: "";
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #fff;
+        border: 4px solid #17a293;
+        position: absolute;
+        top: 0;
+        right: -12px;
+        z-index: 1;
+    }
+    .font .fa-clipboard{
+        font-size: 44px;
+        border-radius: 50%;
+        position: absolute;
+        top: 17px;
+        left: 18px;
+    }
+    .font .fa-weixin{
+        font-size: 44px;
+        border-radius: 50%;
+        position: absolute;
+        top: 17px;
+        left: 14px;
+    }
+    .gai_suyuan_con p {
+        text-align: justify;
+        text-justify: inter-ideograph;
+        padding-right: 5px;
+    }
+</style>
+<script src="https://img.hcharts.cn/highstock/highstock.js"></script>
+<script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+<script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+<div>
+    <div class="dateyf border1">
+        <div class="panel">
+            <div class="panel-heading">
+                 <h3 class="panel-title">阶段演化</h3>
+                <select id="event_evolution_charts_interval">
+                    <option value="1">1h</option><!--1小时  -->
+                    <!--<option value="2">2h</option>
+                    <option value="6">6h</option>
+                    <option value="12">12h</option>-->
+                    <option value="24">24h</option><!--24小时  -->
+                </select>
+            </div>
+            <div class="panel-body">
+                <div class="yh_btn"><ul id="phrase_btn"></ul></div>
+                <div class="content" id="event_evolution_charts"></div>
+            </div>
+             <!--<div class="xiangguanxinxi"><span>相关信息</span></div>-->
+            <!--<div class="panel-body" style="padding-top: 0px;">-->
+                <!--<div class="content ipage" id="key_info_list"></div>-->
+                <!--<div id="kp_related" class="ipage"></div>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+</div>
+
+<script>
+    $(function () {
+        //$("#article_detail_modal").load('monitor_al/mod1/JumpPage',{'path':'/detail/detail_article_modal.html'});
+
+        // console.log(getCookie("userLanguage"));
+//        if(getCookie("userLanguage")=='en-US'||getCookie("userLanguage")=='pt-PT'){
+//            $("#phrase_btn li").css({"width":"auto!important"})
+//        }
+    })
+</script>
+<script>
+
+    //////////态势演化图信息
+    var eid = $(".menu_font .hover").attr("data_eid");
+
+    function time_glider_data(){
+        $.get("event_al/mod6/getEvolutionTrendCharts",{"eid":eid},function(d){
+            //if(d.retMsg.length>0){
+            $('#event_tracking_charts').css('background','#000');
+            var data = eval(d);
+            var infoData = data.info;
+            var tChartData = data.chart;
+            var time;
+            for(var i = 0;i<tChartData.length;i++){
+                var content = tChartData[i].description;
+                var description = content.split("|");
+                if(i==tChartData.length-1){
+                    time = tChartData[i].startdate;
+                }
+                tChartData[i].description="<p style='margin: 0 8px 2px 10px;padding: 0;color: #d4cec2;font-size:10px'>"+description[1]+"</p>"+"<p style='margin: 0 8px 0 10px;padding: 0;color: #d4cec2;font-size:14px'>"+description[2]+"<a class='detail_expand_btn123 changecolor'  data-id="+tChartData[i].id+" data-type="+description[0]+" >详情</a>"+"</p>";
+            }
+            var tgData = [{
+                "id": "idahoTimeline",
+                "title": "",
+                "focus_date": time,
+                "initial_zoom": "15",
+                "color": "#82530d",
+                "size_importance": "true",
+                "events":tChartData
+            }];
+            setTime(tgData);
+            //load列表
+            var infoDataStr = "";
+            $.each(infoData,function(i,n){
+                infoDataStr += n+",";
+            });
+            infoDataStr = infoDataStr.length>0?infoDataStr.substring(0,infoDataStr.length-1):'';
+            //load图
+            load_track_key_info_list(infoDataStr);
+            /*}else{
+             $('#event_tracking_charts').css('background','#fff')
+             $('#event_tracking_charts').html('<div style="padding: 10px; border: 1px #ccc dashed; background-color: #f5f5f5; margin: auto; margin: 10px; margin-bottom: 30px; color: #1953a6; font-size: 14px; font-weight: bold; text-align: center;">暂无相关信息</div>')
+             $('#event_tracking_list').css('overflow-y','inherit')
+             $('#event_tracking_list').html('<div style="padding: 10px; border: 1px #ccc dashed; background-color: #f5f5f5; margin: auto; margin: 10px; margin-bottom: 30px; color: #1953a6; font-size: 14px; font-weight: bold; text-align: center;">暂无相关信息</div>')
+             }*/
+        });
+    }
+
+
+
+
+
+
+
+    var trackChart;
+
+    var myCharts;
+    var chartData = new Object();
+
+    iTrackChart.legend = '<div class="mtrack-legend">'+
+        '<table>'+
+        '<tr><td><div class="mtrack-bd"><div class="mtrack-color"></div></div></td><td><span class="mtrack-text">新闻</span></td></tr>'+
+
+        '<tr><td><div class="mtrack-bd"><div class="mtrack-color"></div></div></td><td><span class="mtrack-text">Twitter</span></td></tr>'+
+        '<tr><td><div class="mtrack-bd"><div class="mtrack-color"></div></div></td><td><span class="mtrack-text">Facebook</span></td></tr>'+
+        '<tr><td><div class="mtrack-bd"><div class="mtrack-color"></div></div></td><td><span class="mtrack-text">Instagram</span></td></tr>'+
+        '<tr style="display:none;"><td><div class="mtrack-bd"><div class="mtrack-color"></div></div></td><td><span class="mtrack-text">关键信息</span></td></tr>'+
+        '</table>'+
+        '</div>';
+
+    var chartsInterval =1;
+    //演化图
+    $("#phrase_btn").on("click",".phase",function(){
+
+        //阶段定位
+        var st = $(this).data("st");
+        var et = $(this).data("et");
+        myCharts.xAxis[0].setExtremes(st,et);
+        $(this).addClass("select_on").siblings().removeClass("select_on");
+
+        //关键信息列表	[{x,id,type,title,text}]
+        var iidsf = '';
+        var iidsk = '';
+        $.each(chartData.firstData,function(i,n){
+            if(n.x >= st && n.x <= et){
+                iidsf += n.id+',';
+            }
+        });
+        if(iidsf){
+            iidsf = iidsf.substring(0,iidsf.length-1);
+        }
+        $.each(chartData.keyData,function(i,n){
+            if(n.x >= st && n.x <= et){
+                iidsk += n.id+',';
+            }
+        });
+        if(iidsk){
+            iidsk = iidsk.substring(0,iidsk.length-1);
+        }
+        var iids = '';
+        if(iidsf && iidsk){
+            iids = iidsf+','+iidsk;
+        } else if(iidsf){
+            iids = iidsf;
+        } else if(iidsk){
+            iids = iidsk;
+        }
+        load_key_info_list(iids);
+    });
+
+    //切换时间刻度
+    $("#event_evolution_charts_interval").unbind("change").change(function(){
+        chartsInterval = $(this).val();
+        chartData.seriesData = eval("chartData.seriesData"+chartsInterval);
+        chartData.pointsData = eval("chartData.pointsData"+chartsInterval);
+        chartData.plotBands = eval("chartData.plotBands"+chartsInterval);
+        chartData.firstData = eval("chartData.firstData"+chartsInterval);
+        chartData.keyData = eval("chartData.keyData"+chartsInterval);
+        stageEvolution(chartData.seriesData,chartData.pointsData,chartData.plotBands,chartData.firstData,chartData.keyData,chartData.stime,chartData.etime)
+//		myCharts.series[0].setData(chartData.seriesData);
+    });
+
+    function stageEvolution(seriesData,pointsData,plotBands,firstData,keyData,stime,etime){
+        $("#phrase_btn").html('');
+        //生成左上角按钮
+        
+        $("#phrase_btn").html(createPlotBands(plotBands,stime,etime));
+
+        var myoptions =	{
+            chart: {
+                renderTo: chartData.containorID
+            },
+            exporting:{
+                enabled:false
+            },
+            credits:{
+                enabled:false
+            },
+            rangeSelector : {
+                inputEnabled: $('#'+chartData.containorID).width() > 480,
+                selected : 1
+            },
+            navigator:{
+                xAxis : {
+                    dateTimeLabelFormats : iFunc.dateTimeLabelFormats
+                }
+            },
+            xAxis : {
+                dateTimeLabelFormats : iFunc.dateTimeLabelFormats,
+                plotBands : chartData.plotBands
+            },
+            yAxis : {
+                title : {
+                    text : '信息量'
+                },
+                min : 0
+            },
+            tooltip: {
+                backgroundColor: Highcharts.Color("#ffffff").setOpacity(0.5).get('rgba'),
+                formatter : function() {
+                    var s = '<span style="font-size: 10px">'+ Highcharts.dateFormat('%Y年%b%e日 %H:%M:%S', this.x) +'</span><br/>';
+                    var tx = this.x;
+                    if(this.points){	//线
+                        var pointsData;
+                        $.each(chartData.pointsData,function(j,m){
+                            if(tx == m.x){
+                                pointsData = m;
+                                return false;
+                            }
+                        });
+                        $.each(this.points, function (i,n) {
+                            s += '<span style="color:'+n.series.color+'">●</span><span> '+n.series.name+': </span><span style="font-weight:bold">'+pointsData.count+' ${_res.event_107}</span>';/*条  */
+                            if (pointsData.count_n>0) {
+                                s += '<br/><span style="color:'+n.series.color+'">●</span><span> ${_res.event_084}: </span><span style="font-weight:bold">'+pointsData.count_n+'${_res.event_107} </span>';
+                            }
+
+                        });
+                    } else if(this.point){	//点
+                        var type = this.point.text[0];
+                        var text = this.point.text[1];
+                        var textList = [];
+                        //console.log(text);
+                        if(text){
+                            var ci = parseInt(text.length/iFunc.legendCutLen);
+                            var fix = text.length%iFunc.legendCutLen;
+                            for(var i=0;i<ci;i++){
+                                textList.push(text.substring(iFunc.legendCutLen*i,iFunc.legendCutLen*(i+1)));
+                            }
+                            textList.push(text.substring(text.length-fix));
+                        }
+                        s += '<span style="color:green;">【'+this.point.text[0]+'】</span><span style="color:gray;">'+this.point.other+'</span><br/>';
+                        $.each(textList, function(i,n){
+                            s += '<span style="color:blue;">'+n+'</span><br/>';
+                        });
+                    }
+                    return s;
+                }
+            },
+            rangeSelector:{
+                enabled:true,
+                inputEditDateFormat:'%Y-%m-%d %H:%M:%S',
+                inputDateFormat:'%Y-%m-%d %H:%M:%S',
+                inputBoxWidth:150
+            },
+            legend:{
+                enabled:true,
+                floating:true,
+                verticalAlign:'top',
+                align:'left'
+            },
+            plotOptions:{
+                series:{
+                    turboThreshold:0
+                }
+            },
+            series : [{
+                type: 'areaspline',
+                id : 'dataseries',
+                name : '信息量',
+                data : chartData.seriesData,
+                color : Highcharts.getOptions().colors[0],
+                threshold : null,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            }]
+        };
+        myCharts = new Highcharts.StockChart(myoptions);
+        myCharts.series[1].hide();
+        myCharts.series[2].hide();
+        $("#phrase_btn .phase").eq(0).click();
+    }
+
+    $.post("event_al/mod6/stageEvolution",{"eid":eid},function(d){
+
+        //if(d && d.evolutionVo){
+        $("#phrase_btn").html('');
+        var evo = d;//.evolutionVo;
+        if(evo.chartDescription==null && evo.etime==null && evo.firstData==null && evo.indexData==null && evo.keyData==null && evo.plotBandsData==null && evo.stime==null){
+            $(".xiangguanxinxi").hide();
+            $("#key_info_list").html('<img style="display:block;margin:60px auto 50px auto;" src="img/my/bt-nodata-now${_home.home_000}.png" />');
+            return false;
+        }else {
+            $(".xiangguanxinxi").show();
+        }
+        chartData.stime = evo.stime+iFunc.timezoneOffset;
+        chartData.etime = evo.etime+iFunc.timezoneOffset;
+        //[{type:trend_type,stage,from:xxxx,to:xxxx}]	1-发生，2-发展，3-高峰，4-回落，5-消亡
+        chartData.plotBands1 = getPlotBands(evo.plotBandsData.d1);
+        chartData.plotBands24 = getPlotBands(evo.plotBandsData.d24);
+
+        var indexData1 = getIndexData(evo.indexData.d1);
+        var indexData2 = getIndexData(evo.indexData.d2);
+        var indexData6 = getIndexData(evo.indexData.d6);
+        var indexData12 = getIndexData(evo.indexData.d12);
+        var indexData24 = getIndexData(evo.indexData.d24);
+
+        chartData.seriesData1 = indexData1.seriesData;
+        chartData.seriesData2 = indexData2.seriesData;
+        chartData.seriesData6 = indexData6.seriesData;
+        chartData.seriesData12 = indexData12.seriesData;
+        chartData.seriesData24 = indexData24.seriesData;
+
+        chartData.pointsData1 = indexData1.pointsData;
+        chartData.pointsData2 = indexData2.pointsData;
+        chartData.pointsData6 = indexData6.pointsData;
+        chartData.pointsData12 = indexData12.pointsData;
+        chartData.pointsData24 = indexData24.pointsData;
+
+        chartData.firstData1 = getKeyData(evo.firstData.d1);
+        chartData.firstData24 = getKeyData(evo.firstData.d24);
+        chartData.keyData1 = getKeyData(evo.keyData.d1);
+        chartData.keyData24 = getKeyData(evo.keyData.d24);
+
+        chartData.containorID = 'event_evolution_charts';
+
+        //初始默认1小时
+        chartData.seriesData = chartData.seriesData1;
+        chartData.pointsData = chartData.pointsData1;
+
+        chartData.plotBands = chartData.plotBands1;
+
+        chartData.firstData = chartData.firstData1;
+
+        chartData.keyData = chartData.keyData1;
+
+        //生成左上角按钮
+        $("#phrase_btn").html(createPlotBands(chartData.plotBands,chartData.stime,chartData.etime));
+
+        var myoptions =	{
+            chart: {
+                renderTo: chartData.containorID
+            },
+            exporting:{
+                enabled:false
+            },
+            credits:{
+                enabled:false
+            },
+            rangeSelector : {
+                inputEnabled: $('#'+chartData.containorID).width() > 480,
+                selected : 1
+            },
+            navigator:{
+                xAxis : {
+                    dateTimeLabelFormats : iFunc.dateTimeLabelFormats
+                }
+            },
+            xAxis : {
+                dateTimeLabelFormats : iFunc.dateTimeLabelFormats,
+                plotBands : chartData.plotBands
+            },
+            yAxis : {
+                title : {
+                    text : '信息量'
+                },
+                min : 0
+            },
+            tooltip: {
+                backgroundColor: Highcharts.Color("#ffffff").setOpacity(0.5).get('rgba'),
+                formatter : function() {
+                    var s = '<span style="font-size: 10px">'+ Highcharts.dateFormat('%Y年%b%e日 %H:%M:%S', this.x) +'</span><br/>';
+                    var tx = this.x;
+                    if(this.points){	//线
+                        var pointsData;
+                        $.each(chartData.pointsData,function(j,m){
+                            if(tx == m.x){
+                                pointsData = m;
+                                return false;
+                            }
+                        });
+                        $.each(this.points, function (i,n) {
+                            s += '<span style="color:'+n.series.color+'">●</span><span> '+n.series.name+': </span><span style="font-weight:bold">'+pointsData.count+' ${_res.event_107}</span>';/*条  */
+                            if (pointsData.count_n>0) {
+                                s += '<br/><span style="color:'+n.series.color+'">●</span><span> ${_res.event_084}: </span><span style="font-weight:bold">'+pointsData.count_n+'${_res.event_107} </span>';
+                            }
+                            if (pointsData.count_facebook>0) {
+                                s += '<br/><span style="color:'+n.series.color+'">●</span><span> Facebook: </span><span style="font-weight:bold">'+pointsData.count_facebook+' ${_res.event_107}</span>';
+                            }
+                            if (pointsData.count_instagram>0) {
+                                s += '<br/><span style="color:'+n.series.color+'">●</span><span> Instagram: </span><span style="font-weight:bold">'+pointsData.count_instagram+' ${_res.event_107}</span>';
+                            }
+                            if (pointsData.count_twitter>0) {
+                                s += '<br/><span style="color:'+n.series.color+'">●</span><span> Twitter: </span><span style="font-weight:bold">'+pointsData.count_twitter+' ${_res.event_107}</span>';
+                            }
+                            if (pointsData.count_newspaper>0) {
+                                s += '<br/><span style="color:'+n.series.color+'">●</span><span> 报纸: </span><span style="font-weight:bold">'+pointsData.count_newspaper+' ${_res.event_107}</span>';
+                            }
+                            if (pointsData.count_forum>0) {
+                                s += '<br/><span style="color:'+n.series.color+'">●</span><span> 论坛: </span><span style="font-weight:bold">'+pointsData.count_forum+' ${_res.event_107}</span>';
+                            }
+                            if (pointsData.count_blog>0) {
+                                s += '<br/><span style="color:'+n.series.color+'">●</span><span> 博客: </span><span style="font-weight:bold">'+pointsData.count_blog+' ${_res.event_107}</span>';
+                            }
+                            if (pointsData.count_wechat>0) {
+                                s += '<br/><span style="color:'+n.series.color+'">●</span><span> 微信: </span><span style="font-weight:bold">'+pointsData.count_wechat+' ${_res.event_107}</span>';
+                            }
+                            if (pointsData.count_mblog>0) {
+                                s += '<br/><span style="color:'+n.series.color+'">●</span><span> 微博: </span><span style="font-weight:bold">'+pointsData.count_mblog+' ${_res.event_107}</span>';
+                            }
+                            if (pointsData.count_app>0) {
+                                s += '<br/><span style="color:'+n.series.color+'">●</span><span> App: </span><span style="font-weight:bold">'+pointsData.count_app+' ${_res.event_107}</span>';
+                            }
+                        });
+                    } else if(this.point){	//点
+                        var type = this.point.text[0];
+                        var text = this.point.text[1];
+                        var textList = [];
+                        //console.log(text);
+                        if(text){
+                            var ci = parseInt(text.length/iFunc.legendCutLen);
+                            var fix = text.length%iFunc.legendCutLen;
+                            for(var i=0;i<ci;i++){
+                                textList.push(text.substring(iFunc.legendCutLen*i,iFunc.legendCutLen*(i+1)));
+                            }
+                            textList.push(text.substring(text.length-fix));
+                        }
+                        s += '<span style="color:green;">【'+this.point.text[0]+'】</span><span style="color:gray;">'+this.point.other+'</span><br/>';
+                        $.each(textList, function(i,n){
+                            s += '<span style="color:blue;">'+n+'</span><br/>';
+                        });
+                    }
+                    return s;
+                }
+            },
+            rangeSelector:{
+                enabled:true,
+                inputEditDateFormat:'%Y-%m-%d %H:%M:%S',
+                inputDateFormat:'%Y-%m-%d %H:%M:%S',
+                inputBoxWidth:150
+            },
+            legend:{
+                enabled:true,
+                floating:true,
+                verticalAlign:'top',
+                align:'left'
+            },
+            plotOptions:{
+                series:{
+                    turboThreshold:0
+                }
+            },
+            series : [{
+                type: 'areaspline',
+                id : 'dataseries',
+                name : '信息量',
+                data : chartData.seriesData,
+                color : Highcharts.getOptions().colors[0],
+                threshold : null,
+                tooltip: {
+                    valueDecimals: 2
+                }
+            }, {
+                type : 'flags',
+                name : '首发信息',
+                onSeries : 'dataseries',
+                data : chartData.firstData,
+                shape : 'squarepin',
+                color : Highcharts.getOptions().colors[1],
+                fillColor : Highcharts.Color("#ffffff").setOpacity(0.5).get('rgba'),
+                events: {
+                    click: function(e) {
+                        load_key_info_list(e.point.id);
+                    }
+                }
+            }, {
+                type : 'flags',
+                name : '关键信息',
+                onSeries : 'dataseries',
+                data : chartData.keyData,
+                color : iFunc.colorList[2],
+                fillColor : Highcharts.Color(iFunc.colorList[2]).setOpacity(0.5).get('rgba'),
+                style : {// text style
+                    color : 'white'
+                },
+                states : {
+                    hover : {
+                        fillColor : iFunc.colorList[2]
+                    }
+                },
+
+                events: {
+                    click: function(e) {
+                        load_key_info_list(e.point.id);
+                    }
+                }
+            }]
+        };
+        myCharts = new Highcharts.StockChart(myoptions);
+        myCharts.series[1].hide();
+        myCharts.series[2].hide();
+        $("#phrase_btn .phase").eq(0).click();
+
+        /*} else {
+         $("#phrase_btn").html('');
+         }*/
+    });
+
+    /** 生成阶段定位按钮 */
+//param:[{stage,type,label,color,from,to}]
+    function createPlotBands(param,st,et){
+        var html = '';
+        if(param){
+            html += '<li class="phase btn_all" style="cursor:pointer;margin-top:4px;" data-st="'+st+'" data-et="'+et+'">全部</li>';
+            $.each(param,function(i,n){
+                html += '<li class="phase btn_p'+ n.type +'" style="cursor:pointer;margin-top:4px;width: auto" data-st="'+n.from+'" data-et="'+n.to+'">'+n.label.text+'</li>';
+            });
+        }
+        //console.log(html);
+        return html;
+    }
+    /** 获取阶段划分对象 */
+//param:[{stage,type:trend_type,from:xxxx,to:xxxx}]	1-发生，2-发展，3-高峰，4-回落，5-消亡
+//ret:[{stage,type,label,color,from,to}]
+    function getPlotBands(param){
+        var plotBands = [];
+        if(param){
+            $.each(param,function(i,n){
+                var plotBandsObj = new Object();
+                plotBandsObj.stage = n.stage;
+                plotBandsObj.type = n.type;
+                plotBandsObj.label = {text : (n.stage==1?'':(iFunc.stagelList[n.stage-1]+'次'))+iFunc.labelList[n.type-1]};
+                //plotBandsObj.label = {text : (n.stage==1?'':(iFunc.stagelList[n.stage-1]+'${_res.event_236}'))+iFunc.labelList[n.type-1]};
+                plotBandsObj.color = Highcharts.Color(iFunc.colorList[n.type-1]).setOpacity(iFunc.opacityValue).get('rgba');
+                plotBandsObj.from = n.from+iFunc.timezoneOffset;
+                plotBandsObj.to = n.to+iFunc.timezoneOffset;
+                plotBands.push(plotBandsObj);
+            });
+        }
+        return plotBands;
+    }
+    /** 获取指标对象 	*/
+//param:[{x,scroe,count}]
+//ret:[[time,value]]
+    function getIndexData(param){
+        var indexDataSeries = [];
+        var indexDataPoints = [];
+        //var str = "";
+        if(param){
+            $.each(param,function(i,n){
+                var seriesObj = new Object();
+                seriesObj.x = n.x+iFunc.timezoneOffset;
+                seriesObj.y = n.count;
+                indexDataSeries.push(seriesObj);
+                var pointObj = new Object();
+                pointObj.x = n.x+iFunc.timezoneOffset;
+                pointObj.count = n.count;
+                pointObj.count_n = n.count_news;
+                pointObj.count_facebook = n.count_facebook;
+                pointObj.count_instagram = n.count_instagram;
+                pointObj.count_twitter = n.count_twitter;
+                pointObj.count_forum = n.count_forum;
+                pointObj.count_mblog = n.count_mblog;
+                pointObj.count_blog = n.count_blog;
+                pointObj.count_app = n.count_app;
+                pointObj.count_wechat = n.count_wechat;
+                pointObj.count_newspaper = n.count_newspaper;
+                indexDataPoints.push(pointObj);
+            });
+        }
+        var indexData = new Object();
+        indexData.seriesData = indexDataSeries;
+        indexData.pointsData = indexDataPoints;
+        return indexData;
+    }
+    /** 获取关键点对象 */
+    function getKeyData(param){
+        var keyData = [];
+        if(param){
+            $.each(param,function(i,n){
+                console.log(iFunc.typeList)
+                //console.log(n.site,n.author);
+                var keyDataObj = new Object();
+                keyDataObj.x = n.x+iFunc.timezoneOffset;
+                keyDataObj.id = n.id;
+                keyDataObj.type = n.type;
+                //alert(iFunc.typeList[n.type-1])
+                //console.log(iFunc.typeList[n.type-1])
+                keyDataObj.title = '<span style="color:green;">【'+iFunc.typeList[n.type-1]+'】</span>'+(n.title && n.title.length>iFunc.cutLen?n.title.substring(0,iFunc.cutLen)+'...':n.title);
+                keyDataObj.text = [iFunc.typeList[n.type-1], n.title];
+                //keyDataObj.other = '<span style="margin-left:30px;">站点:'+n.site+'	'+(n.author?'博主:'+n.author:'')+'</span>';
+                keyDataObj.other = n.site+'	'+(n.author?n.author:'');
+                keyData.push(keyDataObj);
+            });
+        }
+        return keyData;
+    }
+    /** 获取相关信息 */
+    function load_key_info_list(iids){
+        var option = new Object();
+        option.pageSize = 20;
+        option.isExport = false;
+        option.param = {
+            /*"path":"/dynamic/event_all/mod4/finish_event_list.html",
+             "eventSearchVo.name" : name,
+             "eventSearchVo.cate" : cate,
+             "eventSearchVo.stime" : stime,
+             "eventSearchVo.etime" : etime,
+             type : 1//1表示查询主数据量，2表示查询主数据量加评论量*/
+            //"uuid":"001"
+            "path":"/dynamic/event_all/mod6/info_list.html",
+            "id":iids//"56683560659b9c05f7a5b769b21211b1,2740b43b571f0a348ea4bb2dbae16051,8d2ab0f36364fbbe95c123415ab49892,dba47ec1b9c4b389df01e077eef0e8d2,153ccff5f97e6ba57767fc9bd148d56d,24c22ee773e998b03f494840575a3855"
+        };
+        option.callback=function(obj){
+            $(".detail_expand_btn").unbind("click").click(function(){
+                var title= $(this).html();
+                var time = $(this).parents().find(".tanchu_detail1").html();
+                var site = $(this).parents().find(".tanchu_detail2").html();
+                var qinggan = $(this).parents().find(".tanchu_detail3").html();
+                var content =$(this).parent().siblings(".description").html() ;
+                $(".tanchu_title").html(title);
+                $(".tanchu_time").html(time);
+                $(".tanchu_site").html(site);
+                $(".tanchu_qinggan").html(qinggan);
+                $(".tanchu_content").html(content);
+
+            })
+        };
+        var obj=new iPage.PageLoad("key_info_list","event_al/mod6/queryInfo", option).init();
+    }
+
+
+
+</script>
